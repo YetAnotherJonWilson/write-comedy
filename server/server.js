@@ -1,42 +1,81 @@
 var express = require('express');
-var index = require('./index');
+var index = require('./routes/index');
+var create = require('./routes/create');
 var passport = require('passport');
 var app = express();
+var localStrategy = require('passport-local').Strategy;
+var register = require('./routes/register');
+var login = require('./routes/login');
+var bodyParser = require('body-parser');
+var User = require('./models/users');
 
-// This will configure Passport to use Auth0
-var strategy = require('./setup-passport');
 
 // Session and cookies middlewares to keep user logged in
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 
-//"configs"
-app.use(express.static('public'));
-app.use(cookieParser());
 // See express session docs for information on the options: https://github.com/expressjs/session
-app.use(session({ secret: 'Txu1fhQu8ckqrNhjV0Q3lZFvKf3LF4npl27PXNPJxxzSOWfnUMy_2jkpbT40p82p', resave: false,  saveUninitialized: false }));
-
+app.use(session({
+    secret: 'maddon',
+    key: 'user',
+    resave: true,
+    saveUninitialized: false,
+    cookie: { maxAge: 900000, secure: false }
+}));
 
 app.use(passport.initialize());
 app.use(passport.session());
 
+passport.use('local', new localStrategy({
+    usernameField: 'username',
+    passwordField: 'password'
+}, function(username, password, done) {
+    User.findAndComparePassword(username, password, function(err, isMatch, user){
+        if (err) {
+            return done(err);
+        }
+
+        if (isMatch) {
+            // successfully auth the user
+            return done(null, user);
+        } else {
+            done(null, false);
+        }
+    });
+}));
+
+passport.serializeUser(function(user, done){
+    done(null, user.id);
+});
+
+passport.deserializeUser(function(id, done){
+    User.findById(id, function(err, user){
+        if (err) {
+            return done(err);
+        }
+        done(null, user);
+    });
+});
+
+//"configs"
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(express.static('public'));
+app.use(cookieParser());
+
 //routes
 app.use('/', index);
+app.use('/newjoke', create);
+app.use('/register', register);
+app.use('/login', login);
 
-
-// Auth0 callback handler
-// For security purposes, you must add the callback URL of your app to your Application Settings.
-// In this case, the callbackURL should look something like:
-// http://yourUrl/callback
-// [?   localhost  ?]
-app.get('/callback',
-    passport.authenticate('auth0', { failureRedirect: '/url-if-something-fails' }),
-    function(req, res) {
-        if (!req.user) {
-            throw new Error('user null');
-        }
-        res.redirect("/user");
-    });
+app.use('/api', function(req, res, next){
+    if (req.isAuthenticated()) {
+        next();
+    } else {
+        res.sendStatus(403);
+    }
+});
 
 var server = app.listen(3000, function() {
     var port = server.address().port;
