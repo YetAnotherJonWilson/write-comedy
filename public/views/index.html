@@ -4,24 +4,25 @@
       <title>Comedy Write Now</title>
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" charset="utf-8">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <link rel="stylesheet" href="views/styles.css">
       <script src="vendors/angular/angular.min.js"></script>
       <script src="vendors/angular-route/angular-route.min.js"></script>
       <script src="assets/client.min.js"></script>
       <base href="/" />
   </head>
   <body ng-controller="MainController as main">
-  <div class="container">
       <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-es-12 bg-warning">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-es-12" id="header">
               <h1>{{main.message}}</h1>
-              <p class="text-muted">This is some text inside the header.</p>
+              <p class="text-muted">the free app for writing, editing and organizing your comedy</p>
           </div>
       </div>
+      <div class="container">
 
-      <div ng-view>
+          <div ng-view>
+
+          </div>
 
       </div>
-
-  </div>
   </body>
 </html>

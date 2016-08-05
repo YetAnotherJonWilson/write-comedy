@@ -13,7 +13,7 @@ angular.module('passportApp').config(['$routeProvider', '$locationProvider', fun
         .when('/success', {
             templateUrl: '/views/success.html',
             controller: 'WelcomeController',
-            controllerAs: 'welcome'
+            controllerAs: 'success'
         })
         .when('/failure', {
             templateUrl: '/views/failure.html'

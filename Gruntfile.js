@@ -12,7 +12,7 @@ module.exports = function(grunt) {
                 //    mangle: false
                 //  },
                 files: {
-                    'public/assets/client.min.js': ['client/passportApp.module.js', 'client/passportApp.config.js', 'client/MainController.js', 'client/LoginController.js', 'client/RegisterController.js']
+                    'public/assets/client.min.js': ['client/passportApp.module.js', 'client/passportApp.config.js', 'client/MainController.js', 'client/LoginController.js', 'client/RegisterController.js', 'client/WelcomeController.js']
                 }
             }
         }

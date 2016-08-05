@@ -68,6 +68,9 @@ app.use('/', index);
 app.use('/newjoke', create);
 app.use('/register', register);
 app.use('/login', login);
+app.get('/getCurrentUserName', function(request, response){
+   response.send(request.user.username)
+});
 
 app.use('/api', function(req, res, next){
     if (req.isAuthenticated()) {

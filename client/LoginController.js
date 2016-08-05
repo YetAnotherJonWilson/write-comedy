@@ -3,6 +3,8 @@ angular.module('passportApp').controller('LoginController', ['$http', '$location
 
     vm.username = '';  //username
     vm.password = ''; //password
+    vm.error = false;
+    vm.errorMessage = 'Sorry, Wrong Username/Password';
 
     vm.login = function(){
         console.log('Username', vm.username);
@@ -23,6 +25,7 @@ angular.module('passportApp').controller('LoginController', ['$http', '$location
 
     function handleFailure(response){
         console.log('Failure', response);
-        $location.path('/failure');
+        $location.path('/');
+        vm.error = true;
     }
 }]);
