@@ -11,7 +11,9 @@ angular.module('passportApp').config(['$routeProvider', '$locationProvider', fun
             controllerAs: 'register'
         })
         .when('/success', {
-            templateUrl: '/views/success.html'
+            templateUrl: '/views/success.html',
+            controller: 'WelcomeController',
+            controllerAs: 'welcome'
         })
         .when('/failure', {
             templateUrl: '/views/failure.html'

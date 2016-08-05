@@ -61,7 +61,7 @@ function create(username, password, callback) {
 
 function findAndComparePassword(username, candidatePassword, callback) {
     // candidatePassword is what we received on the request
-
+    console.log('Checking password');
     findByUsername(username, function(err, user) {
         if (err) {
             return callback(err);
