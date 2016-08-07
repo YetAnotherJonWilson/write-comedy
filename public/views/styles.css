@@ -10,10 +10,14 @@
 
 #header {
     text-align: right;
-    background-color: burlywood;
+    /*background-color: burlywood;*/
     margin-bottom: 20px;
 }
 
 #welcome h1 {
     text-align: center;
+}
+
+#loginDiv {
+    text-align: right;
 }

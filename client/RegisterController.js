@@ -18,7 +18,7 @@ angular.module('passportApp').controller('RegisterController', ['$http', '$locat
 
     function handleSuccess(response){
         console.log('Success', response);
-        $location.path('/success');
+        $location.path('/');
     };
 
     function handleFailure(response){
