@@ -1,6 +1,10 @@
 h1 {
     font-family: "Helvetica Neue Ultralight", "Helvetica", "Arial", sans-serif;
-    color: #FE65B7;
+    color: #e24e42;
+}
+
+h4 {
+    color: #008f95;
 }
 
 #header h1 {
@@ -14,35 +18,8 @@ h1 {
 #header {
     text-align: right;
     /*background-color: burlywood;*/
-    border-bottom: 2px solid rgb(233, 201, 4);
-    border-bottom: 2px solid rgba(233, 201, 4, .4);
-}
-
-.btn-login {
-    background-color: #8fc33a;
-}
-
-#registerTxt {
-    color: #62edd6;
-}
-
-#welcome h1 {
-    text-align: center;
-    margin-top: 35px;
-    color: #62edd6;
-}
-
-.welcomeButtons {
-    width: 205px;
-    margin: auto;
-}
-
-.welcomeButtons button {
-    margin-top: 35px;
-}
-
-.btn-welcome {
-    background-color: #8fc33a;
+    border-bottom: 2px solid rgb(233, 176, 0);
+    border-bottom: 2px solid rgba(233,176,0, .4);
 }
 
 #loginDiv {
@@ -50,6 +27,38 @@ h1 {
     position: fixed;
     top: 40%;
     left: 40%;
+}
+
+.btn-login {
+    background-color: #008f95;
+}
+
+#registerTxt {
+    color: #eb6e80;
+}
+
+#welcome {
+    position: fixed;
+    left: 40%;
+}
+
+#welcome h1 {
+    color: #e24e42;
+}
+
+.welcomeButtons {
+    width: 205px;
+}
+
+.btn-welcome {
+    width: 205px;
+    background-color: #008f95;
+    color: #fff;
+    margin-top: 35px;
+}
+
+.btn-welcome a:visited {
+    color: #000;
 }
 
 .btn-huge{
