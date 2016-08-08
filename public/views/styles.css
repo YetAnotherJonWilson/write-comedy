@@ -46,3 +46,12 @@ h1 {
     width: 330px;
     margin: auto;
 }
+
+.largeText {
+    width: 300px;
+    height: 200px;
+}
+
+#titleField {
+    width: 300px;
+}
