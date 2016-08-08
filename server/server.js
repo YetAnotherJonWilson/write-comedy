@@ -1,10 +1,11 @@
 var express = require('express');
 var index = require('./routes/index');
-var create = require('./routes/create');
+var exlist = require('./routes/exlist');
 var passport = require('passport');
 var app = express();
 var localStrategy = require('passport-local').Strategy;
 var register = require('./routes/register');
+var newjoke = require('./routes/newjoke');
 var login = require('./routes/login');
 var bodyParser = require('body-parser');
 var User = require('./models/users');
@@ -65,9 +66,10 @@ app.use(cookieParser());
 
 //routes
 app.use('/', index);
-app.use('/newjoke', create);
+app.use('/getex', exlist);
 app.use('/register', register);
 app.use('/login', login);
+app.use('/newjoke', newjoke);
 app.get('/getCurrentUserName', function(request, response){
    response.send(request.user.username)
 });

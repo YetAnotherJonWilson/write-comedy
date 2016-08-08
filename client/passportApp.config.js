@@ -15,8 +15,10 @@ angular.module('passportApp').config(['$routeProvider', '$locationProvider', fun
             controller: 'WelcomeController',
             controllerAs: 'success'
         })
-        .when('/failure', {
-            templateUrl: '/views/failure.html'
+        .when('/newjoke', {
+            templateUrl: '/views/newjoke.html',
+            controller: 'NewJokeController',
+            controllerAs: 'newjoke'
         })
 
     $locationProvider.html5Mode(true);
