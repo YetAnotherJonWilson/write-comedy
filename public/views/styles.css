@@ -15,8 +15,8 @@ h1 {
     text-align: right;
     /*background-color: burlywood;*/
     margin-bottom: 20px;
-    border-bottom: 1px solid rgb(0, 0, 0);
-    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    border-bottom: 2px solid rgb(222, 184, 135);
+    border-bottom: 2px solid rgba(222, 184, 135, .4);
 }
 
 #welcome h1 {
@@ -40,4 +40,9 @@ h1 {
 .btn-huge{
     padding: 20px 0px 20px 0px;
     width: 205px;
+}
+
+#newJokeHeader {
+    width: 330px;
+    margin: auto;
 }
