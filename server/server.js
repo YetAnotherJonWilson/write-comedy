@@ -69,7 +69,8 @@ app.use('/', index);
 app.use('/getex', exlist);
 app.use('/register', index);
 app.use('/login', login);
-app.use('/newjoke', newjoke);
+app.use('/newjoke', index);
+app.use('/success', index);
 app.get('/getCurrentUserName', function(request, response){
    response.send(request.user.username)
 });
