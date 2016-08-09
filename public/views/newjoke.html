@@ -1,14 +1,20 @@
 <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="header">
-            <h1>Create New Joke</h1>
+        <ul id="top-nav">
+            <li><a href="/newjoke" class="btn btn-primary">New Joke</a></li>
+            <li><a href="#" class="btn btn-primary">Find Joke by Title</a></li>
+            <li><a href="#" class="btn btn-primary">Find Joke by Bit</a></li>
+            <li><a href="#" class="btn btn-primary">Find Joke by Set</a></li>
+        </ul>
+        <h1>Create New Joke</h1>
     </div>
 </div>
+
 <div class="row">
     <div class="col-lg-1 col-md-1 "></div>
     <div class="col-lg-11 col-md-11 ">
-        <h4>Title</h4>
+        <h4>Title<span id="red-ast">*</span></h4>
         <input type="text" ng-model="newjoke.title" id="titleField"><br />
-        <input class="btn btn-yellow" type="submit" ng-click="newtitle()">
     </div>
 </div>
 <div class="row">
@@ -16,19 +22,26 @@
     <div class="col-lg-3 col-md-3 ">
         <h4>Setup</h4>
         <textarea type="text" ng-model="newjoke.setup" class="largeText"></textarea><br />
-        <input class="btn btn-yellow" type="submit" ng-click="setup()">
         <h4>Punchline</h4>
         <textarea type="text" ng-model="newjoke.punchline" class="largeText"></textarea><br />
-        <input class="btn btn-yellow" type="submit" ng-click="punchline()">
     </div>
 
     <div class="col-lg-1 col-md-1"></div>
     <div class="col-lg-3 col-md-3">
         <h4>Theme, Topic or Point</h4>
         <textarea type="text" ng-model="newjoke.theme" class="largeText"></textarea><br />
-        <input class="btn btn-yellow" type="submit" ng-click="theme()">
         <h4>Subject Matter</h4>
         <textarea type="text" ng-model="newjoke.subject" class="largeText"></textarea><br />
-        <input class="btn btn-yellow" type="submit" ng-click="subjectMatter()">
     </div>
+</div>
+<div class="row">
+    <div class="col-lg-1 col-md-1"></div>
+    <div class="col-lg-8 col-md-8">
+        <ul id="newjoke-nav">
+            <li ><a class="btn btn-warning" href="#" class="btn">Save</a></li>
+            <li><a class="btn btn-warning" href="#" class="btn">Clear Form</a></li>
+            <li><a class="btn btn-warning" href="/exercises" class="btn">Go To Exercises</a></li>
+        </ul>
+    </div>
+    <div class="col-lg-3 col-md-3"></div>
 </div>

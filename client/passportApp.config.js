@@ -20,6 +20,11 @@ angular.module('passportApp').config(['$routeProvider', '$locationProvider', fun
             controller: 'NewJokeController',
             controllerAs: 'newjoke'
         })
+        .when('/exercises', {
+            templateUrl: '/views/exercises.html',
+            controller: 'ExercisesController',
+            controllerAs: 'exercises'
+        })
 
     $locationProvider.html5Mode(true);
 }]);
