@@ -23,6 +23,6 @@ angular.module('passportApp').controller('RegisterController', ['$http', '$locat
 
     function handleFailure(response){
         console.log('Failure', response);
-        $location.path('/failure');
+        $location.path('/');
     };
 }]);
