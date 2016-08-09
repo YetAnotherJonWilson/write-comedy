@@ -67,7 +67,7 @@ app.use(cookieParser());
 //routes
 app.use('/', index);
 app.use('/getex', exlist);
-app.use('/register', register);
+app.use('/register', index);
 app.use('/login', login);
 app.use('/newjoke', newjoke);
 app.get('/getCurrentUserName', function(request, response){

@@ -18,8 +18,9 @@ h4 {
 #header {
     text-align: right;
     /*background-color: burlywood;*/
-    border-bottom: 2px solid rgb(233, 176, 0);
-    border-bottom: 2px solid rgba(233,176,0, .4);
+    /*border-bottom: 2px solid rgb(233, 176, 0);*/
+    /*border-bottom: 2px solid rgba(233,176,0, .4);*/
+    background-color: #E9B000;
 }
 
 #loginDiv {
@@ -78,4 +79,9 @@ h4 {
 
 #titleField {
     width: 300px;
+}
+
+.btn-yellow {
+    background-color: #E9B000;
+    color: #fff;
 }

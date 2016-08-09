@@ -1,8 +1,6 @@
 <div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div id="newJokeHeader">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="header">
             <h1>Create New Joke</h1>
-        </div>
     </div>
 </div>
 <div class="row">
@@ -10,7 +8,7 @@
     <div class="col-lg-11 col-md-11 ">
         <h4>Title</h4>
         <input type="text" ng-model="newjoke.title" id="titleField"><br />
-        <input class="btn btn-primary" type="submit" ng-click="newtitle()">
+        <input class="btn btn-yellow" type="submit" ng-click="newtitle()">
     </div>
 </div>
 <div class="row">
@@ -18,19 +16,19 @@
     <div class="col-lg-3 col-md-3 ">
         <h4>Setup</h4>
         <textarea type="text" ng-model="newjoke.setup" class="largeText"></textarea><br />
-        <input class="btn btn-primary" type="submit" ng-click="setup()">
+        <input class="btn btn-yellow" type="submit" ng-click="setup()">
         <h4>Punchline</h4>
         <textarea type="text" ng-model="newjoke.punchline" class="largeText"></textarea><br />
-        <input class="btn btn-primary" type="submit" ng-click="punchline()">
+        <input class="btn btn-yellow" type="submit" ng-click="punchline()">
     </div>
 
     <div class="col-lg-1 col-md-1"></div>
     <div class="col-lg-3 col-md-3">
         <h4>Theme, Topic or Point</h4>
         <textarea type="text" ng-model="newjoke.theme" class="largeText"></textarea><br />
-        <input class="btn btn-primary" type="submit" ng-click="theme()">
+        <input class="btn btn-yellow" type="submit" ng-click="theme()">
         <h4>Subject Matter</h4>
         <textarea type="text" ng-model="newjoke.subject" class="largeText"></textarea><br />
-        <input class="btn btn-primary" type="submit" ng-click="subjectMatter()">
+        <input class="btn btn-yellow" type="submit" ng-click="subjectMatter()">
     </div>
 </div>
