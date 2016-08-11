@@ -15,6 +15,19 @@ angular.module('passportApp').controller('NewJokeController', ['$http', '$locati
         console.log(vm.subject);
     };
 
+    $http.get('/getCurrentUserId').then(handleSuccess);
+
+    function handleSuccess(response){
+        vm.userId = response.data.id;
+        console.log(vm.userId);
+    };
+
+    // $http.get('/getCurrentUserName').then(handleSuccess);
+    //
+    // function handleSuccess(response){
+    //     vm.username = response.data;
+    //     console.log(vm.username);
+    // };
 
 
 }]);

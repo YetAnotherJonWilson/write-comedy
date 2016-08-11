@@ -68,13 +68,18 @@ app.use(cookieParser());
 app.use('/', index);
 app.use('/getex', exlist);
 app.use('/register', index);
+app.use('/signup', register);
 app.use('/login', login);
 app.use('/newjoke', index);
 app.use('/success', index);
 app.use('/exercises', index);
 app.use('/alternates', index);
 app.get('/getCurrentUserName', function(request, response){
-   response.send(request.user.username)
+    response.send(request.user.username);
+});
+app.get('/getCurrentUserId', function(request, response){
+    var data = {id: request.user.id};
+    response.send(data);
 });
 
 app.use('/api', function(req, res, next){

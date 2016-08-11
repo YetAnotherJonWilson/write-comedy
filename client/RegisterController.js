@@ -3,6 +3,8 @@ angular.module('passportApp').controller('RegisterController', ['$http', '$locat
 
     vm.username = '';  //username
     vm.password = ''; //password
+    vm.error = false;
+    vm.errorMessage = 'Sorry, Username taken';
 
     vm.register = function(){
         console.log('Username', vm.username);
@@ -13,7 +15,7 @@ angular.module('passportApp').controller('RegisterController', ['$http', '$locat
         sendData.username = vm.username;
         sendData.password = vm.password;
 
-        $http.post('/register', sendData).then(handleSuccess, handleFailure);
+        $http.post('/signup', sendData).then(handleSuccess, handleFailure);
     };
 
     function handleSuccess(response){
@@ -23,6 +25,7 @@ angular.module('passportApp').controller('RegisterController', ['$http', '$locat
 
     function handleFailure(response){
         console.log('Failure', response);
-        $location.path('/');
+        $location.path('/register');
+        vm.error = true;
     };
 }]);
