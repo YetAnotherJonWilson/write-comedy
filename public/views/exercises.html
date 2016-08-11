@@ -17,8 +17,30 @@
         <h4>Punchline</h4>
         <h4>Theme or Topic</h4>
         <h4>Subject Matter</h4>
-        <button class="btn btn-lg btn-success" ng-click="exercises.altMaterial()">View Alternate Material</button><br><br>
+        <a class="btn btn-lg btn-success" href="/alternates">View Alternate Material</a><br /><br />
         <span id="exPage"><h5>Part of set #&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5><button class="btn btn-sm btn-primary">Add to another set</button><br><br>
         <h5>Part of Bit #&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5><button class="btn btn-sm btn-primary">Add to a different bit</button></span>
+    </div>
+    <div id="exPage" class="col-lg-4 col-md-4 col-sm-12 col-sm-12">
+        <button id="exMiddleButton" class="btn btn-lg btn-success" ng-click="exercises.getRandomExercise()">Get Random Exercise</button><br><br>
+        <h3>Name: {{exercises.exerciseName}}</h3>
+        <p>Description: {{exercises.exerciseDescription}}</p>
+        <textarea type="text" class="largeText"></textarea>
+    </div>
+    <div id="exPage" class="col-lg-4 col-md-4 col-sm-12 col-sm-12">
+        <p>Add items to be saved here. For multiple items (themes or topics, or subject matter), separate with commas.</p>
+        <textarea type="text" class="mediumText"></textarea>
+        <p>Save as new version</p>
+        <button class="btn btn-success btn-sm" ng-click="exercises.saveNewSetup()">Setup</button>
+        <button class="btn btn-success btn-sm" ng-click="exercises.saveNewPunch()">Punchline</button>
+        <p>Add to current version</p>
+        <button class="btn btn-success btn-sm" ng-click="exercises.saveNewPunch()">Punchline</button>
+        <button class="btn btn-success btn-sm" ng-click="exercises.saveNewThemel()">Theme or Topic</button>
+        <button class="btn btn-success btn-sm" ng-click="exercises.saveNewSM()">Subject Matter</button>
+        <p>Save as alternate version</p>
+        <button class="btn btn-success btn-sm" ng-click="exercises.saveAltSetup()">Setup</button>
+        <button class="btn btn-success btn-sm" ng-click="exercises.saveAltPunch()">Punchline</button>
+        <button class="btn btn-success btn-sm" ng-click="exercises.saveAltTheme()">Theme or Topic</button>
+        <button class="btn btn-success btn-sm" ng-click="exercises.saveAltSM()">Subject Matter</button>
     </div>
 </div>

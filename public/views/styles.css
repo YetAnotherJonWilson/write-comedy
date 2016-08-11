@@ -113,4 +113,21 @@ h4 {
     float: left;
 }
 
+#exPage h3 {
+    margin-top: 0;
+}
+
+#exMiddleButton {
+    margin-top: 20px;
+}
+
+.mediumText {
+    width: 300px;
+    height: 100px;
+}
+
+#exPage p {
+    margin-top: 10px;
+}
+
 

@@ -72,6 +72,7 @@ app.use('/login', login);
 app.use('/newjoke', index);
 app.use('/success', index);
 app.use('/exercises', index);
+app.use('/alternates', index);
 app.get('/getCurrentUserName', function(request, response){
    response.send(request.user.username)
 });
