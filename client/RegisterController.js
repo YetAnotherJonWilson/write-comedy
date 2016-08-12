@@ -1,4 +1,4 @@
-angular.module('passportApp').controller('RegisterController', ['$http', '$location', function($http, $location){
+angular.module('comedyApp').controller('RegisterController', ['$http', '$location', function($http, $location){
     var vm = this;
 
     vm.username = '';  //username
@@ -7,8 +7,8 @@ angular.module('passportApp').controller('RegisterController', ['$http', '$locat
     vm.errorMessage = 'Sorry, Username taken';
 
     vm.register = function(){
-        console.log('Username', vm.username);
-        console.log('Password', vm.password);
+        // console.log('Username', vm.username);
+        // console.log('Password', vm.password);
 
         var sendData = {};
 

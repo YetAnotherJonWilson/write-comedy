@@ -6,6 +6,7 @@ var app = express();
 var localStrategy = require('passport-local').Strategy;
 var register = require('./routes/register');
 var newjoke = require('./routes/newjoke');
+var postNewJoke = require('./routes/postnewjoke')
 var login = require('./routes/login');
 var bodyParser = require('body-parser');
 var User = require('./models/users');
@@ -74,6 +75,7 @@ app.use('/newjoke', index);
 app.use('/success', index);
 app.use('/exercises', index);
 app.use('/alternates', index);
+app.use('/postNewJoke', postNewJoke);
 app.get('/getCurrentUserName', function(request, response){
     response.send(request.user.username);
 });

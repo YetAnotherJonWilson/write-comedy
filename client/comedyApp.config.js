@@ -1,4 +1,4 @@
-angular.module('passportApp').config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
+angular.module('comedyApp').config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
     $routeProvider
         .when('/', {
             templateUrl: '/views/login.html',
