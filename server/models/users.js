@@ -7,7 +7,7 @@ var config = {
     database: 'ComedyApp',
     port: 5432,
     max: 10,
-    idleTimeoutMillis: 900000
+    idleTimeoutMillis: 1800000
 };
 
 var pool = new pg.Pool(config);

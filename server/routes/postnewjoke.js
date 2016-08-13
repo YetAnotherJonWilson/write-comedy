@@ -1,9 +1,16 @@
 var pg = require('pg');
-var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/ComedyApp';
+// var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/ComedyApp';
 var express = require('express');
 var router = express.Router();
 
-var client = new pg.Client(connectionString);
+var config = {
+    database: 'ComedyApp',
+    port: 5432,
+    max: 15
+};
+
+var pool = new pg.Pool(config);
+
 
 router.post('/', function(request, response){
     var title = request.body.title;
@@ -13,13 +20,15 @@ router.post('/', function(request, response){
     var theme = request.body.theme;
     var subject = request.body.subject;
 
-    client.connect(function(err){
+    pool.connect(function(err, client, done){
         if (err){
             console.log('connection error', err);
+            done();
         }
         client.query('INSERT INTO titles (title, user_id) VALUES ($1, $2) RETURNING id', [title, userId], function(err, result){
             if (err){
                 console.log(err);
+                done();
             } else {
                 var returnedId = result.rows[0].id;
                 insertSetup(returnedId);
@@ -27,9 +36,9 @@ router.post('/', function(request, response){
                 insertTheme(returnedId);
                 insertSubject(returnedId);
                 response.sendStatus(200);
+                done();
             }
-        });
-    });
+
     function insertSetup(id){
         client.query('INSERT INTO setups (setup, title_id) VALUES ($1, $2)', [setup, id], function(err, result){
             if(err){
@@ -68,6 +77,8 @@ router.post('/', function(request, response){
             }
         });
     }
+        });
+    });
 });
 
 

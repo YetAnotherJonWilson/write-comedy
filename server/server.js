@@ -6,7 +6,7 @@ var app = express();
 var localStrategy = require('passport-local').Strategy;
 var register = require('./routes/register');
 var newjoke = require('./routes/newjoke');
-var postNewJoke = require('./routes/postnewjoke')
+var postNewJoke = require('./routes/postnewjoke');
 var login = require('./routes/login');
 var bodyParser = require('body-parser');
 var User = require('./models/users');
@@ -22,7 +22,7 @@ app.use(session({
     key: 'user',
     resave: true,
     saveUninitialized: false,
-    cookie: { maxAge: 900000, secure: false }
+    cookie: { maxAge: 1800000, secure: false }
 }));
 
 app.use(passport.initialize());
@@ -77,11 +77,17 @@ app.use('/exercises', index);
 app.use('/alternates', index);
 app.use('/postNewJoke', postNewJoke);
 app.get('/getCurrentUserName', function(request, response){
+    // console.log(request);
     response.send(request.user.username);
 });
 app.get('/getCurrentUserId', function(request, response){
     var data = {id: request.user.id};
     response.send(data);
+});
+app.get('/getCurrentJokeById', function(request, response){
+    console.log(request.user, request.body);
+    // var data = {id: request.body.id};
+    response.sendStatus(200);
 });
 
 app.use('/api', function(req, res, next){

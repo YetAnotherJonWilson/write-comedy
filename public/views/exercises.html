@@ -11,23 +11,27 @@
 </div>
 
 <div class="row">
-    <div class="col-lg-4 col-md-4 col-sm-12 col-sm-12">
-        <h3>Joke Title Here</h3>
+    <div class="col-lg-4 col-md-4">
+        <h3>{{exercises.data.currentTitle}}</h3>
         <h4>Setup</h4>
+        <h5>{{exercises.data.currentSetup}}</h5>
         <h4>Punchline</h4>
+        <h5>{{exercises.data.currentPunchline}}</h5>
         <h4>Theme or Topic</h4>
+        <h5>{{exercises.data.currentTheme}}</h5>
         <h4>Subject Matter</h4>
+        <h5>{{exercises.data.currentSubject}}</h5>
         <a class="btn btn-lg btn-success" href="/alternates">View Alternate Material</a><br /><br />
-        <span id="exPage"><h5>Part of set #&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5><button class="btn btn-sm btn-primary">Add to another set</button><br><br>
-        <h5>Part of Bit #&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5><button class="btn btn-sm btn-primary">Add to a different bit</button></span>
+        <h5>Part of set #&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5><button class="btn btn-sm btn-primary">Add to another set</button><br><br>
+        <h5>Part of Bit #&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5><button class="btn btn-sm btn-primary">Add to a different bit</button>
     </div>
-    <div id="exPage" class="col-lg-4 col-md-4 col-sm-12 col-sm-12">
+    <div class="col-lg-4 col-md-4">
         <button id="exMiddleButton" class="btn btn-lg btn-success" ng-click="exercises.getRandomExercise()">Get Random Exercise</button><br><br>
         <h3>Name: {{exercises.exerciseName}}</h3>
         <p>Description: {{exercises.exerciseDescription}}</p>
         <textarea type="text" class="largeText"></textarea>
     </div>
-    <div id="exPage" class="col-lg-4 col-md-4 col-sm-12 col-sm-12">
+    <div class="col-lg-4 col-md-4">
         <p>Add items to be saved here. For multiple items (themes or topics, or subject matter), separate with commas.</p>
         <textarea type="text" class="mediumText"></textarea>
         <p>Save as new version</p>

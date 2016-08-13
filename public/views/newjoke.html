@@ -44,7 +44,7 @@
             <li ng-show="newjoke.afterSave"><button class="btn btn-warning" ng-click="newjoke.saveJoke()">Save</button></li>
             <p ng-show="newjoke.saved">Joke Saved!</p>
             <li><a class="btn btn-warning" href="javascript:window.location.reload();">Clear Form</a></li>
-            <li><a class="btn btn-warning" href="/exercises">Go To Exercises</a></li>
+            <li><button class="btn btn-warning" ng-show="newjoke.exerciseLink" ng-click="newjoke.goToExercises()">Go To Exercises</button></li>
         </ul>
     </div>
     <div class="col-lg-3 col-md-3"></div>
