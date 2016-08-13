@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-es-12" id="header">
+    <div class="col-lg-12 col-md-12" id="header">
         <ul id="top-nav">
             <li><a href="/newjoke" class="btn btn-primary">New Joke</a></li>
             <li><a href="#" class="btn btn-primary">Find Joke by Title</a></li>
@@ -9,11 +9,19 @@
         <h1>Hello, {{success.username}}</h1>
     </div>
 </div>
-<div class="col-lg-12 col-md-12 col-sm-12 col-es-12" id="welcome">
-    <div class="welcomeButtons">
-        <a href="/newjoke" class="btn btn-huge btn-welcome">New Joke</a>
-        <button class="btn btn-huge btn-welcome">Select Joke by Title</button>
-        <button class="btn btn-huge btn-welcome">Select Joke from Bit</button>
-        <button class="btn btn-huge btn-welcome">Select Joke from Set</button>
-    </div>
+<div class="col-lg-12 col-md-12">
+    <table>
+        <th>Title</th>
+        <th>Setup</th>
+        <th>Punchline</th>
+        <th>Theme or Topic</th>
+        <th>Subject Matter</th>
+        <tr ng-repeat="joke in jokes">
+            <td>{{joke.title}}</td>
+            <td>{{joke.setup}}</td>
+            <td>{{joke.punchline}}</td>
+            <td>{{joke.theme}}</td>
+            <td>{{joke.subject}}</td>
+        </tr>
+    </table>
 </div>

@@ -1,4 +1,4 @@
-angular.module('comedyApp').controller('NewJokeController', ['$http', '$location', 'DataService', function($http, $location, DataService){
+angular.module('comedyApp').controller('NewJokeController', ['$http', '$location', 'DataService', '$localStorage', function($http, $location, DataService, $localStorage){
     var vm = this;
     vm.title = '';
     vm.setup = '';
@@ -32,14 +32,20 @@ angular.module('comedyApp').controller('NewJokeController', ['$http', '$location
 
     vm.goToExercises = function() {
         $location.path('/exercises');
-        DataService.data.currentTitle = vm.title;
-        DataService.data.currentSetup = vm.setup;
-        DataService.data.currentPunchline = vm.punchline;
-        DataService.data.currentTheme = vm.theme;
-        DataService.data.currentSubject = vm.subject;
+        var pageData = {};
+        vm.pageData = {currentTitle: vm.title, currentSetup: vm.setup, currentPunchline: vm.punchline, currentTheme: vm.theme, currentSubject: vm.subject};
+        $localStorage.prevPageData = vm.pageData;
 
 
-    }
+
+        // DataService.data.currentTitle = vm.title;
+        // DataService.data.currentSetup = vm.setup;
+        // DataService.data.currentPunchline = vm.punchline;
+        // DataService.data.currentTheme = vm.theme;
+        // DataService.data.currentSubject = vm.subject;
+
+
+    };
 
     function handleSuccess(response) {
         vm.userId = response.data.id;

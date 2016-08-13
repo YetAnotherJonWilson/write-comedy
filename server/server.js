@@ -10,6 +10,8 @@ var postNewJoke = require('./routes/postnewjoke');
 var login = require('./routes/login');
 var bodyParser = require('body-parser');
 var User = require('./models/users');
+var randomizer = require('./routes/randomizer');
+var currentuserjokes = require('./routes/currentuserjokes')
 
 
 // Session and cookies middlewares to keep user logged in
@@ -89,6 +91,8 @@ app.get('/getCurrentJokeById', function(request, response){
     // var data = {id: request.body.id};
     response.sendStatus(200);
 });
+app.use('/exerciseRandomizer', randomizer);
+app.use('/getCurrentUserJokes', currentuserjokes);
 
 app.use('/api', function(req, res, next){
     if (req.isAuthenticated()) {

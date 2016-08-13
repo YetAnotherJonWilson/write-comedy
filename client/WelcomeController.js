@@ -6,4 +6,11 @@ angular.module('comedyApp').controller('WelcomeController', ['$http', '$location
     function handleSuccess(response){
         vm.username = response.data;
     }
+
+    $http.get('/getCurrentUserJokes').then(handleSuccessTwo);
+
+    function handleSuccessTwo(response) {
+        vm.jokes = response.data;
+    }
+
 }]);

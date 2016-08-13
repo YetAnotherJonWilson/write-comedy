@@ -1,1 +1,1 @@
-angular.module('comedyApp', ['ngRoute']);
+angular.module('comedyApp', ['ngRoute', 'ngStorage']);
