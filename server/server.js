@@ -87,7 +87,7 @@ app.get('/getCurrentUserId', function(request, response){
     response.send(data);
 });
 app.get('/getCurrentJokeById', function(request, response){
-    console.log(request.user, request.body);
+    console.log(request);
     // var data = {id: request.body.id};
     response.sendStatus(200);
 });

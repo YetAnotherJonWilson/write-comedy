@@ -18,13 +18,13 @@ router.get('/', function(request, response){
             console.log('connection error', err);
             done();
         }
-        client.query('select titles.title, setups.setup, punchlines.punchline, subject_matter.subject_matter, themes.theme from titles ' +
+        client.query('select titles.title, titles.id, setups.setup, punchlines.punchline, subject_matter.subject_matter, themes.theme from titles ' +
             'join setups on setups.title_id = titles.id join punchlines on punchlines.title_id = titles.id join subject_matter on ' +
             'subject_matter.title_id = titles.id join themes on themes.title_id = titles.id where user_id=$1 order by title;',
             [currentUserId], function(err, result){
             if (err){
                 console.log(err);
-                console.log(currentUserId)
+                console.log(currentUserId);
                 done();
             } else {
                 console.log('Current UserId', currentUserId);
