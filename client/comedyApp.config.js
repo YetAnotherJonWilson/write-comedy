@@ -13,7 +13,7 @@ angular.module('comedyApp').config(['$routeProvider', '$locationProvider', funct
         .when('/success', {
             templateUrl: '/views/success.html',
             controller: 'WelcomeController',
-            controllerAs: 'success'
+            controllerAs: 'welcome'
         })
         .when('/newjoke', {
             templateUrl: '/views/newjoke.html',

@@ -11,7 +11,7 @@ var login = require('./routes/login');
 var bodyParser = require('body-parser');
 var User = require('./models/users');
 var randomizer = require('./routes/randomizer');
-var currentuserjokes = require('./routes/currentuserjokes')
+var currentuserjokes = require('./routes/currentuserjokes');
 
 
 // Session and cookies middlewares to keep user logged in

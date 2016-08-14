@@ -18,10 +18,9 @@ function genRanNumber(){
     return ranNumber;
 }
 
-genRanNumber();
-
 
 router.get('/', function(request, response){
+    genRanNumber();
 
     pool.connect(function(err, client){
         if (err){

@@ -11,6 +11,7 @@ angular.module('comedyApp').controller('WelcomeController', ['$http', '$location
 
     function handleSuccessTwo(response) {
         vm.jokes = response.data;
+        console.log(response.data);
     }
 
 }]);
