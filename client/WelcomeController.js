@@ -14,10 +14,10 @@ angular.module('comedyApp').controller('WelcomeController', ['$http', '$location
         console.log(response.data);
     }
 
-    vm.currentJokeInExercises = function(id, title, setup, punchline, theme, subject){
+    vm.currentJokeInExercises = function(id, title, setup, punchline, theme, subject, topic){
         console.log(id);
         var pageData = {};
-        vm.pageData = {currentId: id, currentTitle: title, currentSetup: setup, currentPunchline: punchline, currentTheme: theme, currentSubject: subject};
+        vm.pageData = {currentId: id, currentTitle: title, currentSetup: setup, currentPunchline: punchline, currentTheme: theme, currentSubject: subject, currentTopic: topic};
         $localStorage.prevPageData = vm.pageData;
         $location.path('/exercises');
     }

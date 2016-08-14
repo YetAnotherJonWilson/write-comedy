@@ -19,6 +19,7 @@ router.post('/', function(request, response){
     var punchline = request.body.punchline;
     var theme = request.body.theme;
     var subject = request.body.subject;
+    var topic = request.body.topic;
 
     pool.connect(function(err, client, done){
         if (err){
@@ -35,48 +36,61 @@ router.post('/', function(request, response){
                 insertPunchline(returnedId);
                 insertTheme(returnedId);
                 insertSubject(returnedId);
+                insertTopic(returnedId);
                 response.sendStatus(200);
                 done();
             }
 
-    function insertSetup(id){
-        client.query('INSERT INTO setups (setup, title_id) VALUES ($1, $2)', [setup, id], function(err, result){
-            if(err){
-                console.log('err', err);
-            } else {
+            function insertSetup(id){
+                client.query('INSERT INTO setups (setup, title_id) VALUES ($1, $2)', [setup, id], function(err, result){
+                    if(err){
+                        console.log('err', err);
+                    } else {
 
-                console.log('Inserted setup successfully');
+                        console.log('Inserted setup successfully');
+                    }
+                });
             }
-        });
-    }
-    function insertPunchline(id){
-        client.query('INSERT INTO punchlines (punchline, title_id) VALUES ($1, $2)', [punchline, id], function(err, result){
-            if(err){
-                console.log('err', err);
-            } else {
+            function insertPunchline(id){
+                client.query('INSERT INTO punchlines (punchline, title_id) VALUES ($1, $2)', [punchline, id], function(err, result){
+                    if(err){
+                        console.log('err', err);
+                    } else {
 
-                console.log('Inserted punchline successfully');
+                        console.log('Inserted punchline successfully');
+                    }
+                });
             }
-        });
-    }function insertTheme(id){
-        client.query('INSERT INTO themes (theme, title_id) VALUES ($1, $2)', [theme, id], function(err, result){
-            if(err){
-                console.log('err', err);
-            } else {
+            function insertTheme(id){
+                client.query('INSERT INTO themes (theme, title_id) VALUES ($1, $2)', [theme, id], function(err, result){
+                    if(err){
+                        console.log('err', err);
+                    } else {
 
-                console.log('Inserted theme successfully');
+                        console.log('Inserted theme successfully');
+                    }
+                });
             }
-        });
-    }function insertSubject(id){
-        client.query('INSERT INTO subject_matter (subject_matter, title_id) VALUES ($1, $2)', [subject, id], function(err, result){
-            if(err){
-                console.log('err', err);
-            } else {
+            function insertSubject(id){
+                client.query('INSERT INTO subject_matter (subject_matter, title_id) VALUES ($1, $2)', [subject, id], function(err, result){
+                    if(err){
+                        console.log('err', err);
+                    } else {
 
-                console.log('Inserted subject-matter successfully');
+                        console.log('Inserted subject-matter successfully');
+                    }
+                });
             }
-        });
-    }
+            function insertTopic(id){
+                client.query('INSERT INTO topics (topic, title_id) VALUES ($1, $2)', [topic, id], function(err, result){
+                    if(err){
+                        console.log('err', err);
+                    } else {
+
+                        console.log('Inserted topic successfully');
+                    }
+                });
+            }
         });
     });
 });

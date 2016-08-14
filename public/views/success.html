@@ -15,16 +15,18 @@
             <th>Title</th>
             <th>Setup</th>
             <th>Punchline</th>
-            <th>Theme or Topic</th>
             <th>Subject Matter</th>
+            <th>Topic</th>
+            <th>Theme or Point</th>
             <th> </th>
             <tr ng-repeat="joke in welcome.jokes">
                 <td>{{joke.title}}</td>
                 <td>{{joke.setup}}</td>
                 <td>{{joke.punchline}}</td>
-                <td>{{joke.theme}}</td>
                 <td>{{joke.subject_matter}}</td>
-                <td><button class="btn btn-info" ng-click="welcome.currentJokeInExercises(joke.id, joke.title, joke.setup, joke.punchline, joke.theme, joke.subject_matter)">Go to Exercises</button></td>
+                <td>{{joke.topic}}</td>
+                <td>{{joke.theme}}</td>
+                <td><button class="btn btn-info" ng-click="welcome.currentJokeInExercises(joke.id, joke.title, joke.setup, joke.punchline, joke.theme, joke.subject_matter, joke.topic)">Go to Exercises</button></td>
             </tr>
         </table>
     </div>

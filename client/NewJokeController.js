@@ -5,6 +5,7 @@ angular.module('comedyApp').controller('NewJokeController', ['$http', '$location
     vm.punchline = '';
     vm.theme = '';
     vm.subject = '';
+    vm.topic = '';
     vm.afterSave = true;
     vm.saved = false;
     vm.exerciseLink = false;
@@ -23,6 +24,7 @@ angular.module('comedyApp').controller('NewJokeController', ['$http', '$location
         sendData.punchline = vm.punchline;
         sendData.theme = vm.theme;
         sendData.subject = vm.subject;
+        sendData.topic = vm.topic;
 
         console.log(vm.title);
 
@@ -33,7 +35,7 @@ angular.module('comedyApp').controller('NewJokeController', ['$http', '$location
     vm.goToExercises = function() {
         $location.path('/exercises');
         var pageData = {};
-        vm.pageData = {currentTitle: vm.title, currentSetup: vm.setup, currentPunchline: vm.punchline, currentTheme: vm.theme, currentSubject: vm.subject};
+        vm.pageData = {currentTitle: vm.title, currentSetup: vm.setup, currentPunchline: vm.punchline, currentTheme: vm.theme, currentSubject: vm.subject, currentTopic: vm.topic};
         $localStorage.prevPageData = vm.pageData;
 
 
