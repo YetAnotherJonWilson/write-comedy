@@ -2,9 +2,9 @@
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="header">
         <ul id="top-nav">
             <li><a href="/newjoke" class="btn btn-primary">New Joke</a></li>
-            <li><a href="#" class="btn btn-primary">Find Joke by Title</a></li>
-            <li><a href="#" class="btn btn-primary">Find Joke by Bit</a></li>
-            <li><a href="#" class="btn btn-primary">Find Joke by Set</a></li>
+            <li><a href="/success" class="btn btn-primary">Find Joke by Title</a></li>
+            <!--<li><a href="#" class="btn btn-primary">Find Joke by Bit</a></li>-->
+            <!--<li><a href="#" class="btn btn-primary">Find Joke by Set</a></li>-->
         </ul>
         <h1>Exercises</h1>
     </div>
@@ -12,7 +12,7 @@
 
 <div class="row">
     <div class="col-lg-4 col-md-4">
-        <h3>{{exercises.pageData.currentTitle}}</h3>
+        <h2 id="exPageJokeTitle">{{exercises.pageData.currentTitle}}</h2>
         <h4>Setup</h4>
         <h5>{{exercises.pageData.currentSetup}}</h5>
         <h4>Punchline</h4>
@@ -33,20 +33,24 @@
         <p>Description: {{exercises.exerciseDescription}}</p>
         <textarea type="text" class="largeText"></textarea>
     </div>
-    <div class="col-lg-4 col-md-4">
+    <div id="exPageSmallBtns" class="col-lg-4 col-md-4">
         <p>Add items to be saved here. For multiple items (themes or topics, or subject matter), separate with commas.</p>
-        <textarea type="text" class="mediumText"></textarea>
+        <textarea type="text" class="mediumText" ng-model="exercises.textToUpdate"></textarea>
+        <h5 ng-show="exercises.updatedTextToSave">Saved!</h5>
         <p>Save as new version</p>
-        <button class="btn btn-success btn-sm" ng-click="exercises.saveNewSetup()">Setup</button>
-        <button class="btn btn-success btn-sm" ng-click="exercises.saveNewPunch()">Punchline</button>
+        <button class="btn btn-success btn-sm" ng-click="exercises.replaceSetup()">Setup</button>
+        <button class="btn btn-success btn-sm" ng-click="exercises.replacePunch()">Punchline</button>
         <p>Add to current version</p>
-        <button class="btn btn-success btn-sm" ng-click="exercises.saveNewPunch()">Punchline</button>
-        <button class="btn btn-success btn-sm" ng-click="exercises.saveNewThemel()">Theme or Topic</button>
-        <button class="btn btn-success btn-sm" ng-click="exercises.saveNewSM()">Subject Matter</button>
+        <button class="btn btn-success btn-sm" ng-click="exercises.addToSetup()">Setup</button>
+        <button class="btn btn-success btn-sm" ng-click="exercises.addToPunch()">Punchline</button>
+        <button class="btn btn-success btn-sm" ng-click="exercises.addToSM()">Subject Matter</button>
+        <button class="btn btn-success btn-sm" ng-click="exercises.addToTopic()">Topic</button>
+        <button class="btn btn-success btn-sm" ng-click="exercises.addToTheme()">Theme or Point</button>
         <p>Save as alternate version</p>
-        <button class="btn btn-success btn-sm" ng-click="exercises.saveAltSetup()">Setup</button>
-        <button class="btn btn-success btn-sm" ng-click="exercises.saveAltPunch()">Punchline</button>
-        <button class="btn btn-success btn-sm" ng-click="exercises.saveAltTheme()">Theme or Topic</button>
-        <button class="btn btn-success btn-sm" ng-click="exercises.saveAltSM()">Subject Matter</button>
+        <button class="btn btn-success btn-sm" ng-click="exercises.addAltSetup()">Setup</button>
+        <button class="btn btn-success btn-sm" ng-click="exercises.addAltPunch()">Punchline</button>
+        <button class="btn btn-success btn-sm" ng-click="exercises.addAltSM()">Subject Matter</button>
+        <button class="btn btn-success btn-sm" ng-click="exercises.addAltTopic()">Topic</button>
+        <button class="btn btn-success btn-sm" ng-click="exercises.addAltTheme()">Theme or Point</button>
     </div>
 </div>
