@@ -23,9 +23,9 @@
         <h5>{{exercises.pageData.currentTopic}}</h5>
         <h4>Theme(s) or Point(s)</h4>
         <h5>{{exercises.pageData.currentTheme}}</h5>
-        <a class="btn btn-lg btn-success" href="/alternates">View Alternate Material</a><br /><br />
-        <h5>Part of set #&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5><button class="btn btn-sm btn-primary">Add to another set</button><br><br>
-        <h5>Part of Bit #&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5><button class="btn btn-sm btn-primary">Add to a different bit</button>
+        <button class="btn btn-lg btn-success" ng-click="exercises.viewAlternateMaterial()">View Alternate Material</button><br /><br />
+        <!--<h5>Part of set #&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5><button class="btn btn-sm btn-primary">Add to another set</button><br><br>-->
+        <!--<h5>Part of Bit #&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5><button class="btn btn-sm btn-primary">Add to a different bit</button>-->
     </div>
     <div class="col-lg-4 col-md-4">
         <button id="exMiddleButton" class="btn btn-lg btn-success" ng-click="exercises.getRandomExercise()">Get Random Exercise</button><br><br>

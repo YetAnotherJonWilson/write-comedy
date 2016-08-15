@@ -435,4 +435,29 @@ router.put('/addalttheme/:id/:text', function(request, response) {
     });
 });
 
+router.get('/alternatematerial/:id', function(request, response){
+    var id = request.params.id;
+
+    pool.connect(function(err, client, done){
+        if (err){
+            console.log('connection error', err);
+            done();
+        }
+        client.query('select titles.title, titles.id, alt_setups.setup, alt_punchlines.punchline, alt_subject_matter.subject_matter, alt_themes.theme, alt_topics.topic from titles ' +
+            'left join alt_setups on alt_setups.title_id = titles.id left join alt_punchlines on alt_punchlines.title_id = titles.id left join alt_subject_matter on ' +
+            'alt_subject_matter.title_id = titles.id left join alt_themes on alt_themes.title_id = titles.id left join alt_topics on alt_topics.title_id = titles.id where titles.id=$1 order by title;',
+            [id], function(err, result){
+                if (err){
+                    console.log(err);
+                    done();
+                } else {
+                    console.log(result.rows);
+                    response.send(result.rows);
+                    done();
+                }
+            });
+
+    });
+});
+
 module.exports = router;
