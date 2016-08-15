@@ -1,5 +1,7 @@
 angular.module('comedyApp').controller('WelcomeController', ['$http', '$location', '$localStorage', function($http, $location, $localStorage) {
     var vm = this;
+    vm.deleteStepOneButton = true;
+    vm.deleteStepTwoButton = false;
 
     $http.get('/getCurrentUserName').then(handleSuccess);
 
@@ -20,10 +22,19 @@ angular.module('comedyApp').controller('WelcomeController', ['$http', '$location
         vm.pageData = {currentId: id, currentTitle: title, currentSetup: setup, currentPunchline: punchline, currentTheme: theme, currentSubject: subject, currentTopic: topic};
         $localStorage.prevPageData = vm.pageData;
         $location.path('/exercises');
-    }
+    };
 
-    // function handleSuccessThree(response){
-    //     console.log(response);
-    // }
+    vm.deleteStepOne = function () {
+        vm.deleteStepOneButton = false;
+        vm.deleteStepTwoButton = true;
+    };
+
+    vm.deleteStepTwo = function(itemId){
+        console.log(itemId);
+        $http.delete('/crud/deleteitem/' + itemId);
+        //.then(fetchItems());
+    };
+
+    //fetchItems();
 
 }]);
