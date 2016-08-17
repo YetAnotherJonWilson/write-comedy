@@ -130,10 +130,10 @@ router.delete('/deleteitem/:id', function(request, response) {
     });
 });
 
-router.put('/replacesetup/:id/:text', function(request, response) {
-    console.log('request.params:', request.params);
-    var id = request.params.id;
-    var text = request.params.text;
+router.put('/replacesetup/', function(request, response) {
+    console.log('request.body:', request.body);
+    var id = request.body.id;
+    var text = ' ' + request.body.text;
 
     pool.connect(function (err, client) {
         if (err) {
@@ -150,10 +150,10 @@ router.put('/replacesetup/:id/:text', function(request, response) {
     });
 });
 
-router.put('/replacepunchline/:id/:text', function(request, response) {
-    console.log('request.params:', request.params);
-    var id = request.params.id;
-    var text = request.params.text;
+router.put('/replacepunchline/', function(request, response) {
+    console.log('request.body:', request.body);
+    var id = request.body.id;
+    var text = ' ' + request.body.text;
 
     pool.connect(function (err, client) {
         if (err) {
@@ -170,10 +170,10 @@ router.put('/replacepunchline/:id/:text', function(request, response) {
     });
 });
 
-router.put('/addtosetup/:id/:text', function(request, response) {
-    console.log('request.params:', request.params);
-    var id = request.params.id;
-    var text = ' ' + request.params.text;
+router.put('/addtosetup/', function(request, response) {
+    console.log('request.body:', request.body);
+    var id = request.body.id;
+    var text = ' ' + request.body.text;
 
     pool.connect(function (err, client) {
         if (err) {
@@ -183,17 +183,22 @@ router.put('/addtosetup/:id/:text', function(request, response) {
         client.query('UPDATE setups SET setup = setup || $1 WHERE title_id=$2;', [text, id], function (err, result) {
             if (err) {
                 console.log(err);
-            } else {
-                response.sendStatus(200);
             }
+            client.query('INSERT INTO setups (setup, title_id) SELECT $1, $2 WHERE NOT EXISTS (SELECT 1 FROM setups WHERE title_id=$2);', [text, id], function (err, result) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    response.sendStatus(200);
+                }
+            });
         });
     });
 });
 
-router.put('/addtopunchline/:id/:text', function(request, response) {
-    console.log('request.params:', request.params);
-    var id = request.params.id;
-    var text = ' ' + request.params.text;
+router.put('/addtopunchline/', function(request, response) {
+    console.log('request.body:', request.body);
+    var id = request.body.id;
+    var text = ' ' + request.body.text;
 
     pool.connect(function (err, client) {
         if (err) {
@@ -203,37 +208,46 @@ router.put('/addtopunchline/:id/:text', function(request, response) {
         client.query('UPDATE punchlines SET punchline = punchline || $1 WHERE title_id=$2;', [text, id], function (err, result) {
             if (err) {
                 console.log(err);
-            } else {
-                response.sendStatus(200);
             }
+            client.query('INSERT INTO punchlines (punchline, title_id) SELECT $1, $2 WHERE NOT EXISTS (SELECT 1 FROM punchlines WHERE title_id=$2);', [text, id], function (err, result) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    response.sendStatus(200);
+                }
+            });
         });
     });
 });
 
-router.put('/addtoSM/:id/:text', function(request, response) {
-    console.log('request.params:', request.params);
-    var id = request.params.id;
-    var text = ' ' + request.params.text;
+router.put('/addtoSM/', function(request, response) {
+    console.log('request.body:', request.body);
+    var id = request.body.id;
+    var text = ' ' + request.body.text;
 
     pool.connect(function (err, client) {
         if (err) {
             console.log('connection error', err);
         }
-
         client.query('UPDATE subject_matter SET subject_matter = subject_matter || $1 WHERE title_id=$2;', [text, id], function (err, result) {
             if (err) {
                 console.log(err);
-            } else {
-                response.sendStatus(200);
             }
+            client.query('INSERT INTO subject_matter (subject_matter, title_id) SELECT $1, $2 WHERE NOT EXISTS (SELECT 1 FROM subject_matter WHERE title_id=$2);', [text, id], function (err, result) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    response.sendStatus(200);
+                }
+            });
         });
     });
 });
 
-router.put('/addtotopic/:id/:text', function(request, response) {
-    console.log('request.params:', request.params);
-    var id = request.params.id;
-    var text = ' ' + request.params.text;
+router.put('/addtotopic/', function(request, response) {
+    console.log('request.body:', request.body);
+    var id = request.body.id;
+    var text = ' ' + request.body.text;
 
     pool.connect(function (err, client) {
         if (err) {
@@ -243,17 +257,22 @@ router.put('/addtotopic/:id/:text', function(request, response) {
         client.query('UPDATE topics SET topic = topic || $1 WHERE title_id=$2;', [text, id], function (err, result) {
             if (err) {
                 console.log(err);
-            } else {
-                response.sendStatus(200);
             }
+            client.query('INSERT INTO topics (topic, title_id) SELECT $1, $2 WHERE NOT EXISTS (SELECT 1 FROM topics WHERE title_id=$2);', [text, id], function (err, result) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    response.sendStatus(200);
+                }
+            });
         });
     });
 });
 
-router.put('/addtotheme/:id/:text', function(request, response) {
-    console.log('request.params:', request.params);
-    var id = request.params.id;
-    var text = ' ' + request.params.text;
+router.put('/addtotheme/', function(request, response) {
+    console.log('request.body:', request.body);
+    var id = request.body.id;
+    var text = ' ' + request.body.text;
 
     pool.connect(function (err, client) {
         if (err) {
@@ -263,17 +282,22 @@ router.put('/addtotheme/:id/:text', function(request, response) {
         client.query('UPDATE themes SET theme = theme || $1 WHERE title_id=$2;', [text, id], function (err, result) {
             if (err) {
                 console.log(err);
-            } else {
-                response.sendStatus(200);
             }
+            client.query('INSERT INTO themes (theme, title_id) SELECT $1, $2 WHERE NOT EXISTS (SELECT 1 FROM themes WHERE title_id=$2);', [text, id], function (err, result) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    response.sendStatus(200);
+                }
+            });
         });
     });
 });
 
-router.put('/addaltsetup/:id/:text', function(request, response) {
-    console.log('request.params:', request.params);
-    var id = request.params.id;
-    var text = ' ' + request.params.text;
+router.put('/addaltsetup/', function(request, response) {
+    console.log('request.body:', request.body);
+    var id = request.body.id;
+    var text = ' ' + request.body.text;
 
     pool.connect(function (err, client) {
         if (err) {
@@ -295,10 +319,10 @@ router.put('/addaltsetup/:id/:text', function(request, response) {
     });
 });
 
-router.put('/addaltpunchline/:id/:text', function(request, response) {
-    console.log('request.params:', request.params);
-    var id = request.params.id;
-    var text = ' ' + request.params.text;
+router.put('/addaltpunchline/', function(request, response) {
+    console.log('request.body:', request.body);
+    var id = request.body.id;
+    var text = ' ' + request.body.text;
 
     pool.connect(function (err, client, next) {
         if (err) {
@@ -319,10 +343,10 @@ router.put('/addaltpunchline/:id/:text', function(request, response) {
     });
 });
 
-router.put('/addaltsm/:id/:text', function(request, response) {
-    console.log('request.params:', request.params);
-    var id = request.params.id;
-    var text = ' ' + request.params.text;
+router.put('/addaltsm/', function(request, response) {
+    console.log('request.body:', request.body);
+    var id = request.body.id;
+    var text = ' ' + request.body.text;
 
     pool.connect(function (err, client) {
         if (err) {
@@ -344,10 +368,10 @@ router.put('/addaltsm/:id/:text', function(request, response) {
     });
 });
 
-router.put('/addalttopic/:id/:text', function(request, response) {
-    console.log('request.params:', request.params);
-    var id = request.params.id;
-    var text = ' ' + request.params.text;
+router.put('/addalttopic/', function(request, response) {
+    console.log('request.body:', request.body);
+    var id = request.body.id;
+    var text = ' ' + request.body.text;
 
     pool.connect(function (err, client) {
         if (err) {
@@ -369,10 +393,10 @@ router.put('/addalttopic/:id/:text', function(request, response) {
     });
 });
 
-router.put('/addalttheme/:id/:text', function(request, response) {
-    console.log('request.params:', request.params);
-    var id = request.params.id;
-    var text = ' ' + request.params.text;
+router.put('/addalttheme/', function(request, response) {
+    console.log('request.body:', request.body);
+    var id = request.body.id;
+    var text = ' ' + request.body.text;
 
     pool.connect(function (err, client) {
         if (err) {
