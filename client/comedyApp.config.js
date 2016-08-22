@@ -29,7 +29,7 @@ angular.module('comedyApp').config(['$routeProvider', '$locationProvider', funct
             templateUrl: '/views/alternates.html',
             controller: 'AlternatesController',
             controllerAs: 'alternates'
-        })
+        });
 
     $locationProvider.html5Mode(true);
 }]);

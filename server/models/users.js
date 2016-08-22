@@ -77,7 +77,7 @@ function findAndComparePassword(username, candidatePassword, callback) {
             } else {
                 console.log('isMatch', isMatch);
                 callback(null, isMatch, user);
-            };
+            }
         });
     });
 }
@@ -106,4 +106,4 @@ module.exports = {
     findById: findById,
     create: create,
     findAndComparePassword: findAndComparePassword
-}
+};
