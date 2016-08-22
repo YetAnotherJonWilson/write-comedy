@@ -13,6 +13,20 @@ var User = require('./models/users');
 var randomizer = require('./routes/randomizer');
 var currentuserjokes = require('./routes/currentuserjokes');
 var crud = require('./routes/crud');
+var pg = require('pg');
+
+
+// pg.defaults.ssl = true;
+// pg.connect(process.env.DATABASE_URL || 'postgres://iltehnovjjxpab:_axhzdDANx8JMp1szFZCZu7j9k@ec2-54-243-47-83.compute-1.amazonaws.com:5432/dfhfup9kuh3lcg', function(err, client) {
+//     if (err) throw err;
+//     console.log('Connected to postgres! Getting schemas...');
+//
+//     client
+//         .query('SELECT table_schema,table_name FROM information_schema.tables;')
+//         .on('row', function(row) {
+//             console.log(JSON.stringify(row));
+//         });
+// });
 
 
 // Session and cookies middlewares to keep user logged in
@@ -67,6 +81,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('public'));
 app.use(cookieParser());
+
+
+
 
 //routes
 app.use('/', index);
