@@ -33,12 +33,17 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session');
 
 // See express session docs for information on the options: https://github.com/expressjs/session
+var pgSession = require('connect-pg-simple')(session);
 app.use(session({
-    store: new (require('connect-pg-simple')(session))(),
-    secret: process.env.FOO_COOKIE_SECRET,
+    store: new pgSession({
+        conString : process.env.DATABASE_URL
+    }),
+    secret: 'mysessionsecret',
     resave: false,
-    cookie: { maxAge: 30 * 24 * 60 * 60 * 1000 }, // 30 days
-    saveUninitialized: false
+    cookie: {
+        maxAge: 7 * 24 * 60 * 60 * 1000
+    },
+    secure : true
 }));
 
 app.use(passport.initialize());
