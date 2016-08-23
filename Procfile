@@ -1,1 +1,1 @@
-web: node server/server.js
+web: FOO_COOKIE_SECRET="interface backup" node server/server.js
