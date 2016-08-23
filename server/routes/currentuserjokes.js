@@ -33,6 +33,7 @@ router.get('/', function(request, response){
             if (err){
                 console.log(err);
                 console.log(currentUserId);
+                response.sendStatus(200);
                 done();
             } else {
                 console.log('Current UserId', currentUserId);
