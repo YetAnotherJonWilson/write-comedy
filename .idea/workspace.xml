@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="68c25141-2923-4166-8333-288754bf750f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routes/crud.js" afterPath="$PROJECT_DIR$/server/routes/crud.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routes/currentuserjokes.js" afterPath="$PROJECT_DIR$/server/routes/currentuserjokes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routes/exlist.js" afterPath="$PROJECT_DIR$/server/routes/exlist.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routes/postnewjoke.js" afterPath="$PROJECT_DIR$/server/routes/postnewjoke.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routes/randomizer.js" afterPath="$PROJECT_DIR$/server/routes/randomizer.js" />
     </list>
     <ignored path="write-comedy.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -114,7 +109,7 @@
         <entry file="file://$PROJECT_DIR$/server/routes/randomizer.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+              <caret line="8" column="55" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -528,12 +523,12 @@
       <workItem from="1471618965391" duration="3650000" />
       <workItem from="1471736956742" duration="477000" />
       <workItem from="1471840006542" duration="25000" />
-      <workItem from="1471840658362" duration="11758000" />
+      <workItem from="1471840658362" duration="12021000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="197101000" />
+    <option name="totallyTimeSpent" value="197364000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -952,7 +947,7 @@
     <entry file="file://$PROJECT_DIR$/server/routes/randomizer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+          <caret line="8" column="55" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
           <folding />
         </state>
       </provider>
