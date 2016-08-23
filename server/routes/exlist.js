@@ -6,15 +6,22 @@ var pg = require('pg');
 var parseDbUrl = require("parse-database-url");
 
 
-// If we are running on Heroku, use the remote database (with SSL)
+// // If we are running on Heroku, use the remote database (with SSL)
+// if(process.env.DATABASE_URL != undefined) {
+//     var config = parseDbUrl(process.env["DATABASE_URL"]);
+// } else {
+//     // running locally, use our local database instead
+//     var config = {
+//         database: 'ComedyApp',
+//         port: 5432
+//     };
+// }
+
 if(process.env.DATABASE_URL != undefined) {
-    var config = parseDbUrl(process.env["DATABASE_URL"]);
+    config = process.env.DATABASE_URL + "?ssl=true";
 } else {
     // running locally, use our local database instead
-    var config = {
-        database: 'ComedyApp',
-        port: 5432
-    };
+    config = 'postgres://localhost:5432/local_db_name';
 }
 
 router.get('/', function(request, response){
