@@ -34,11 +34,11 @@ var session = require('express-session');
 
 // See express session docs for information on the options: https://github.com/expressjs/session
 app.use(session({
-    secret: 'maddon',
-    key: 'user',
-    resave: true,
-    saveUninitialized: false,
-    cookie: { maxAge: 1800000, secure: false }
+    store: new (require('connect-pg-simple')(session))(),
+    secret: process.env.FOO_COOKIE_SECRET,
+    resave: false,
+    cookie: { maxAge: 30 * 24 * 60 * 60 * 1000 }, // 30 days
+    saveUninitialized: false
 }));
 
 app.use(passport.initialize());
