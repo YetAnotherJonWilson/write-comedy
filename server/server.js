@@ -28,18 +28,17 @@ var pg = require('pg');
 //         });
 // });
 
-
 // Session and cookies middlewares to keep user logged in
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 
 // See express session docs for information on the options: https://github.com/expressjs/session
 app.use(session({
-    store: new (require('connect-pg-simple')(session))(),
-    secret: process.env.FOO_COOKIE_SECRET,
-    resave: false,
-    cookie: { maxAge: 30 * 24 * 60 * 60 * 1000 }, // 30 days
-    saveUninitialized: false
+    secret: 'maddon',
+    key: 'user',
+    resave: true,
+    saveUninitialized: false,
+    cookie: { maxAge: 1800000, secure: false }
 }));
 
 app.use(passport.initialize());
