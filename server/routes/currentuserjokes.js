@@ -39,6 +39,7 @@ router.get('/', function(request, response){
                 console.log('Current UserId', currentUserId);
                 console.log(result.rows);
                 response.send(result.rows);
+                response.sendStatus(200);
                 done();
             }
         });
