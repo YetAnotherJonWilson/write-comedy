@@ -38,12 +38,13 @@ app.use(session({
     store: new pgSession({
         conString : process.env.DATABASE_URL
     }),
-    secret: 'mysessionsecret',
+    secret: 'variablecats',
     resave: false,
     cookie: {
         maxAge: 7 * 24 * 60 * 60 * 1000
     },
-    secure : true
+    secure : true,
+    saveUninitialized: false
 }));
 
 app.use(passport.initialize());
