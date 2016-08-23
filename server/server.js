@@ -36,7 +36,7 @@ var session = require('express-session');
 // See express session docs for information on the options: https://github.com/expressjs/session
 app.use(session({
     store: new (require('connect-pg-simple')(session))(),
-    secret: process.env.secret,
+    secret: process.env.FOO_COOKIE_SECRET,
     resave: false,
     cookie: { maxAge: 30 * 24 * 60 * 60 * 1000 }, // 30 days
     saveUninitialized: false
