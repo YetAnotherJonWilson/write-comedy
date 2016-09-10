@@ -1,7 +1,7 @@
 angular.module('comedyApp').controller('WelcomeController', ['$http', '$location', '$localStorage', function($http, $location, $localStorage) {
     var vm = this;
 
-    // warn user before deleting jokes
+    // warn user before deleting joke
     vm.deleteStepOneButton = true;
     vm.deleteStepTwoButton = false;
 
