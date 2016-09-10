@@ -1,5 +1,7 @@
 angular.module('comedyApp').controller('WelcomeController', ['$http', '$location', '$localStorage', function($http, $location, $localStorage) {
     var vm = this;
+
+    // warn user before deleting jokes
     vm.deleteStepOneButton = true;
     vm.deleteStepTwoButton = false;
 
@@ -20,6 +22,8 @@ angular.module('comedyApp').controller('WelcomeController', ['$http', '$location
         console.log(id);
         var pageData = {};
         vm.pageData = {currentId: id, currentTitle: title, currentSetup: setup, currentPunchline: punchline, currentTheme: theme, currentSubject: subject, currentTopic: topic};
+
+        // Use browser's localstorage to store current joke data
         $localStorage.prevPageData = vm.pageData;
         $location.path('/exercises');
     };
