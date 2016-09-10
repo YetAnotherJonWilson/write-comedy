@@ -12,7 +12,7 @@ module.exports = function(grunt) {
                 //    mangle: false
                 //  },
                 files: {
-                    'public/assets/client.min.js': ['client/comedyApp.module.js', 'client/comedyApp.config.js', 'client/MainController.js', 'client/LoginController.js', 'client/RegisterController.js', 'client/WelcomeController.js', 'client/NewJokeController.js', 'client/ExercisesController.js', 'client/AlternatesController.js', 'client/ServiceController.js', 'client/Factory.js']
+                    'public/assets/client.min.js': ['client/comedyApp.module.js', 'client/comedyApp.config.js', 'client/MainController.js', 'client/LoginController.js', 'client/RegisterController.js', 'client/WelcomeController.js', 'client/NewJokeController.js', 'client/ExercisesController.js', 'client/AlternatesController.js', 'client/DataService.js', 'client/Factory.js']
                 }
             }
         }
