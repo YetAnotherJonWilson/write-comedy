@@ -21,7 +21,7 @@
       <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
       <meta name="theme-color" content="#ffffff">
       <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
-      <link rel="stylesheet" href="vendors/angular-material/layouts/angular-material.layouts.min.css">
+      <link rel="stylesheet" href="vendors/angular-material/angular-material.min.css">
       <link rel="stylesheet" href="views/styles.css">
       <script src="vendors/angular/angular.min.js"></script>
       <script src="vendors/angular-route/angular-route.min.js"></script>
@@ -33,6 +33,13 @@
       <base href="/" />
   </head>
   <body ng-controller="MainController as main">
-      <div ng-view></div>
+    <div layout="column" layout-fill>
+        <md-toolbar>
+            <div id="header">
+                <h1>{{main.message}}</h1>
+            </div>
+        </md-toolbar>
+        <div ng-view></div>
+    </div>
   </body>
 </html>
