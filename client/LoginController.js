@@ -7,8 +7,6 @@ angular.module('comedyApp').controller('LoginController', ['$http', '$location',
     vm.errorMessage = 'Sorry, Wrong Username/Password';
 
     vm.login = function(){
-        console.log('Username', vm.username);
-        console.log('Password', vm.password);
 
         var sendData = {};
 
@@ -19,13 +17,16 @@ angular.module('comedyApp').controller('LoginController', ['$http', '$location',
     };
 
     function handleSuccess(response){
-        console.log('Success', response);
         $location.path('/success');
     }
 
     function handleFailure(response){
-        console.log('Failure', response);
         $location.path('/');
         vm.error = true;
     }
+
+    vm.register = function(){
+        $location.path('/register');
+    }
+
 }]);
