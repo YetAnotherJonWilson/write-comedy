@@ -1,141 +1,153 @@
-h1 {
-    font-family: "Helvetica Neue Ultralight", "Helvetica", "Arial", sans-serif;
+md-sidenav  {
+    width: 110px;
+    padding: 20px;
+    background-color: #6bc7cc;
+}
+
+md-content {
+    background-color: tan;
+    padding: 20px;
+}
+
+
+/*h1 {*/
+    /*font-family: "Helvetica Neue Ultralight", "Helvetica", "Arial", sans-serif;*/
+    /*!*color: #C60032;*!*/
+/*}*/
+
+/*h4 {*/
+    /*color: #221096;*/
+/*}*/
+
+/*#header h1 {*/
+    /*margin-bottom: 0;*/
+    /*margin-top: 0;*/
+/*}*/
+
+/*#header h1, p {*/
+ /*padding-right: 12px;*/
+/*}*/
+
+/*#header {*/
+    /*text-align: right;*/
+    /*margin-top: 25px;*/
+    /*border-bottom: 2px solid  rgb(217, 172, 0);*/
+    /*border-bottom: 2px solid rgba(217, 172, 0, .4);*/
+/*}*/
+
+/*#loginDiv {*/
+    /*text-align: right;*/
+    /*position: fixed;*/
+    /*top: 40%;*/
+    /*left: 40%;*/
+/*}*/
+
+/*.btn-login {*/
+    /*background-color: #4BBF00;*/
+/*}*/
+
+/*#registerTxt {*/
+    /*color: #221096;*/
+/*}*/
+
+/*#top-nav {*/
+    /*float: left;*/
+/*}*/
+
+/*#top-nav li {*/
+    /*list-style-type: none;*/
+    /*display: inline-block;*/
+/*}*/
+
+/*#welcome {*/
+    /*position: fixed;*/
+    /*left: 40%;*/
+/*}*/
+
+/*#welcome h1 {*/
     /*color: #C60032;*/
-}
+/*}*/
 
-h4 {
-    color: #221096;
-}
+/*.welcomeButtons {*/
+    /*width: 205px;*/
+/*}*/
 
-#header h1 {
-    margin-bottom: 0;
-    margin-top: 0;
-}
+/*.btn-welcome {*/
+    /*width: 205px;*/
+    /*background-color: #4BBF00;*/
+    /*color: #fff;*/
+    /*margin-top: 35px;*/
+/*}*/
 
-#header h1, p {
- padding-right: 12px;
-}
+/*.btn-welcome a:visited {*/
+    /*color: #000;*/
+/*}*/
 
-#header {
-    text-align: right;
-    margin-top: 25px;
-    border-bottom: 2px solid  rgb(217, 172, 0);
-    border-bottom: 2px solid rgba(217, 172, 0, .4);
-}
+/*.btn-huge{*/
+    /*padding: 20px 0px 20px 0px;*/
+    /*width: 205px;*/
+/*}*/
 
-#loginDiv {
-    text-align: right;
-    position: fixed;
-    top: 40%;
-    left: 40%;
-}
+/*#newJokeHeader {*/
+    /*width: 330px;*/
+    /*margin: auto;*/
+/*}*/
 
-.btn-login {
-    background-color: #4BBF00;
-}
+/*#red-ast {*/
+    /*color: red;*/
+/*}*/
 
-#registerTxt {
-    color: #221096;
-}
+/*.largeText {*/
+    /*width: 300px;*/
+    /*height: 200px;*/
+/*}*/
 
-#top-nav {
-    float: left;
-}
+/*#titleField {*/
+    /*width: 300px;*/
+/*}*/
 
-#top-nav li {
-    list-style-type: none;
-    display: inline-block;
-}
+/*.btn-yellow {*/
+    /*background-color: #311BBA;*/
+    /*color: #fff;*/
+/*}*/
 
-#welcome {
-    position: fixed;
-    left: 40%;
-}
+/*#newjoke-nav {*/
+    /*text-align: center;*/
+/*}*/
 
-#welcome h1 {
-    color: #C60032;
-}
+/*#newjoke-nav li {*/
+    /*list-style-type: none;*/
+    /*display: inline-block;*/
+    /*margin-left: 20px;*/
+/*}*/
 
-.welcomeButtons {
-    width: 205px;
-}
+/*#exPage h5 {*/
+    /*float: left;*/
+/*}*/
 
-.btn-welcome {
-    width: 205px;
-    background-color: #4BBF00;
-    color: #fff;
-    margin-top: 35px;
-}
+/*#exPage h3 {*/
+    /*margin-top: 0;*/
+/*}*/
 
-.btn-welcome a:visited {
-    color: #000;
-}
+/*#exMiddleButton {*/
+    /*margin-top: 20px;*/
+/*}*/
 
-.btn-huge{
-    padding: 20px 0px 20px 0px;
-    width: 205px;
-}
+/*.mediumText {*/
+    /*width: 300px;*/
+    /*height: 100px;*/
+/*}*/
 
-#newJokeHeader {
-    width: 330px;
-    margin: auto;
-}
+/*.exPage p {*/
+    /*margin-top: 10px;*/
+/*}*/
 
-#red-ast {
-    color: red;
-}
+/*#exPageSmallBtns button {*/
+    /*margin-bottom: 14px;*/
+/*}*/
 
-.largeText {
-    width: 300px;
-    height: 200px;
-}
-
-#titleField {
-    width: 300px;
-}
-
-.btn-yellow {
-    background-color: #311BBA;
-    color: #fff;
-}
-
-#newjoke-nav {
-    text-align: center;
-}
-
-#newjoke-nav li {
-    list-style-type: none;
-    display: inline-block;
-    margin-left: 20px;
-}
-
-#exPage h5 {
-    float: left;
-}
-
-#exPage h3 {
-    margin-top: 0;
-}
-
-#exMiddleButton {
-    margin-top: 20px;
-}
-
-.mediumText {
-    width: 300px;
-    height: 100px;
-}
-
-.exPage p {
-    margin-top: 10px;
-}
-
-#exPageSmallBtns button {
-    margin-bottom: 14px;
-}
-
-#exPageJokeTitle {
-    color: #C60032;
-}
+/*#exPageJokeTitle {*/
+    /*color: #C60032;*/
+/*}*/
 
 

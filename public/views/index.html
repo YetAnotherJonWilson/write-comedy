@@ -22,7 +22,7 @@
       <meta name="theme-color" content="#ffffff">
       <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
       <link rel="stylesheet" href="vendors/angular-material/angular-material.min.css">
-      <!--<link rel="stylesheet" href="views/styles.css">-->
+      <link rel="stylesheet" href="views/styles.css">
       <script src="vendors/angular/angular.min.js"></script>
       <script src="vendors/angular-route/angular-route.min.js"></script>
       <script src="assets/client.min.js"></script>
@@ -33,21 +33,24 @@
       <base href="/" />
   </head>
   <body ng-controller="MainController as main">
-    <div layout="column">
 
-        <!--Header toolbar, consistent at top of each view-->
+      <!--Header toolbar, consistent at top of each view-->
+      <div layout="column">
         <md-toolbar>
             <div>
                 <h1 class="md-display-3">{{main.message}}</h1>
             </div>
         </md-toolbar>
+      </div>
+     <div layout="row">
+          <!--sidebar-->
+          <md-sidenav layout="column" md-is-locked-open="true"></md-sidenav>
 
-        <!--sidebar-->
-        <div flex="30" layout="column"></div>
+          <!--Views-->
+          <md-content flex layout="column">
+          <ng-view></ng-view>
+          </md-content>
+     </div>
 
-        <!--Views-->
-        <div ng-view></div>
-
-    </div>
   </body>
 </html>
