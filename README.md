@@ -13,4 +13,4 @@ How to Use the App:
 5. To do the exercises, use the large box in the middle like a scratch pad, and then copy and paste material to be saved in the box in the upper right, then select how you would like to save it from the buttons below
 
 * To do exercises with alternate material, just click the "View Alternates" link on the Exercises page, and do exercises as normal
-* To save ALternate material as the new version, click the apprpriate button below the save box
+* To save Alternate material as the new version, click the apprpriate button below the save box
