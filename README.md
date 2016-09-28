@@ -3,6 +3,9 @@ ComedyWriteNow
 
 #### This app allows registered users to add jokes and enter information about each joke, then go through 47 randomized exercises that will help them expand on their ideas, and save the product of their work.
 
+How to Use the App:
+---------
+
 1. Sign in or Register
 2. After signing in, choose a joke to work on from the displayed list, or select "Create New Joke"
 3. On Create New Joke Page, fill out as few or as many sections as desired
