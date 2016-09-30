@@ -1,8 +1,8 @@
 md-content {
-    justify-content: center;
     padding: 20px;
 }
 
 #loginDiv {
+    width: 300px;
     justify-content: center;
 }
