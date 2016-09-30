@@ -1,26 +1,17 @@
-<div flex layout="column" layout-margin class="container">
-    <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-12 col-md-12"></div>
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <div id = "loginDiv">
-                <div>
-                    <label for="username">Username:</label>
-                    <input type="text" ng-model="login.username" id="username"/>
-                </div>
-                <div>
-                    <label for="password">Password: </label>
-                    <input type="password" ng-model="login.password" id="password"/>
-                </div>
-
-                <md-button ng-click="login.login()">Login</md-button>
-                <md-button ng-click="login.register()">Register</md-button>
-
-                <div ng-show="login.error">
-                    {{login.errorMessage}}
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-        </div>
+ <div id = "loginDiv">
+    <div>
+        <label for="username">Username:</label>
+        <input type="text" ng-model="login.username" id="username"/>
     </div>
-</div>
+    <div>
+        <label for="password">Password: </label>
+        <input type="password" ng-model="login.password" id="password"/>
+    </div>
+
+    <md-button ng-click="login.login()">Login</md-button>
+    <md-button ng-click="login.register()">Register</md-button>
+
+    <div ng-show="login.error">
+        {{login.errorMessage}}
+    </div>
+ </div>
