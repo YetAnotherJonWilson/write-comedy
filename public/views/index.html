@@ -33,11 +33,8 @@
   </head>
   <body layout="column" ng-controller="MainController as main">
     <!--Header toolbar, consistent at top of each view-->
-    <md-toolbar layout="row" hide-xs show-gt-xs>
+    <md-toolbar layout="row">
         <h1 class="md-display-3">{{main.message}}</h1>
-    </md-toolbar>
-    <md-toolbar layout="row" show-xs hide-gt-xs>
-        <h1>{{main.message}}</h1>
     </md-toolbar>
     <md-content>
       <!--Views-->
