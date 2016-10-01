@@ -9,8 +9,8 @@ md-toolbar h1 {
     font-weight: 400;
 }
 
-md-toolbar.show-xs h1 {
-    font-size: 1.2em;
+md-toolbar.small h1 {
+    font-size: 1.25em;
 }
 
 #loginDiv {
