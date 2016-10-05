@@ -1,22 +1,23 @@
 var pg = require('pg');
 var bcrypt = require('bcrypt');
+require('dotenv').config();
 
 var SALT_WORK_FACTOR = 10;
 
 var parseDbUrl = require("parse-database-url");
 
 // If running on Heroku, use the remote database (with SSL)
-if(process.env.DATABASE_URL != undefined) {
-    var config = parseDbUrl(process.env.DATABASE_URL);
-} else {
-    // running locally, use our local database instead
-    var config = {
-        database: 'ComedyApp',
-        port: 5432,
-        max: 10,
-        idleTimeoutMillis: 1800000
-    };
-}
+// if(process.env.DATABASE_URL != undefined) {
+     var config = parseDbUrl(process.env.DATABASE_URL);
+// } else {
+//     // running locally, use our local database instead
+//     var config = {
+//         database: 'ComedyApp',
+//         port: 5432,
+//         max: 10,
+//         idleTimeoutMillis: 1800000
+//     };
+// }
 
 var pool = new pg.Pool(config);
 

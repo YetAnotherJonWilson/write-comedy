@@ -4,18 +4,20 @@ var router = require('express').Router();
 // var path = require('path');
 var pg = require('pg');
 var parseDbUrl = require("parse-database-url");
+require('dotenv').config();
 
 
-// If we are running on Heroku, use the remote database (with SSL)
-if(process.env.DATABASE_URL != undefined) {
-    var config = parseDbUrl(process.env.DATABASE_URL);
-} else {
-    // running locally, use our local database instead
-    var config = {
-        database: 'ComedyApp',
-        port: 5432
-    };
-}
+
+// // If we are running on Heroku, use the remote database (with SSL)
+// if(process.env.DATABASE_URL != undefined) {
+     var config = parseDbUrl(process.env.DATABASE_URL);
+// } else {
+//     // running locally, use our local database instead
+//     var config = {
+//         database: 'ComedyApp',
+//         port: 5432
+//     };
+// }
 
 router.get('/', function(request, response){
     var client = new pg.Client(config);
