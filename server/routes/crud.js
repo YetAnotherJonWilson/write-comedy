@@ -5,15 +5,7 @@ var router = express.Router();
 var parseDbUrl = require("parse-database-url");
 require('dotenv').config();
 
-// If we are running on Heroku, use the remote database (with SSL)
-// if(process.env.DATABASE_URL != undefined) {
-     var config = parseDbUrl(process.env.DATABASE_URL);
-// } else {
-//     // running locally, use our local database instead
-//     var config = {
-//         url: process.env.DATABASE_URL
-//     }
-// }
+var config = parseDbUrl(process.env.DATABASE_URL);
 
 var pool = new pg.Pool(config);
 console.log("config: ", config);

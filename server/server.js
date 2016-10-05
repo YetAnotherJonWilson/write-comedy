@@ -16,13 +16,9 @@ var crud = require('./routes/crud');
 var pg = require('pg');
 require('dotenv').config();
 
-// If we are running on Heroku, use the remote database (with SSL)
-// if(process.env.DATABASE_URL != undefined) {
-    connectionString = process.env.DATABASE_URL;
-// } else {
-//     // running locally, use our local database instead
-//     connectionString = process.env.DB_HOST;
-// }
+
+connectionString = process.env.DATABASE_URL;
+
 
 // Session and cookies middlewares to keep user logged in
 var cookieParser = require('cookie-parser');
