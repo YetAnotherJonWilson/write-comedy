@@ -14,13 +14,14 @@ var randomizer = require('./routes/randomizer');
 var currentuserjokes = require('./routes/currentuserjokes');
 var crud = require('./routes/crud');
 var pg = require('pg');
+require('dotenv').config();
 
 // If we are running on Heroku, use the remote database (with SSL)
 if(process.env.DATABASE_URL != undefined) {
     connectionString = process.env.DATABASE_URL;
 } else {
     // running locally, use our local database instead
-    connectionString = 'postgres://localhost:5432/ComedyApp';
+    connectionString = process.env.DB_HOST;
 }
 
 // Session and cookies middlewares to keep user logged in
@@ -33,7 +34,7 @@ app.use(session({
     store: new pgSession({
         conString : connectionString
     }),
-    secret: 'variablecats',
+    secret: process.env.DB_SECRET,
     resave: false,
     cookie: {
         maxAge: 7 * 24 * 60 * 60 * 1000
