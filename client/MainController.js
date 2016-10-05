@@ -14,5 +14,4 @@ angular.module('comedyApp').controller('MainController', ['$http', '$mdMedia', '
     };
 
     setScreensize();
-    console.log("screensize", vm.screensize);
 }]);
