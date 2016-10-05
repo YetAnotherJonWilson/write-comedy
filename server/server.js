@@ -23,19 +23,6 @@ if(process.env.DATABASE_URL != undefined) {
     connectionString = 'postgres://localhost:5432/ComedyApp';
 }
 
-
-// pg.defaults.ssl = true;
-// pg.connect(process.env.DATABASE_URL || 'postgres://iltehnovjjxpab:_axhzdDANx8JMp1szFZCZu7j9k@ec2-54-243-47-83.compute-1.amazonaws.com:5432/dfhfup9kuh3lcg', function(err, client) {
-//     if (err) throw err;
-//     console.log('Connected to postgres! Getting schemas...');
-//
-//     client
-//         .query('SELECT table_schema,table_name FROM information_schema.tables;')
-//         .on('row', function(row) {
-//             console.log(JSON.stringify(row));
-//         });
-// });
-
 // Session and cookies middlewares to keep user logged in
 var cookieParser = require('cookie-parser');
 var session = require('express-session');

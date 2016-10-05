@@ -36,9 +36,10 @@
     <md-toolbar layout="row" ng-class="main.screenSize">
         <h1 class="md-display-3">{{main.message}}</h1>
     </md-toolbar>
-    <md-content id="content" ng-class="main.screenSize">
+    <md-content flex id="content" ng-class="main.screenSize">
       <!--Views-->
       <ng-view></ng-view>
     </md-content>
+    <md-toolbar>Footer</md-toolbar>
   </body>
 </html>
