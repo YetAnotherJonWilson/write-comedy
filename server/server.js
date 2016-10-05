@@ -17,12 +17,12 @@ var pg = require('pg');
 require('dotenv').config();
 
 // If we are running on Heroku, use the remote database (with SSL)
-if(process.env.DATABASE_URL != undefined) {
+// if(process.env.DATABASE_URL != undefined) {
     connectionString = process.env.DATABASE_URL;
-} else {
-    // running locally, use our local database instead
-    connectionString = process.env.DB_HOST;
-}
+// } else {
+//     // running locally, use our local database instead
+//     connectionString = process.env.DB_HOST;
+// }
 
 // Session and cookies middlewares to keep user logged in
 var cookieParser = require('cookie-parser');

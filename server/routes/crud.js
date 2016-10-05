@@ -17,6 +17,7 @@ if(process.env.DATABASE_URL != undefined) {
 }
 
 var pool = new pg.Pool(config);
+console.log("config: ", config);
 
 
 router.delete('/deleteitem/:id', function(request, response) {
