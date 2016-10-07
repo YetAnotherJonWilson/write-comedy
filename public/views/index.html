@@ -2,6 +2,7 @@
 <html ng-app="comedyApp">
   <head>
       <title>Comedy Write Now</title>
+      <!--Favicons-->
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" charset="utf-8">
       <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
       <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
@@ -20,8 +21,10 @@
       <meta name="msapplication-TileColor" content="#ffffff">
       <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
       <meta name="theme-color" content="#ffffff">
+      <!--Styles-->
       <link rel="stylesheet" href="vendors/angular-material/angular-material.min.css">
       <link rel="stylesheet" href="views/styles.css">
+      <!--Scripts-->
       <script src="vendors/angular/angular.min.js"></script>
       <script src="vendors/angular-route/angular-route.min.js"></script>
       <script src="assets/client.min.js"></script>
@@ -29,6 +32,7 @@
       <script src="vendors/angular-aria/angular-aria.js"></script>
       <script src="vendors/angular-animate/angular-animate.js"></script>
       <script src="vendors/angular-material/angular-material.js"></script>
+      <!--HTML5 Mode-->
       <base href="/" />
   </head>
   <body layout="column" ng-controller="MainController as main">
@@ -40,6 +44,7 @@
       <!--Views-->
       <ng-view></ng-view>
     </md-content>
+    <!--Footer-->
     <md-toolbar>Footer</md-toolbar>
   </body>
 </html>

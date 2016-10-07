@@ -2,6 +2,6 @@ angular.module('comedyApp').controller('ServiceController', ['DataService', func
     var vm = this;
 
     vm.data = DataService.data;
-
-    console.log(vm.data.currentTitle); //Title Value Here
+    //Title Value Here
+    console.log("Current Title from Dataservice", vm.data.currentTitle);
 }]);
