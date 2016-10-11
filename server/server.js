@@ -93,6 +93,7 @@ app.use('/success', index);
 app.use('/exercises', index);
 app.use('/alternates', index);
 app.use('/postNewJoke', postNewJoke);
+app.use('/tables', index);
 app.get('/getCurrentUserName', function(request, response){
     // console.log(request);
     response.send(request.user.username);
