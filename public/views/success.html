@@ -9,15 +9,18 @@
         <h1>Hello, {{welcome.username}}</h1>
     </div>
 </div>
+
+<md-toolbar layout="row" class="md-hue-3">
+    <div class="md-toolbar-tools">
+        <span>Jokes</span>
+    </div>
+</md-toolbar>
 <md-list>
     <md-list-item class="md-2-line" ng-repeat="joke in welcome.jokes">
         <div class="md-list-item-text">
             <h3>{{joke.title}}</h3>
             <p>{{joke.setup}}</p>
             <p>{{joke.punchline}}</p>
-            <p>{{joke.subject_matter}}</p>
-            <p>{{joke.topic}}</p>
-            <p>{{joke.theme}}</p>
             <p><button class="btn btn-info btn-sm" ng-click="welcome.currentJokeInExercises(joke.id, joke.title, joke.setup, joke.punchline, joke.theme, joke.subject_matter, joke.topic)">Go to Exercises</button>
                 <button class="btn btn-info btn-sm" ng-show="welcome.deleteStepOneButton" ng-click="welcome.deleteStepOne()">Delete</button>
                 <button class="btn btn-info btn-sm" ng-show="welcome.deleteStepTwoButton" ng-click="welcome.deleteStepTwo(joke.id)">Are you Sure?</button>
