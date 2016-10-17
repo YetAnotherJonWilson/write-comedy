@@ -15,7 +15,8 @@
         <span>Jokes</span>
     </div>
 </md-toolbar>
-<md-card ng-repeat="joke in welcome.jokes"t>
+<div  layout="row" layout-wrap>
+<md-card style="width: 350px;" ng-repeat="joke in welcome.jokes">
     <md-card-content>
         <h3>{{joke.title}}</h3>
         <p>{{joke.setup}}</p>
@@ -27,3 +28,4 @@
         <md-button ng-show="welcome.deleteStepTwoButton" ng-click="welcome.deleteStepTwo(joke.id)">Are you Sure?</md-button>
     </md-card-actions>
 </md-card>
+</div>
