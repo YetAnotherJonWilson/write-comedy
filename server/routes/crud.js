@@ -26,7 +26,6 @@ router.delete('/deleteitem/:id', function(request, response) {
 });
 
 router.put('/replacesetup/', function(request, response) {
-    console.log('request.body:', request.body);
     var id = request.body.id;
     var text = ' ' + request.body.text;
 
@@ -35,27 +34,7 @@ router.put('/replacesetup/', function(request, response) {
             console.log('connection error', err);
         }
 
-        client.query('UPDATE setups SET setup=$1 WHERE title_id=$2;', [text, id], function (err, result) {
-            if (err) {
-                console.log(err);
-            } else {
-                response.sendStatus(200);
-            }
-        });
-    });
-});
-
-router.put('/replacepunchline/', function(request, response) {
-    console.log('request.body:', request.body);
-    var id = request.body.id;
-    var text = ' ' + request.body.text;
-
-    pool.connect(function (err, client) {
-        if (err) {
-            console.log('connection error', err);
-        }
-
-        client.query('UPDATE punchlines SET punchline=$1 WHERE title_id=$2;', [text, id], function (err, result) {
+        client.query('UPDATE titles SET setup_punch=$1 WHERE id=$2;', [text, id], function (err, result) {
             if (err) {
                 console.log(err);
             } else {

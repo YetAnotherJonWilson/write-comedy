@@ -16,14 +16,13 @@ router.get('/', function(request, response){
             console.log('connection error', err);
             done();
         }
-        client.query('select titles.title, titles.id, setups.setup, punchlines.punchline, subject_matter.subject_matter, themes.theme, topics.topic from titles ' +
-            'left join setups on setups.title_id = titles.id left join punchlines on punchlines.title_id = titles.id left join subject_matter on ' +
-            'subject_matter.title_id = titles.id left join themes on themes.title_id = titles.id left join topics on topics.title_id = titles.id where user_id=$1 order by title;',
+        client.query('select titles.title, titles.id, titles.setup_punch, titles.subject_matter, titles.themes, titles.topics from titles ' +
+            'where user_id=$1 order by title;',
             [currentUserId], function(err, result){
             if (err){
                 console.log(err);
                 console.log(currentUserId);
-                response.sendStatus(200);
+                response.sendStatus(400);
                 done();
             } else {
                 console.log('Current UserId', currentUserId);

@@ -1,22 +1,10 @@
-<div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="header">
-        <ul id="top-nav">
-            <li><a href="/newjoke" class="btn btn-primary">New Joke</a></li>
-            <li><a href="/success" class="btn btn-primary">Find Joke by Title</a></li>
-            <!--<li><a href="#" class="btn btn-primary">Find Joke by Bit</a></li>-->
-            <!--<li><a href="#" class="btn btn-primary">Find Joke by Set</a></li>-->
-        </ul>
-        <h1>Exercises</h1>
-    </div>
-</div>
+<h1>Exercises</h1>
 
 <div class="row">
-    <div class="col-lg-4 col-md-4">
+    <div>
         <h2 id="exPageJokeTitle">{{exercises.pageData.currentTitle}}</h2>
-        <h4>Setup</h4>
-        <h5>{{exercises.pageData.currentSetup}}</h5>
-        <h4>Punchline</h4>
-        <h5>{{exercises.pageData.currentPunchline}}</h5>
+        <h4>Joke</h4>
+        <h5>{{exercises.pageData.currentJoke}}</h5>
         <h4>Subject Matter</h4>
         <h5>{{exercises.pageData.currentSubject}}</h5>
         <h4>Topic(s)</h4>
@@ -27,19 +15,18 @@
         <!--<h5>Part of set #&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5><button class="btn btn-sm btn-primary">Add to another set</button><br><br>-->
         <!--<h5>Part of Bit #&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5><button class="btn btn-sm btn-primary">Add to a different bit</button>-->
     </div>
-    <div class="col-lg-4 col-md-4">
-        <button id="exMiddleButton" class="btn btn-lg btn-success" ng-click="exercises.getRandomExercise()">Get Random Exercise</button><br><br>
+    <div>
+        <button ng-click="exercises.getRandomExercise()">Get Random Exercise</button><br><br>
         <h3>Exercise: {{exercises.exerciseName}}</h3>
         <p>Description: {{exercises.exerciseDescription}}</p>
         <textarea type="text" class="largeText"></textarea>
     </div>
-    <div id="exPageSmallBtns" class="col-lg-4 col-md-4">
+    <div>
         <p>Add items to be saved here. For multiple items (themes or topics, or subject matter), separate with commas.</p>
         <textarea type="text" class="mediumText" ng-model="exercises.textToUpdate"></textarea>
+        <br /> <br />
         <h5 ng-show="exercises.updatedTextToSave">Saved!</h5>
-        <p>Save as new version</p>
-        <button class="btn btn-success btn-sm" ng-click="exercises.replaceSetup()">Setup</button>
-        <button class="btn btn-success btn-sm" ng-click="exercises.replacePunch()">Punchline</button>
+        <button class="btn btn-success btn-sm" ng-click="exercises.replaceSetup()">Save as New Version</button>
         <p>Add to current version</p>
         <button class="btn btn-success btn-sm" ng-click="exercises.addToSetup()">Setup</button>
         <button class="btn btn-success btn-sm" ng-click="exercises.addToPunch()">Punchline</button>

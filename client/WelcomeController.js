@@ -15,14 +15,13 @@ angular.module('comedyApp').controller('WelcomeController', ['$http', '$location
 
     function handleSuccessTwo(response) {
         vm.jokes = response.data;
-        console.log(response.data);
+        console.log("vm.jokes =", response.data);
     }
 
-    vm.currentJokeInExercises = function(id, title, setup, punchline, theme, subject, topic){
+    vm.currentJokeInExercises = function(id, title, setup_punch, theme, subject, topic){
         console.log(id);
         var pageData = {};
-        vm.pageData = {currentId: id, currentTitle: title, currentSetup: setup, currentPunchline: punchline, currentTheme: theme, currentSubject: subject, currentTopic: topic};
-
+        vm.pageData = {currentId: id, currentTitle: title, currentJoke: setup_punch, currentTheme: theme, currentSubject: subject, currentTopic: topic};
         // Use browser's localstorage to store current joke data
         $localStorage.prevPageData = vm.pageData;
         $location.path('/exercises');
