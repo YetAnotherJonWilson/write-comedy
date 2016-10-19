@@ -62,15 +62,6 @@ angular.module('comedyApp').controller('ExercisesController', ['DataService', '$
         }).then(handleSavedSuccess());
     };
 
-    vm.addToPunch = function(){
-        //$http.put('crud/addtopunchline/' + vm.pageData.currentId + '/' + vm.textToUpdate).then(handleSavedSuccess());
-        $http({
-            method: 'PUT',
-            url: '/crud/addtopunchline/',
-            data: {"id" : vm.pageData.currentId, "text" : vm.textToUpdate}
-        }).then(handleSavedSuccess());
-    };
-
     vm.addToSM = function(){
         //$http.put('crud/addtosm/' + vm.pageData.currentId + '/' + vm.textToUpdate).then(handleSavedSuccess());
         $http({
@@ -103,15 +94,6 @@ angular.module('comedyApp').controller('ExercisesController', ['DataService', '$
         $http({
             method: 'PUT',
             url: '/crud/addaltsetup/',
-            data: {"id" : vm.pageData.currentId, "text" : vm.textToUpdate}
-        }).then(handleSavedSuccess());
-    };
-
-    vm.addAltPunch = function(){
-        //$http.put('crud/addaltpunchline/' + vm.pageData.currentId + '/' + vm.textToUpdate).then(handleSavedSuccess());
-        $http({
-            method: 'PUT',
-            url: '/crud/addaltpunchline/',
             data: {"id" : vm.pageData.currentId, "text" : vm.textToUpdate}
         }).then(handleSavedSuccess());
     };

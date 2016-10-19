@@ -3,7 +3,6 @@
 <div class="row">
     <div>
         <h2 id="exPageJokeTitle">{{exercises.pageData.currentTitle}}</h2>
-        <h4>Joke</h4>
         <h5>{{exercises.pageData.currentJoke}}</h5>
         <h4>Subject Matter</h4>
         <h5>{{exercises.pageData.currentSubject}}</h5>
@@ -28,14 +27,12 @@
         <h5 ng-show="exercises.updatedTextToSave">Saved!</h5>
         <button class="btn btn-success btn-sm" ng-click="exercises.replaceSetup()">Save as New Version</button>
         <p>Add to current version</p>
-        <button class="btn btn-success btn-sm" ng-click="exercises.addToSetup()">Setup</button>
-        <button class="btn btn-success btn-sm" ng-click="exercises.addToPunch()">Punchline</button>
+        <button class="btn btn-success btn-sm" ng-click="exercises.addToSetup()">Bit</button>
         <button class="btn btn-success btn-sm" ng-click="exercises.addToSM()">Subject Matter</button>
         <button class="btn btn-success btn-sm" ng-click="exercises.addToTopic()">Topic</button>
         <button class="btn btn-success btn-sm" ng-click="exercises.addToTheme()">Theme or Point</button>
         <p>Save as alternate version</p>
-        <button class="btn btn-success btn-sm" ng-click="exercises.addAltSetup()">Setup</button>
-        <button class="btn btn-success btn-sm" ng-click="exercises.addAltPunch()">Punchline</button>
+        <button class="btn btn-success btn-sm" ng-click="exercises.addAltSetup()">Bit</button>
         <button class="btn btn-success btn-sm" ng-click="exercises.addAltSM()">Subject Matter</button>
         <button class="btn btn-success btn-sm" ng-click="exercises.addAltTopic()">Topic</button>
         <button class="btn btn-success btn-sm" ng-click="exercises.addAltTheme()">Theme or Point</button>

@@ -54,11 +54,11 @@ router.put('/addtosetup/', function(request, response) {
             console.log('connection error', err);
         }
 
-        client.query('UPDATE setups SET setup = setup || $1 WHERE title_id=$2;', [text, id], function (err, result) {
+        client.query('UPDATE titles SET setup_punch = setup_punch || $1 WHERE id=$2 AND setup_punch IS NOT NULL;', [text, id], function (err, result) {
             if (err) {
                 console.log(err);
             }
-            client.query('INSERT INTO setups (setup, title_id) SELECT $1, $2 WHERE NOT EXISTS (SELECT 1 FROM setups WHERE title_id=$2);', [text, id], function (err, result) {
+            client.query('UPDATE titles SET setup_punch = $1 WHERE id=$2 AND setup_punch IS NULL;', [text, id], function (err, result) {
                 if (err) {
                     console.log(err);
                 } else {
@@ -69,30 +69,6 @@ router.put('/addtosetup/', function(request, response) {
     });
 });
 
-router.put('/addtopunchline/', function(request, response) {
-    console.log('request.body:', request.body);
-    var id = request.body.id;
-    var text = ' ' + request.body.text;
-
-    pool.connect(function (err, client) {
-        if (err) {
-            console.log('connection error', err);
-        }
-
-        client.query('UPDATE punchlines SET punchline = punchline || $1 WHERE title_id=$2;', [text, id], function (err, result) {
-            if (err) {
-                console.log(err);
-            }
-            client.query('INSERT INTO punchlines (punchline, title_id) SELECT $1, $2 WHERE NOT EXISTS (SELECT 1 FROM punchlines WHERE title_id=$2);', [text, id], function (err, result) {
-                if (err) {
-                    console.log(err);
-                } else {
-                    response.sendStatus(200);
-                }
-            });
-        });
-    });
-});
 
 router.put('/addtoSM/', function(request, response) {
     console.log('request.body:', request.body);
@@ -193,30 +169,6 @@ router.put('/addaltsetup/', function(request, response) {
     });
 });
 
-router.put('/addaltpunchline/', function(request, response) {
-    console.log('request.body:', request.body);
-    var id = request.body.id;
-    var text = ' ' + request.body.text;
-
-    pool.connect(function (err, client, next) {
-        if (err) {
-            console.log('connection error', err);
-        }
-        client.query('UPDATE alt_punchlines SET punchline = punchline || $1 WHERE title_id=$2;', [text, id], function (err, result) {
-            if (err) {
-                console.log(err);
-            }
-            client.query('INSERT INTO alt_punchlines(punchline, title_id) SELECT $1, $2 WHERE NOT EXISTS (SELECT 1 FROM alt_punchlines WHERE title_id=$2);', [text, id], function (err, result) {
-                if (err) {
-                    console.log(err);
-                } else {
-                    response.sendStatus(200);
-                }
-            });
-        });
-    });
-});
-
 router.put('/addaltsm/', function(request, response) {
     console.log('request.body:', request.body);
     var id = request.body.id;
@@ -243,7 +195,7 @@ router.put('/addaltsm/', function(request, response) {
 });
 
 router.put('/addalttopic/', function(request, response) {
-    console.log('request.body:', request.body);
+    //console.log('request.body:', request.body);
     var id = request.body.id;
     var text = ' ' + request.body.text;
 
