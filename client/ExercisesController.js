@@ -89,6 +89,15 @@ angular.module('comedyApp').controller('ExercisesController', ['DataService', '$
         }).then(handleSavedSuccess());
     };
 
+    vm.addToStatements = function(){
+        //$http.put('crud/addaltsetup/' + vm.pageData.currentId + '/' + vm.textToUpdate).then(handleSavedSuccess());
+        $http({
+            method: 'PUT',
+            url: '/crud/addstatement/',
+            data: {"id" : vm.pageData.currentId, "text" : vm.textToUpdate}
+        }).then(handleSavedSuccess());
+    };
+
     vm.addAltSetup = function(){
         //$http.put('crud/addaltsetup/' + vm.pageData.currentId + '/' + vm.textToUpdate).then(handleSavedSuccess());
         $http({

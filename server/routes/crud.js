@@ -144,6 +144,31 @@ router.put('/addtotheme/', function(request, response) {
     });
 });
 
+router.put('/addstatement/', function(request, response) {
+    console.log('request.body:', request.body);
+    var id = request.body.id;
+    var text = ' ' + request.body.text;
+
+    pool.connect(function (err, client) {
+        if (err) {
+            console.log('connection error', err);
+        }
+
+        client.query('UPDATE titles SET statements = statements || $1 WHERE id=$2 AND statements IS NOT NULL;', [text, id], function (err, result) {
+            if (err) {
+                console.log(err);
+            }
+            client.query('UPDATE titles SET statements = $1 WHERE id=$2 AND statements IS NULL;', [text, id], function (err, result) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    response.sendStatus(200);
+                }
+            });
+        });
+    });
+});
+
 router.put('/addaltsetup/', function(request, response) {
     console.log('request.body:', request.body);
     var id = request.body.id;

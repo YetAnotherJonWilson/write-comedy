@@ -25,16 +25,17 @@
         <textarea type="text" class="mediumText" ng-model="exercises.textToUpdate"></textarea>
         <br /> <br />
         <h5 ng-show="exercises.updatedTextToSave">Saved!</h5>
-        <button class="btn btn-success btn-sm" ng-click="exercises.replaceSetup()">Save as New Version</button>
+        <button ng-click="exercises.replaceSetup()">Save as New Version</button>
         <p>Add to current version</p>
-        <button class="btn btn-success btn-sm" ng-click="exercises.addToSetup()">Bit</button>
-        <button class="btn btn-success btn-sm" ng-click="exercises.addToSM()">Subject Matter</button>
-        <button class="btn btn-success btn-sm" ng-click="exercises.addToTopic()">Topic</button>
-        <button class="btn btn-success btn-sm" ng-click="exercises.addToTheme()">Theme or Point</button>
+        <button ng-click="exercises.addToSetup()">Bit</button>
+        <button ng-click="exercises.addToSM()">Subject Matter</button>
+        <button ng-click="exercises.addToTopic()">Topic</button>
+        <button ng-click="exercises.addToTheme()">Theme or Point</button>
+        <button ng-click="exercises.addToStatements()">Statements</button>
         <p>Save as alternate version</p>
-        <button class="btn btn-success btn-sm" ng-click="exercises.addAltSetup()">Bit</button>
-        <button class="btn btn-success btn-sm" ng-click="exercises.addAltSM()">Subject Matter</button>
-        <button class="btn btn-success btn-sm" ng-click="exercises.addAltTopic()">Topic</button>
-        <button class="btn btn-success btn-sm" ng-click="exercises.addAltTheme()">Theme or Point</button>
+        <button ng-click="exercises.addAltSetup()">Bit</button>
+        <button ng-click="exercises.addAltSM()">Subject Matter</button>
+        <button ng-click="exercises.addAltTopic()">Topic</button>
+        <button ng-click="exercises.addAltTheme()">Theme or Point</button>
     </div>
 </div>
