@@ -79,11 +79,11 @@ router.put('/addtoSM/', function(request, response) {
         if (err) {
             console.log('connection error', err);
         }
-        client.query('UPDATE subject_matter SET subject_matter = subject_matter || $1 WHERE title_id=$2;', [text, id], function (err, result) {
+        client.query('UPDATE titles SET subject_matter = subject_matter || $1 WHERE id=$2 AND subject_matter IS NOT NULL;', [text, id], function (err, result) {
             if (err) {
                 console.log(err);
             }
-            client.query('INSERT INTO subject_matter (subject_matter, title_id) SELECT $1, $2 WHERE NOT EXISTS (SELECT 1 FROM subject_matter WHERE title_id=$2);', [text, id], function (err, result) {
+            client.query('UPDATE titles SET subject_matter = $1 WHERE id=$2 AND subject_matter IS NULL;', [text, id], function (err, result) {
                 if (err) {
                     console.log(err);
                 } else {
