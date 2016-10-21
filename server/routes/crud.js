@@ -129,11 +129,11 @@ router.put('/addtotheme/', function(request, response) {
             console.log('connection error', err);
         }
 
-        client.query('UPDATE themes SET theme = theme || $1 WHERE title_id=$2;', [text, id], function (err, result) {
+        client.query('UPDATE titles SET themes = themes || $1 WHERE id=$2 AND themes IS NOT NULL;', [text, id], function (err, result) {
             if (err) {
                 console.log(err);
             }
-            client.query('INSERT INTO themes (theme, title_id) SELECT $1, $2 WHERE NOT EXISTS (SELECT 1 FROM themes WHERE title_id=$2);', [text, id], function (err, result) {
+            client.query('UPDATE titles SET themes = $1 WHERE id=$2 and themes IS NULL;', [text, id], function (err, result) {
                 if (err) {
                     console.log(err);
                 } else {
