@@ -104,11 +104,11 @@ router.put('/addtotopic/', function(request, response) {
             console.log('connection error', err);
         }
 
-        client.query('UPDATE topics SET topic = topic || $1 WHERE title_id=$2;', [text, id], function (err, result) {
+        client.query('UPDATE titles SET topics = topics || $1 WHERE id=$2 AND topics IS NOT NULL;', [text, id], function (err, result) {
             if (err) {
                 console.log(err);
             }
-            client.query('INSERT INTO topics (topic, title_id) SELECT $1, $2 WHERE NOT EXISTS (SELECT 1 FROM topics WHERE title_id=$2);', [text, id], function (err, result) {
+            client.query('UPDATE titles SET topics = $1 WHERE id=$2 AND topics IS NULL;', [text, id], function (err, result) {
                 if (err) {
                     console.log(err);
                 } else {
