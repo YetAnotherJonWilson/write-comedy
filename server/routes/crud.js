@@ -204,11 +204,11 @@ router.put('/addaltsm/', function(request, response) {
             console.log('connection error', err);
         }
 
-        client.query('UPDATE alt_subject_matter SET subject_matter = subject_matter || $1 WHERE title_id=$2;', [text, id], function (err, result) {
+        client.query('UPDATE titles SET alt_subject_matter = alt_subject_matter || $1 WHERE id=$2 AND alt_subject_matter IS NOT NULL;', [text, id], function (err, result) {
             if (err) {
                 console.log(err);
             }
-            client.query('INSERT INTO alt_subject_matter(subject_matter, title_id) SELECT $1, $2 WHERE NOT EXISTS (SELECT 1 FROM alt_subject_matter WHERE title_id=$2);', [text, id], function (err, result) {
+            client.query('UPDATE titles SET alt_subject_matter = $1 WHERE id = $2 AND alt_subject_matter IS NULL;', [text, id], function (err, result) {
                 if (err) {
                     console.log(err);
                 } else {
