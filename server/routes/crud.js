@@ -133,7 +133,7 @@ router.put('/addtotheme/', function(request, response) {
             if (err) {
                 console.log(err);
             }
-            client.query('UPDATE titles SET themes = $1 WHERE id=$2 and themes IS NULL;', [text, id], function (err, result) {
+            client.query('UPDATE titles SET themes = $1 WHERE id=$2 AND themes IS NULL;', [text, id], function (err, result) {
                 if (err) {
                     console.log(err);
                 } else {
@@ -179,11 +179,11 @@ router.put('/addaltsetup/', function(request, response) {
             console.log('connection error', err);
         }
 
-        client.query('UPDATE alt_setups SET setup = setup || $1 WHERE title_id=$2;', [text, id], function (err, result) {
+        client.query('UPDATE titles SET alt_setup_punch = alt_setup_punch || $1 WHERE id=$2 AND alt_setup_punch IS NOT NULL;', [text, id], function (err, result) {
             if (err) {
                 console.log(err);
             }
-            client.query('INSERT INTO alt_setups (setup, title_id) SELECT $1, $2 WHERE NOT EXISTS (SELECT 1 FROM alt_setups WHERE title_id=$2);', [text, id], function (err, result) {
+            client.query('UPDATE titles SET alt_setup_punch = $1 WHERE id = $2 AND alt_setup_punch IS NULL;', [text, id], function (err, result) {
                 if (err) {
                     console.log(err);
                 } else {
