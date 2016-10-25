@@ -229,11 +229,11 @@ router.put('/addalttopic/', function(request, response) {
             console.log('connection error', err);
         }
 
-        client.query('UPDATE alt_topics SET topic = topic || $1 WHERE title_id=$2;', [text, id], function (err, result) {
+        client.query('UPDATE titles SET alt_topics = alt_topics || $1 WHERE id=$2 AND alt_topics IS NOT NULL;', [text, id], function (err, result) {
             if (err) {
                 console.log(err);
             }
-            client.query('INSERT INTO alt_topics(topic, title_id) SELECT $1, $2 WHERE NOT EXISTS (SELECT 1 FROM alt_topics WHERE title_id=$2);', [text, id], function (err, result) {
+            client.query('UDATE titles SET alt_topics = $1 WHERE id = $2 AND alt_topics IS NULL;', [text, id], function (err, result) {
                 if (err) {
                     console.log(err);
                 } else {
