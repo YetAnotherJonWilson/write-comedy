@@ -254,11 +254,11 @@ router.put('/addalttheme/', function(request, response) {
             console.log('connection error', err);
         }
 
-        client.query('UPDATE alt_themes SET theme = theme || $1 WHERE title_id=$2;', [text, id], function (err, result) {
+        client.query('UPDATE titles SET alt_themes = alt_themes || $1 WHERE id=$2 AND alt_themes IS NOT NULL;', [text, id], function (err, result) {
             if (err) {
                 console.log(err);
             }
-            client.query('INSERT INTO alt_themes(theme, title_id) SELECT $1, $2 WHERE NOT EXISTS (SELECT 1 FROM alt_themes WHERE title_id=$2);', [text, id], function (err, result) {
+            client.query('UPDATE titles SET alt_themes = $1 WHERE id = $2 AND alt_themes IS NULL;', [text, id], function (err, result) {
                 if (err) {
                     console.log(err);
                 } else {
