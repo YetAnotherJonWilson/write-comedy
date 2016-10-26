@@ -23,7 +23,7 @@ router.post('/', function(request, response){
             console.log('connection error', err);
             done();
         }
-        client.query('INSERT INTO titles (title, user_id, setup_punch, themes, subject_matter, topics) VALUES ($1, $2) RETURNING id', [title, userId, setup_punch, themes, subject, topics], function(err, result){
+        client.query('INSERT INTO titles (title, user_id, setup_punch, themes, subject_matter, topics) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id', [title, userId, setup_punch, themes, subject, topics], function(err, result){
             if (err){
                 console.log(err);
                 done();
