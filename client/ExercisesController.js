@@ -19,7 +19,7 @@ angular.module('comedyApp').controller('ExercisesController', ['DataService', '$
         vm.pageData = {currentId: response.data[0].id, currentTitle: response.data[0].title, currentJoke: response.data[0].setup_punch, currentTheme: response.data[0].themes, currentSubject: response.data[0].subject_matter, currentTopic: response.data[0].topics};
 
         // response.data[0];
-        console.log(response.data[0]);
+        //console.log(response.data[0]);
     }
 
     vm.getRandomExercise = function(){
