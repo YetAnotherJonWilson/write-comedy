@@ -37,9 +37,11 @@
   </head>
   <body layout="column" ng-controller="MainController as main">
     <!--Header toolbar, consistent at top of each view-->
-    <md-toolbar layout="row" ng-class="main.screenSize">
-        <h1 class="md-display-3">{{main.message}}</h1>
-    </md-toolbar>
+    <md-nav-bar>
+        <!--<h1 class="md-display-3">{{main.message}}</h1>-->
+        <md-nav-item md-nav-href="/newjoke">New Joke</md-nav-item>
+        <md-nav-item md-nav-href="/success">Find Joke by Title</md-nav-item>
+    </md-nav-bar>
     <md-content flex id="content" ng-class="main.screenSize">
       <!--Views-->
       <ng-view></ng-view>
