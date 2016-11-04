@@ -2,18 +2,9 @@ md-content {
     padding: 20px;
 }
 
-md-toolbar h1 {
-    text-align: right;
-    margin-top: auto;
-    margin-bottom: auto;
-    font-weight: 400;
-}
-
-md-toolbar.small h1 {
-    font-size: 1.25em;
-}
-
 #loginDiv {
     width: 300px;
     margin: auto;
 }
+
+
