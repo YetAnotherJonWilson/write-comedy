@@ -37,11 +37,13 @@
   </head>
   <body layout="column" ng-controller="MainController as main">
     <!--Header toolbar, consistent at top of each view-->
-    <md-tabs md-dynamic-height="true">
-        <md-tab><a href="/newjoke">New Joke</a></md-tab>
-        <md-tab><a href="/success">All Jokes</a></md-tab>
-    </md-tabs>
-    <!--<h1>{{main.message}}</h1>-->
+    <md-toolbar layout="row" layout-align="space-around center">
+        <span>
+        <md-button aria-label="New Joke" ng-href="/newjoke">New Joke</md-button>
+        <md-button aria-label="All Jokes" ng-href="/success">All Jokes</md-button>
+        </span>
+        <h1 id="main-message">{{main.message}}</h1>
+    </md-toolbar>
     <md-content flex id="content" ng-class="main.screenSize">
       <!--Views-->
       <ng-view></ng-view>

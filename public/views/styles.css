@@ -7,4 +7,6 @@ md-content {
     margin: auto;
 }
 
-
+#main-message {
+    text-align: right;
+}

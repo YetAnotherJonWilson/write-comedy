@@ -1,7 +1,7 @@
 angular.module('comedyApp').controller('MainController', ['$http', '$mdMedia', '$scope', function($http, $mdMedia){
     var vm = this;
 
-    vm.message = "Comedy Write Now";
+    vm.message = "Comedy Notebook";
 
     // Set screensize for screens under or over 600px
 
