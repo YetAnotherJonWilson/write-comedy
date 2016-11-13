@@ -5,12 +5,6 @@ angular.module('comedyApp').controller('WelcomeController', ['$http', '$location
     vm.deleteStepOneButton = true;
     vm.deleteStepTwoButton = false;
 
-    $http.get('/getCurrentUserName').then(handleSuccess);
-
-    function handleSuccess(response){
-        vm.username = response.data;
-    }
-
     $http.get('/getCurrentUserJokes').then(handleSuccessTwo);
 
     function handleSuccessTwo(response) {
