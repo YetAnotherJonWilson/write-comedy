@@ -37,7 +37,7 @@
   </head>
   <body layout="column" ng-controller="MainController as main">
     <!--Header toolbar, consistent at top of each view-->
-    <md-toolbar style="height: 75px; padding: 0 15px 0 15px" layout="row">
+    <md-toolbar md-whiteframe="3" style="height: 75px; padding: 0 15px 0 15px" layout="row">
         <md-button style="height: 35px; margin-top: 38px" aria-label="New Joke" ng-href="/newjoke">New Joke</md-button>
         <md-button style="height: 35px; margin-top: 38px" aria-label="All Jokes" ng-href="/success">All Jokes</md-button>
         <span flex></span>
@@ -47,7 +47,5 @@
       <!--Views-->
       <ng-view></ng-view>
     </md-content>
-    <!--Footer-->
-    <md-toolbar></md-toolbar>
   </body>
 </html>
