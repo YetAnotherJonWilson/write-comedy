@@ -1,4 +1,12 @@
- <div id = "loginDiv">
+<!--Header toolbar, consistent at top of each view-->
+<md-toolbar md-whiteframe="3" style="height: 75px; padding: 0 15px 0 15px" layout="row">
+    <md-button style="height: 35px; margin-top: 38px" aria-label="New Joke" ng-href="/newjoke">New Joke</md-button>
+    <md-button style="height: 35px; margin-top: 38px" aria-label="All Jokes" ng-href="/success">All Jokes</md-button>
+    <span flex></span>
+    <h1 id="main-message">{{main.message}}</h1>
+</md-toolbar>
+
+<div id = "loginDiv">
     <div>
         <label for="username">Username: </label>
         <input type="text" ng-model="login.username" id="username"/>

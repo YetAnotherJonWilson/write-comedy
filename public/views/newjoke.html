@@ -1,15 +1,17 @@
-<div>
-    <div id="header">
-        <ul id="top-nav">
-            <li><a href="/newjoke">New Joke</a></li>
-            <li><a href="/success">All Jokes</a></li>
-            <!--<li><a href="#">Find Joke by Bit</a></li>-->
-            <!--<li><a href="#">Find Joke by Set</a></li>-->
-        </ul>
-        <h1>Create New Joke</h1>
-    </div>
-</div>
+<!--Header toolbar, consistent at top of each view-->
+<md-toolbar md-whiteframe="3" style="height: 75px; padding: 0 15px 0 15px" layout="row">
+    <md-button style="height: 35px; margin-top: 38px" aria-label="New Joke" ng-href="/newjoke">New Joke</md-button>
+    <md-button style="height: 35px; margin-top: 38px" aria-label="All Jokes" ng-href="/success">All Jokes</md-button>
+    <span flex></span>
+    <h1 id="main-message">{{main.message}}</h1>
+</md-toolbar>
 
+<div layout="row">
+    <md-sidenav layout="column" md-component-id="left" md-is-locked-open="$mdMedia('min-width: 333px')" class="md-sidenav-left">
+        Left Nav!
+    </md-sidenav>
+
+<div layout="column">
 <div>
         <h4>Title<span id="red-ast">*</span></h4>
         <input type="text" ng-model="newjoke.title" id="titleField"><br />
@@ -31,7 +33,7 @@
         <h4>Theme(s) or Point(s)</h4>
         <p>What is the joke about at a meta level? Try to say what the joke is about without referencing the subject matter or topic.</p>
         <textarea type="text" ng-model="newjoke.theme"></textarea><br />
-</div>
+
         <ul id="newjoke-nav">
             <li ng-show="newjoke.afterSave"><button ng-click="newjoke.saveJoke()">Save</button></li>
             <p ng-show="newjoke.saved">Joke Saved!</p>
@@ -39,3 +41,5 @@
             <li><button ng-show="newjoke.exerciseLink" ng-click="newjoke.goToExercises()">Go To Exercises</button></li>
         </ul>
 
+</div>
+</div>
