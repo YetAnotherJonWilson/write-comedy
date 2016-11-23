@@ -7,3 +7,7 @@ md-content {
     margin: auto;
     margin-top: 20px;
 }
+
+.toolbarHeading {
+    font-family: serif;
+}
