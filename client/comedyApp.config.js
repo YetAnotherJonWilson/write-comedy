@@ -1,4 +1,4 @@
-angular.module('comedyApp').config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
+angular.module('comedyApp').config(['$routeProvider', '$locationProvider', '$mdThemingProvider', function($routeProvider, $locationProvider, $mdThemingProvider){
     $routeProvider
         .when('/', {
             templateUrl: '/views/login.html',
@@ -30,6 +30,11 @@ angular.module('comedyApp').config(['$routeProvider', '$locationProvider', funct
             controller: 'AlternatesController',
             controllerAs: 'alternates'
     });
+
+    $mdThemingProvider.theme('default')
+        .primaryPalette('orange')
+        .accentPalette('brown')
+        .warnPalette('purple');
 
     $locationProvider.html5Mode(true);
 }]);
