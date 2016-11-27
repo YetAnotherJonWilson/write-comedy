@@ -11,11 +11,11 @@
         Left Nav!
     </md-sidenav>
 
-<div layout="column">
-<div>
-        <h4>Title<span id="red-ast">*</span></h4>
-        <input type="text" ng-model="newjoke.title" id="titleField"><br />
-</div>
+    <div layout="column" class="page" md-whiteframe="3">
+        <div>
+                <h4>Title<span id="red-ast">*</span></h4>
+                <input type="text" ng-model="newjoke.title" id="titleField"><br />
+        </div>
 
         <h4>Setup</h4>
         <textarea type="text" ng-model="newjoke.setup"></textarea><br />
@@ -40,6 +40,5 @@
             <li><a href="javascript:window.location.reload();">Clear Form</a></li>
             <li><button ng-show="newjoke.exerciseLink" ng-click="newjoke.goToExercises()">Go To Exercises</button></li>
         </ul>
-
-</div>
+    </div>
 </div>

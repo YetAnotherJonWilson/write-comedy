@@ -11,3 +11,8 @@ md-content {
 .toolbarHeading {
     font-family: serif;
 }
+
+.page {
+    margin: 20px;
+    padding: 20px;
+}
