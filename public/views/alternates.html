@@ -7,24 +7,24 @@
 </md-toolbar>
 
 <div layout="row">
-    <md-sidenav layout="column" md-component-id="left" md-is-locked-open="$mdMedia('min-width: 333px')" class="md-sidenav-left">
+    <md-sidenav flex="20" layout="column" md-component-id="left" md-is-locked-open="$mdMedia('min-width: 333px')" class="md-sidenav-left">
         Left Nav!
     </md-sidenav>
 
-<div layout="column">
-<h1>Alternate Material</h1>
+    <div flex="70" layout="column" class="page" md-whiteframe="3">
+        <h1>Alternate Material</h1>
 
-<h2>{{alternates.title}}</h2>
+        <h2>{{alternates.title}}</h2>
 
-<h4>Joke</h4>
-<p>{{alternates.joke}}</p>
+        <h4>Joke</h4>
+        <p>{{alternates.joke}}</p>
 
-<h4>Subject Matter</h4>
+        <h4>Subject Matter</h4>
 
-<h4>Topics</h4>
+        <h4>Topics</h4>
 
-<h4>Themes and Points</h4>
-<p>{{alternates.altThemes}}</p>
-</div>
+        <h4>Themes and Points</h4>
+        <p>{{alternates.altThemes}}</p>
+    </div>
 </div>
 
