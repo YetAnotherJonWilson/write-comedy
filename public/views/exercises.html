@@ -11,11 +11,11 @@
         <div>
             <h2 id="exPageJokeTitle">{{exercises.pageData.currentTitle}}</h2>
             <h5>{{exercises.pageData.currentJoke}}</h5>
-            <h4>Subject Matter</h4>
+            <h4 class="underline">Subject Matter</h4>
             <h5>{{exercises.pageData.currentSubject}}</h5>
-            <h4>Topic(s)</h4>
+            <h4 class="underline">Topic(s)</h4>
             <h5>{{exercises.pageData.currentTopic}}</h5>
-            <h4>Theme(s) or Point(s)</h4>
+            <h4 class="underline">Theme(s) or Point(s)</h4>
             <h5>{{exercises.pageData.currentTheme}}</h5>
             <button ng-click="exercises.viewAlternateMaterial()">View Alternate Material</button><br /><br />
             <!--<h5>Part of set #&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5><button>Add to another set</button><br><br>-->
@@ -25,22 +25,23 @@
             <button ng-click="exercises.getRandomExercise()">Get Random Exercise</button><br><br>
             <h3>Exercise: {{exercises.exerciseName}}</h3>
             <p>Description: {{exercises.exerciseDescription}}</p>
+            <p>Use the box below to do the exercise and write ideas.</p>
             <textarea type="text"></textarea>
         </div>
         <div>
-            <p>Add items to be saved here. For multiple items (themes or topics, or subject matter), separate with commas.</p>
+            <p>Add items you want to save in the box below. For multiple items (themes or topics, or subject matter), separate with commas.</p>
             <textarea type="text" ng-model="exercises.textToUpdate"></textarea>
             <br /> <br />
             <h5 ng-show="exercises.updatedTextToSave">Saved!</h5>
             <button ng-click="exercises.replaceSetup()">Save as New Version</button>
             <p>Add to current version</p>
-            <button ng-click="exercises.addToSetup()">Bit</button>
+            <!--<button ng-click="exercises.addToSetup()">Bit</button>-->
             <button ng-click="exercises.addToSM()">Subject Matter</button>
             <button ng-click="exercises.addToTopic()">Topic</button>
             <button ng-click="exercises.addToTheme()">Theme or Point</button>
             <button ng-click="exercises.addToStatements()">Statements</button>
             <p>Save as alternate version</p>
-            <button ng-click="exercises.addAltSetup()">Bit</button>
+            <!--<button ng-click="exercises.addAltSetup()">Bit</button>-->
             <button ng-click="exercises.addAltSM()">Subject Matter</button>
             <button ng-click="exercises.addAltTopic()">Topic</button>
             <button ng-click="exercises.addAltTheme()">Theme or Point</button>

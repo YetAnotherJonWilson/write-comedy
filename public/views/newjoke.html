@@ -29,10 +29,10 @@
     <p>What is the joke about at a meta level? Try to say what the joke is about without referencing the subject matter or topic.</p>
     <textarea type="text" ng-model="newjoke.theme"></textarea><br />
 
-    <ul id="newjoke-nav">
+    <ul style="list-style: none" id="newjoke-nav">
         <li ng-show="newjoke.afterSave"><button ng-click="newjoke.saveJoke()">Save</button></li>
         <p ng-show="newjoke.saved">Joke Saved!</p>
-        <li><a href="javascript:window.location.reload();">Clear Form</a></li>
+        <li><button><a style="text-decoration: none; color: black" href="javascript:window.location.reload();">Clear Form</a></button></li>
         <li ng-show="newjoke.exerciseLink"><button ng-click="newjoke.goToExercises()">Go To Exercises</button></li>
     </ul>
 </div>
