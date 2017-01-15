@@ -263,6 +263,7 @@ router.put('/addalttheme/', function(request, response) {
                     console.log(err);
                 } else {
                     response.sendStatus(200);
+                    done();
                 }
             });
         });
