@@ -6,18 +6,21 @@
     <h1 id="main-message">{{main.message}}</h1>
 </md-toolbar>
 
-<div style="padding-left: 100px; padding-top: 50px"><h2>{{welcome.nojokes}}</h2></div>
+<div layout="column" class="page" md-whiteframe="3">
 
-<div  layout="row" layout-wrap>
-    <md-card style="width: 350px;" ng-repeat="joke in welcome.jokes">
-        <md-card-content>
-            <h3>{{joke.title}}</h3>
-            <p>{{joke.setup_punch}}</p>
-        </md-card-content>
-        <md-card-actions layout="row" layout-align="end center">
-            <md-button ng-click="welcome.currentJokeInExercises(joke.id, joke.title, joke.setup_punch, joke.themes, joke.subject_matter, joke.topics)">Go to Exercises</md-button>
-            <md-button ng-show="welcome.deleteStepOneButton" ng-click="welcome.deleteStepOne()">Delete</md-button>
-            <md-button ng-show="welcome.deleteStepTwoButton" ng-click="welcome.deleteStepTwo(joke.id)">Are you Sure?</md-button>
-        </md-card-actions>
-    </md-card>
+    <div style="padding-left: 100px; padding-top: 50px"><h2>{{welcome.nojokes}}</h2></div>
+
+    <div  layout="row" layout-wrap>
+        <md-card style="width: 350px;" ng-repeat="joke in welcome.jokes">
+            <md-card-content>
+                <h3>{{joke.title}}</h3>
+                <p>{{joke.setup_punch}}</p>
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button ng-click="welcome.currentJokeInExercises(joke.id, joke.title, joke.setup_punch, joke.themes, joke.subject_matter, joke.topics)">Go to Exercises</md-button>
+                <md-button ng-show="welcome.deleteStepOneButton" ng-click="welcome.deleteStepOne()">Delete</md-button>
+                <md-button ng-show="welcome.deleteStepTwoButton" ng-click="welcome.deleteStepTwo(joke.id)">Are you Sure?</md-button>
+            </md-card-actions>
+        </md-card>
+    </div>
 </div>
