@@ -14,6 +14,7 @@ md-content {
 
 .page {
     width: 70%;
+    min-height: 1000px;
     margin: 20px auto 20px auto;
     padding: 20px;
 }

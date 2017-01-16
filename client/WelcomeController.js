@@ -5,6 +5,7 @@ angular.module('comedyApp').controller('WelcomeController', ['$http', '$location
     vm.deleteStepOneButton = true;
     vm.deleteStepTwoButton = false;
     vm.nojokes="";
+    vm.alljokes="All Jokes";
 
     $http.get('/getCurrentUserJokes').then(handleSuccessTwo);
 
@@ -13,6 +14,7 @@ angular.module('comedyApp').controller('WelcomeController', ['$http', '$location
         console.log("vm.jokes =", response.data);
         if(vm.jokes.length < 1 ) {
             vm.nojokes="Click New Joke to create your first joke.";
+            vm.alljokes="";
         }
     }
 
