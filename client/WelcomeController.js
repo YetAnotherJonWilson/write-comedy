@@ -13,7 +13,7 @@ angular.module('comedyApp').controller('WelcomeController', ['$http', '$location
         vm.jokes = response.data;
         console.log("vm.jokes =", response.data);
         if(vm.jokes.length < 1 ) {
-            vm.nojokes="Click New Joke to create your first joke.";
+            vm.nojokes="To get started, click New Joke to create your first joke.";
             vm.alljokes="";
         }
     }
