@@ -37,5 +37,8 @@
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "pg": "^6.0.3"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0"
   }
 }
