@@ -19,7 +19,12 @@
     <md-button ng-click="login.login()">Login</md-button>
     <md-button ng-click="login.register()">Register</md-button>
 
-    <div ng-show="login.error">
-        {{login.errorMessage}}
+    <div ng-show="login.loginError">
+        {{login.loginErrorMessage}}
     </div>
+
+    <div ng-show="login.registerError">
+        {{login.registerErrorMessage}}
+    </div>
+
  </div>

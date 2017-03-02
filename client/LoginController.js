@@ -3,8 +3,10 @@ angular.module('comedyApp').controller('LoginController', ['$http', '$location',
 
     vm.username = '';
     vm.password = '';
-    vm.error = false;
-    vm.errorMessage = 'Sorry, Wrong Username/Password';
+    vm.loginError = false;
+    vm.registerError = false;
+    vm.loginErrorMessage = 'Sorry, Wrong Username/Password';
+    vm.registerErrorMessage = 'Sorry, Username taken';
 
     vm.login = function(){
 
@@ -13,20 +15,38 @@ angular.module('comedyApp').controller('LoginController', ['$http', '$location',
         sendData.username = vm.username;
         sendData.password = vm.password;
 
-        $http.post('/login', sendData).then(handleSuccess, handleFailure);
+        $http.post('/login', sendData).then(handleLoginSuccess, handleLoginFailure);
     };
 
-    function handleSuccess(response){
+    function handleLoginSuccess(response){
         $location.path('/success');
     }
 
-    function handleFailure(response){
+    function handleLoginFailure(response){
         $location.path('/');
-        vm.error = true;
+        vm.loginError = true;
     }
 
     vm.register = function(){
-        $location.path('/register');
+        // console.log('Username', vm.username);
+        // console.log('Password', vm.password);
+
+        var sendData = {};
+
+        sendData.username = vm.username;
+        sendData.password = vm.password;
+
+        $http.post('/signup', sendData).then(handleRegisterSuccess, handleRegisterFailure);
+    };
+
+    function handleRegisterSuccess(response){
+        console.log('Success', response);
+        $location.path('/');
+    }
+
+    function handleRegisterFailure(response){
+        console.log('Failure', response);
+        vm.registerError = true;
     }
 
 }]);
