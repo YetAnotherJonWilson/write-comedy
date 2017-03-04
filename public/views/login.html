@@ -6,25 +6,44 @@
     <h1 id="main-message">{{main.message}}</h1>
 </md-toolbar>
 
-<div id = "loginDiv">
-    <div>
-        <label for="username">Username: </label>
-        <input type="text" ng-model="login.username" id="username"/>
-    </div>
-    <div>
-        <label for="password">Password: </label>
-        <input type="password" ng-model="login.password" id="password"/>
-    </div>
+<div id = "leftLogin">
+    <h1>New User?</h1>
+    <h2>Register</h2>
+    <div class = "loginDiv">
+        <div>
+            <label for="username">Username: </label>
+            <input type="text" ng-model="login.username" id="username"/>
+        </div>
+        <div>
+            <label for="password">Password: </label>
+            <input type="password" ng-model="login.password" id="password"/>
+        </div>
 
-    <md-button ng-click="login.login()">Login</md-button>
-    <md-button ng-click="login.register()">Register</md-button>
+        <md-button ng-click="login.register()">Register</md-button>
 
-    <div ng-show="login.loginError">
-        {{login.loginErrorMessage}}
+        <div ng-show="login.registerError">
+            {{login.registerErrorMessage}}
+        </div>
     </div>
+</div>
 
-    <div ng-show="login.registerError">
-        {{login.registerErrorMessage}}
+<div id = "rightLogin">
+    <h1>Old User?</h1>
+    <h2>Sign in</h2>
+    <div class = "loginDiv">
+        <div>
+            <label for="username">Username: </label>
+            <input type="text" ng-model="login.username" id="username"/>
+        </div>
+        <div>
+            <label for="password">Password: </label>
+            <input type="password" ng-model="login.password" id="password"/>
+        </div>
+
+        <md-button ng-click="login.login()">Login</md-button>
+
+        <div ng-show="login.loginError">
+            {{login.loginErrorMessage}}
+        </div>
     </div>
-
- </div>
+</div>
