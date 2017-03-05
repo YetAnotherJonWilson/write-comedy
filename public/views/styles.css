@@ -16,16 +16,6 @@ md-content {
     float: right;
 }
 
-#leftLogin h1, #rightLogin h1 {
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
-
-#leftLogin h2, #rightLogin h2 {
-    margin-top: 0;
-    padding-top: 0;
-}
-
 .loginDiv {
     width: 300px;
     margin: auto;
