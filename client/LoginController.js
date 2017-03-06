@@ -41,7 +41,7 @@ angular.module('comedyApp').controller('LoginController', ['$http', '$location',
 
     function handleRegisterSuccess(response){
         console.log('Success', response);
-        $location.path('/');
+        $location.path('/success');
     }
 
     function handleRegisterFailure(response){
