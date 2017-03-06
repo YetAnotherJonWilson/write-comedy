@@ -33,8 +33,8 @@ angular.module('comedyApp').controller('LoginController', ['$http', '$location',
 
         var sendData = {};
 
-        sendData.username = vm.username;
-        sendData.password = vm.password;
+        sendData.username = vm.registername;
+        sendData.password = vm.registerpassword;
 
         $http.post('/signup', sendData).then(handleRegisterSuccess, handleRegisterFailure);
     };
