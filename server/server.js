@@ -119,6 +119,11 @@ app.use('/api', function(req, res, next){
     }
 });
 
+app.get('/logout', function(req, res){
+    req.logout();
+    res.redirect('/');
+});
+
 var server = app.listen(process.env.PORT || 3000, function() {
     var port = server.address().port;
     console.log('Listening on port: ', port);
