@@ -21,7 +21,7 @@ md-content {
     margin: auto;
 }
 
-.toolbarHeading {
+.toolbarHeading h1 {
     font-family: serif;
 }
 
