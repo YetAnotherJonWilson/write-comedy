@@ -7,18 +7,20 @@
 </md-toolbar>
 
 <div id = "leftLogin">
-    <h2 style="margin-top: 250px">New User? Register</h2>
+    <h2 style="margin-top: 250px">New User?</h2>
     <div class = "loginDiv">
-        <div>
-            <label for="registernname">Username: </label>
-            <input type="text" ng-model="login.registername" id="registernname"/>
-        </div>
-        <div>
-            <label for="registerpassword">Password: </label>
-            <input type="password" ng-model="login.registerpassword" id="registerpassword"/>
-        </div>
+        <fieldset>
+            <legend>Register</legend>
+            <form ng-submit="login.register()">
+                <label for="registernname">Username: </label>
+                <input type="text" ng-model="login.registername" id="registernname"/>
 
-        <md-button ng-click="login.register()">Register</md-button>
+                <label for="registerpassword">Password: </label>
+                <input type="password" ng-model="login.registerpassword" id="registerpassword"/>
+
+                <md-button><input type="submit" value="REGISTER" /></md-button>
+            </form>
+        </fieldset>
 
         <div ng-show="login.registerError">
             {{login.registerErrorMessage}}
@@ -27,18 +29,20 @@
 </div>
 
 <div id = "rightLogin">
-    <h2 style="margin-top: 250px">Old User? Sign In</h2>
+    <h2 style="margin-top: 250px">Old User?</h2>
     <div class = "loginDiv">
-        <div>
-            <label for="username">Username: </label>
-            <input type="text" ng-model="login.username" id="username"/>
-        </div>
-        <div>
-            <label for="password">Password: </label>
-            <input type="password" ng-model="login.password" id="password"/>
-        </div>
+        <fieldset>
+            <legend>Sign In</legend>
+            <form ng-submit="login.login()">
+                <label for="username">Username: </label>
+                <input type="text" ng-model="login.username" id="username"/>
 
-        <md-button ng-click="login.login()">Login</md-button>
+                <label for="password">Password: </label>
+                <input type="password" ng-model="login.password" id="password" />
+
+                <md-button><input type="submit" value="LOGIN" /></md-button>
+            </form>
+        </fieldset>
 
         <div ng-show="login.loginError">
             {{login.loginErrorMessage}}
