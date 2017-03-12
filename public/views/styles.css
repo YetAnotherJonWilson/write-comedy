@@ -35,3 +35,18 @@ md-content {
 .underline {
     text-decoration: underline;
 }
+
+.joke-card {
+    width: 350px;
+    min-height: 350px;
+}
+
+.joke-card h3 {
+    padding-bottom: 5px;
+    border-bottom: groove;
+}
+
+.joke-card p {
+    min-height: 200px;
+}
+
