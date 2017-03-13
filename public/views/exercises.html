@@ -8,8 +8,8 @@
     <h1 id="main-message">{{main.message}}</h1>
 </md-toolbar>
 
-<div layout="column" class="page" md-whiteframe="3">
-    <h1>Exercises</h1>
+<div class="page" md-whiteframe="3">
+    <h1>Joke</h1>
         <div>
             <h2 id="exPageJokeTitle">{{exercises.pageData.currentTitle}}</h2>
             <h5>{{exercises.pageData.currentJoke}}</h5>
@@ -23,16 +23,19 @@
             <!--<h5>Part of set #&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5><button>Add to another set</button><br><br>-->
             <!--<h5>Part of Bit #&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5><button>Add to a different bit</button>-->
         </div>
-        <div>
+</div>
+<div class="page" md-whiteframe="3">
+    <h1>Exercises</h1>
+    <div>
             <button ng-click="exercises.getRandomExercise()">Get Random Exercise</button><br><br>
             <h3>Exercise: {{exercises.exerciseName}}</h3>
             <p>Description: {{exercises.exerciseDescription}}</p>
             <p>Use the box below to do the exercise and write ideas.</p>
-            <textarea type="text"></textarea>
+            <textarea type="text" rows="15" cols="50"></textarea>
         </div>
         <div>
             <p>Add items you want to save in the box below. For multiple items (themes or topics, or subject matter), separate with commas.</p>
-            <textarea type="text" ng-model="exercises.textToUpdate"></textarea>
+            <textarea type="text" cols="50" ng-model="exercises.textToUpdate"></textarea>
             <br /> <br />
             <h5 ng-show="exercises.updatedTextToSave">Saved!</h5>
             <button ng-click="exercises.replaceSetup()">Save as New Version</button>
