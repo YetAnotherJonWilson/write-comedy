@@ -16,7 +16,7 @@ angular.module('comedyApp').controller('ExercisesController', ['DataService', '$
     };
 
     function handleAltSuccess(response){
-        $localStorage.prevPageData = {currentId: response.data[0].id, currentTitle: response.data[0].title, currentJoke: response.data[0].setup_punch, currentAltThemes: response.data[0].alt_themes, currentSubject: response.data[0].subject_matter, currentTopic: response.data[0].topics};
+        $localStorage.prevPageData = {currentId: response.data[0].id, currentTitle: response.data[0].title, currentJoke: response.data[0].setup_punch, currentAltThemes: response.data[0].alt_themes, currentAltSM: response.data[0].alt_subject_matter, currentSubject: response.data[0].subject_matter, currentTopic: response.data[0].topics};
         $location.path('/alternates');
         console.log(response.data[0]);
     }
