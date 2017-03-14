@@ -25,6 +25,13 @@ md-content {
     font-family: serif;
 }
 
+.welcome {
+    width: 80%;
+    min-height: 1000px;
+    margin: 20px auto 20px auto;
+    padding: 20px;
+}
+
 .page {
     width: 45%;
     min-height: 1000px;
