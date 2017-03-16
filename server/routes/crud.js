@@ -233,7 +233,7 @@ router.put('/addalttopic/', function(request, response) {
             if (err) {
                 console.log(err);
             }
-            client.query('UDATE titles SET alt_topics = $1 WHERE id = $2 AND alt_topics IS NULL;', [text, id], function (err, result) {
+            client.query('UPDATE titles SET alt_topics = $1 WHERE id = $2 AND alt_topics IS NULL;', [text, id], function (err, result) {
                 if (err) {
                     console.log(err);
                 } else {

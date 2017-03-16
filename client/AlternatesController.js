@@ -9,6 +9,7 @@ angular.module('comedyApp').controller('AlternatesController', ['$http', '$locat
     vm.title = vm.pageData.currentTitle;
     vm.joke = vm.pageData.currentJoke;
     vm.subjectMatter = vm.pageData.currentAltSM;
+    vm.topics = vm.pageData.currentAltTopic;
     vm.altThemes = vm.pageData.currentAltThemes;
 
 }]);
