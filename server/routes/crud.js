@@ -263,7 +263,6 @@ router.put('/addalttheme/', function(request, response) {
                     console.log(err);
                 } else {
                     response.sendStatus(200);
-                    done();
                 }
             });
         });
@@ -281,11 +280,9 @@ router.get('/alternatematerial/:id', function(request, response){
         client.query('select titles.title, titles.id, titles.setup_punch, titles.alt_subject_matter, titles.alt_themes, titles.alt_topics from titles WHERE id=$1;', [id], function(err, result){
                 if (err){
                     console.log(err);
-                    done();
                 } else {
                     console.log(result.rows);
                     response.send(result.rows);
-                    done();
                 }
             });
 
