@@ -35,7 +35,7 @@ angular.module('comedyApp').controller('NewJokeController', ['$http', '$location
     vm.goToExercises = function() {
         $location.path('/exercises');
         var pageData = {};
-        vm.pageData = {currentTitle: vm.title, currentSetup: vm.setup, currentPunchline: vm.punchline, currentTheme: vm.theme, currentSubject: vm.subject, currentTopic: vm.topic};
+        vm.pageData = {currentTitle: vm.title, currentJoke: vm.setup, currentTheme: vm.theme, currentSubject: vm.subject, currentTopic: vm.topic};
         $localStorage.prevPageData = vm.pageData;
 
 
