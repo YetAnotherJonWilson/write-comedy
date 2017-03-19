@@ -18,9 +18,10 @@
             <md-card-content>
                 <h3>{{joke.title}}</h3>
                 <p>{{joke.setup_punch}}</p>
+                <p>{{joke}}</p>
             </md-card-content>
             <md-card-actions layout="row">
-                <md-button ng-click="welcome.currentJokeInExercises(joke.id, joke.title, joke.setup_punch, joke.themes, joke.subject_matter, joke.topics)">Go to Exercises</md-button>
+                <md-button ng-click="welcome.currentJokeInExercises(joke.id, joke.title, joke.setup_punch, joke.themes, joke.subject_matter, joke.topics, joke.statements)">Go to Exercises</md-button>
                 <md-button ng-show="welcome.deleteStepOneButton" ng-click="welcome.deleteStepOne()">Delete</md-button>
                 <md-button ng-show="welcome.deleteStepTwoButton" ng-click="welcome.deleteStepTwo(joke.id)">Are you Sure?</md-button>
             </md-card-actions>

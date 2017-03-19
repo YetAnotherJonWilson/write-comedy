@@ -11,14 +11,54 @@
 <div class="page" md-whiteframe="3">
     <h1>Joke</h1>
         <div>
+            <!--Title of current Joke-->
             <h2 id="exPageJokeTitle">{{exercises.pageData.currentTitle}}</h2>
-            <h5>{{exercises.pageData.currentJoke}}</h5>
-            <h4 class="underline">Subject Matter</h4>
-            <h5>{{exercises.pageData.currentSubject}}</h5>
-            <h4 class="underline">Topic(s)</h4>
-            <h5>{{exercises.pageData.currentTopic}}</h5>
+
+            <!--Textbox of current Joke or Bit-->
+            <h3>Joke or Bit</h3>
+            <textarea type="text" cols="50" ng-model="exercises.pageData.currentJoke">
+                <h5>{{exercises.pageData.currentJoke}}</h5>
+            </textarea>
+            <br />
+            <button class="exercise-buttons" ng-click="exercises.replaceSetup()">Save</button>
+
+            <!--Textbox of current Themes or Points-->
             <h4 class="underline">Theme(s) or Point(s)</h4>
-            <h5>{{exercises.pageData.currentTheme}}</h5>
+            <textarea type="text" cols="50" ng-model="exercises.pageData.currentTheme">
+                <h5>{{exercises.pageData.currentTheme}}</h5>
+            </textarea>
+            <br />
+            <button class="exercise-buttons" ng-click="exercises.addToTheme()">Save</button>
+            <br />
+
+            <!--Textbox of current Topics-->
+            <h4 class="underline">Topic(s)</h4>
+            <textarea type="text" cols="50" ng-model="exercises.pageData.currentTopic">
+                <h5>{{exercises.pageData.currentTopic}}</h5>
+            </textarea>
+            <br />
+            <button class="exercise-buttons" ng-click="exercises.addToTopic()">Save</button>
+            <br />
+
+            <!--Textbox of current Subject Matter-->
+            <h4 class="underline">Subject Matter</h4>
+            <textarea type="text" cols="50" ng-model="exercises.pageData.currentSubject">
+                <h5>{{exercises.pageData.currentSubject}}</h5>
+            </textarea>
+            <br />
+            <button class="exercise-buttons" ng-click="exercises.addToSM()">Save</button>
+            <br />
+
+            <!--Textbox of current Statements-->
+            <h4 class="underline">Statements</h4>
+            <textarea type="text" cols="50" ng-model="exercises.pageData.currentStatements">
+                <h5>{{exercises.pageData.currentSubject}}</h5>
+            </textarea>
+            <br />
+            <button class="exercise-buttons" ng-click="exercises.addToStatements()">Save</button>
+            <br />
+
+            <!--Link to Alternate Material view-->
             <button ng-click="exercises.viewAlternateMaterial()">View Alternate Material</button><br /><br />
             <!--<h5>Part of set #&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5><button>Add to another set</button><br><br>-->
             <!--<h5>Part of Bit #&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5><button>Add to a different bit</button>-->
@@ -34,17 +74,6 @@
             <textarea type="text" rows="15" cols="50"></textarea>
         </div>
         <div>
-            <p>Add items you want to save in the box below.</p>
-            <textarea type="text" cols="50" ng-model="exercises.textToUpdate"></textarea>
-            <br /> <br />
-            <h5 ng-show="exercises.updatedTextToSave">Saved!</h5>
-            <button ng-click="exercises.replaceSetup()">Save as New Version</button>
-            <p>Add to current version</p>
-            <!--<button ng-click="exercises.addToSetup()">Bit</button>-->
-            <button ng-click="exercises.addToSM()">Subject Matter</button>
-            <button ng-click="exercises.addToTopic()">Topic</button>
-            <button ng-click="exercises.addToTheme()">Theme or Point</button>
-            <button ng-click="exercises.addToStatements()">Statements</button>
             <p>Save as alternate version</p>
             <!--<button ng-click="exercises.addAltSetup()">Bit</button>-->
             <button ng-click="exercises.addAltSM()">Subject Matter</button>

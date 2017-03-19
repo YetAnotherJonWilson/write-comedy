@@ -39,7 +39,7 @@ angular.module('comedyApp').controller('ExercisesController', ['DataService', '$
         $http({
             method: 'PUT',
             url: '/crud/replacesetup/',
-            data: {"id" : vm.pageData.currentId, "text" : vm.textToUpdate}
+            data: {"id" : vm.pageData.currentId, "text" : vm.pageData.currentJoke}
         }).then(handleSavedSuccess());
     };
 

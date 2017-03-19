@@ -18,10 +18,10 @@ angular.module('comedyApp').controller('WelcomeController', ['$http', '$location
         }
     }
 
-    vm.currentJokeInExercises = function(id, title, setup_punch, theme, subject, topic){
-        console.log(id);
+    vm.currentJokeInExercises = function(id, title, setup_punch, theme, subject, topic, statements){
+        console.log("id:", id);
         var pageData = {};
-        vm.pageData = {currentId: id, currentTitle: title, currentJoke: setup_punch, currentTheme: theme, currentSubject: subject, currentTopic: topic};
+        vm.pageData = {currentId: id, currentTitle: title, currentJoke: setup_punch, currentTheme: theme, currentSubject: subject, currentTopic: topic, currentStatements: statements};
         // Use browser's localstorage to store current joke data
         $localStorage.prevPageData = vm.pageData;
         $location.path('/exercises');
