@@ -47,7 +47,7 @@ router.put('/replacesetup/', function(request, response) {
 router.put('/addtosetup/', function(request, response) {
     console.log('request.body:', request.body);
     var id = request.body.id;
-    var text = ' ' + request.body.text;
+    var text = ' ' + request.body.text + '. ';
 
     pool.connect(function (err, client) {
         if (err) {
@@ -73,7 +73,7 @@ router.put('/addtosetup/', function(request, response) {
 router.put('/addtoSM/', function(request, response) {
     console.log('request.body:', request.body);
     var id = request.body.id;
-    var text = ' ' + request.body.text;
+    var text = ' ' + request.body.text + '. ';
 
     pool.connect(function (err, client) {
         if (err) {
@@ -97,7 +97,7 @@ router.put('/addtoSM/', function(request, response) {
 router.put('/addtotopic/', function(request, response) {
     console.log('request.body:', request.body);
     var id = request.body.id;
-    var text = ' ' + request.body.text;
+    var text = ' ' + request.body.text + '. ';
 
     pool.connect(function (err, client) {
         if (err) {
@@ -122,7 +122,7 @@ router.put('/addtotopic/', function(request, response) {
 router.put('/addtotheme/', function(request, response) {
     console.log('request.body:', request.body);
     var id = request.body.id;
-    var text = ' ' + request.body.text;
+    var text = ' ' + request.body.text + '. ';
 
     pool.connect(function (err, client) {
         if (err) {
@@ -147,7 +147,7 @@ router.put('/addtotheme/', function(request, response) {
 router.put('/addstatement/', function(request, response) {
     console.log('request.body:', request.body);
     var id = request.body.id;
-    var text = ' ' + request.body.text;
+    var text = ' ' + request.body.text + '. ';
 
     pool.connect(function (err, client) {
         if (err) {
@@ -172,7 +172,7 @@ router.put('/addstatement/', function(request, response) {
 router.put('/addaltsetup/', function(request, response) {
     console.log('request.body:', request.body);
     var id = request.body.id;
-    var text = ' ' + request.body.text;
+    var text = ' ' + request.body.text + '. ';
 
     pool.connect(function (err, client) {
         if (err) {
@@ -197,7 +197,7 @@ router.put('/addaltsetup/', function(request, response) {
 router.put('/addaltsm/', function(request, response) {
     console.log('request.body:', request.body);
     var id = request.body.id;
-    var text = ' ' + request.body.text;
+    var text = ' ' + request.body.text + '. ';
 
     pool.connect(function (err, client) {
         if (err) {
@@ -222,7 +222,7 @@ router.put('/addaltsm/', function(request, response) {
 router.put('/addalttopic/', function(request, response) {
     //console.log('request.body:', request.body);
     var id = request.body.id;
-    var text = ' ' + request.body.text;
+    var text = ' ' + request.body.text + '. ';
 
     pool.connect(function (err, client) {
         if (err) {
@@ -247,7 +247,7 @@ router.put('/addalttopic/', function(request, response) {
 router.put('/addalttheme/', function(request, response) {
     console.log('request.body:', request.body);
     var id = request.body.id;
-    var text = ' ' + request.body.text;
+    var text = ' ' + request.body.text + '. ';
 
     pool.connect(function (err, client) {
         if (err) {
