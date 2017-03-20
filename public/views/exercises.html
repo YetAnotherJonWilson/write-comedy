@@ -59,7 +59,7 @@
             <br />
 
             <!--Link to Alternate Material view-->
-            <button ng-click="exercises.viewAlternateMaterial()">View Alternate Material</button><br /><br />
+            <button class="exercise-buttons" ng-click="exercises.viewAlternateMaterial()">View Alternate Material</button><br /><br />
             <!--<h5>Part of set #&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5><button>Add to another set</button><br><br>-->
             <!--<h5>Part of Bit #&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5><button>Add to a different bit</button>-->
         </div>
@@ -67,17 +67,10 @@
 <div class="page" md-whiteframe="3">
     <h1>Exercises</h1>
     <div>
-            <button ng-click="exercises.getRandomExercise()">Get Random Exercise</button><br><br>
-            <h3>Exercise: {{exercises.exerciseName}}</h3>
-            <p>Description: {{exercises.exerciseDescription}}</p>
-            <p>Use the box below to do the exercise and write ideas.</p>
-            <textarea type="text" rows="15" cols="50"></textarea>
-        </div>
-        <div>
-            <p>Save as alternate version</p>
-            <!--<button ng-click="exercises.addAltSetup()">Bit</button>-->
-            <button ng-click="exercises.addAltSM()">Subject Matter</button>
-            <button ng-click="exercises.addAltTopic()">Topic</button>
-            <button ng-click="exercises.addAltTheme()">Theme or Point</button>
-        </div>
+        <button ng-click="exercises.getRandomExercise()">Get Random Exercise</button><br><br>
+        <h3>Exercise: {{exercises.exerciseName}}</h3>
+        <p>Description: {{exercises.exerciseDescription}}</p>
+        <p>Use the box below to do the exercise and write ideas.</p>
+        <textarea type="text" rows="15" cols="50"></textarea>
+    </div>
 </div>

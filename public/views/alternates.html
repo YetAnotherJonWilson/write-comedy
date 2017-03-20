@@ -8,7 +8,7 @@
     <h1 id="main-message">{{main.message}}</h1>
 </md-toolbar>
 
-<div layout="column" class="welcome" md-whiteframe="3">
+<div class="welcome" md-whiteframe="3">
     <h1>Alternate Material</h1>
 
     <h2>{{alternates.title}}</h2>
@@ -17,14 +17,30 @@
     <p>{{alternates.joke}}</p>
 
     <h4 class="underline">Subject Matter</h4>
-    <p>{{alternates.subjectMatter}}</p>
+    <textarea type="text" cols="50" ng-model="alternates.subjectMatter">
+                <h5>{{alternates.subjectMatter}}</h5>
+    </textarea>
+    <br />
+    <button class="exercise-buttons" ng-click="alternates.addAltSM()">Save</button>
+    <br />
 
     <h4 class="underline">Topics</h4>
-    <p>{{alternates.topics}}</p>
+    <textarea type="text" cols="50" ng-model="alternates.topics">
+                <h5>{{alternates.topics}}</h5>
+    </textarea>
+    <br />
+    <button class="exercise-buttons" ng-click="alternates.addAltTopic()">Save</button>
+    <br />
 
 
     <h4 class="underline">Themes and Points</h4>
-    <p>{{alternates.altThemes}}</p>
+    <textarea type="text" cols="50" ng-model="alternates.altThemes">
+                <h5>{{alternates.altThemes}}</h5>
+    </textarea>
+    <br />
+    <button class="exercise-buttons" ng-click="alternates.addAltTheme()">Save</button>
+    <br />
+
 </div>
 
 

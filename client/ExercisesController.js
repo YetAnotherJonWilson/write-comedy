@@ -105,31 +105,4 @@ angular.module('comedyApp').controller('ExercisesController', ['DataService', '$
             data: {"id" : vm.pageData.currentId, "text" : vm.textToUpdate}
         }).then(handleSavedSuccess());
     };
-
-    vm.addAltSM = function(){
-        //$http.put('crud/addaltsm/' + vm.pageData.currentId + '/' + vm.textToUpdate).then(handleSavedSuccess());
-        $http({
-            method: 'PUT',
-            url: '/crud/addaltsm/',
-            data: {"id" : vm.pageData.currentId, "text" : vm.textToUpdate}
-        }).then(handleSavedSuccess());
-    };
-
-    vm.addAltTopic = function(){
-        //$http.put('crud/addalttopic/' + vm.pageData.currentId + '/' + vm.textToUpdate).then(handleSavedSuccess());
-        $http({
-            method: 'PUT',
-            url: '/crud/addalttopic/',
-            data: {"id" : vm.pageData.currentId, "text" : vm.textToUpdate}
-        }).then(handleSavedSuccess());
-    };
-
-    vm.addAltTheme = function(){
-        //$http.put('crud/addalttheme/' + vm.pageData.currentId + '/' + vm.textToUpdate).then(handleSavedSuccess());
-        $http({
-            method: 'PUT',
-            url: '/crud/addalttheme/',
-            data: {"id" : vm.pageData.currentId, "text" : vm.textToUpdate}
-        }).then(handleSavedSuccess());
-    }
 }]);
