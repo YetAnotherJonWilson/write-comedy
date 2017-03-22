@@ -7,6 +7,7 @@ angular.module('comedyApp').controller('ExercisesController', ['DataService', '$
 
 
     vm.pageData = $localStorage.prevPageData;
+    console.log("vm.pageData from exercises controller", vm.pageData);
     //vm.data = DataService.data;
 
     console.log(vm.pageData); //Title Value Here
@@ -16,7 +17,7 @@ angular.module('comedyApp').controller('ExercisesController', ['DataService', '$
     };
 
     function handleAltSuccess(response){
-        $localStorage.prevPageData = {currentId: response.data[0].id, currentTitle: response.data[0].title, currentJoke: response.data[0].setup_punch, currentAltThemes: response.data[0].alt_themes, currentAltSM: response.data[0].alt_subject_matter, currentSubject: response.data[0].subject_matter, currentAltTopic: response.data[0].alt_topics};
+        $localStorage.prevPageData = {currentId: response.data[0].id, currentTitle: response.data[0].title, currentJoke: response.data[0].setup_punch, currentTheme: response.data[0].theme, currentAltThemes: response.data[0].alt_themes, currentAltSM: response.data[0].alt_subject_matter, currentSubject: response.data[0].subject_matter, currentAltTopic: response.data[0].alt_topics};
         $location.path('/alternates');
         console.log(response.data[0]);
     }
@@ -48,7 +49,7 @@ angular.module('comedyApp').controller('ExercisesController', ['DataService', '$
         $http({
             method: 'PUT',
             url: '/crud/replacepunchline/',
-            data: {"id" : vm.pageData.currentId, "text" : vm.textToUpdate}
+            data: {"id" : vm.pageData.currentId, "text" : vm.textToSave}
         }).then(handleSavedSuccess());
     };
 
@@ -57,7 +58,7 @@ angular.module('comedyApp').controller('ExercisesController', ['DataService', '$
         $http({
             method: 'PUT',
             url: '/crud/addtosetup/',
-            data: {"id" : vm.pageData.currentId, "text" : vm.textToUpdate}
+            data: {"id" : vm.pageData.currentId, "text" : vm.pageData.currentTheme}
         }).then(handleSavedSuccess());
     };
 
@@ -66,7 +67,7 @@ angular.module('comedyApp').controller('ExercisesController', ['DataService', '$
         $http({
             method: 'PUT',
             url: '/crud/addtosm/',
-            data: {"id" : vm.pageData.currentId, "text" : vm.textToUpdate}
+            data: {"id" : vm.pageData.currentId, "text" : vm.pageData.currentSubject}
         }).then(handleSavedSuccess());
     };
 
@@ -75,7 +76,7 @@ angular.module('comedyApp').controller('ExercisesController', ['DataService', '$
         $http({
             method: 'PUT',
             url: '/crud/addtotopic/',
-            data: {"id" : vm.pageData.currentId, "text" : vm.textToUpdate}
+            data: {"id" : vm.pageData.currentId, "text" : vm.pageData.currentTopic}
         }).then(handleSavedSuccess());
     };
 
@@ -84,7 +85,7 @@ angular.module('comedyApp').controller('ExercisesController', ['DataService', '$
         $http({
             method: 'PUT',
             url: '/crud/addtotheme/',
-            data: {"id" : vm.pageData.currentId, "text" : vm.textToUpdate}
+            data: {"id" : vm.pageData.currentId, "text" : vm.pageData.currentTheme}
         }).then(handleSavedSuccess());
     };
 
@@ -93,7 +94,7 @@ angular.module('comedyApp').controller('ExercisesController', ['DataService', '$
         $http({
             method: 'PUT',
             url: '/crud/addstatement/',
-            data: {"id" : vm.pageData.currentId, "text" : vm.textToUpdate}
+            data: {"id" : vm.pageData.currentId, "text" : vm.pageData.currentStatements}
         }).then(handleSavedSuccess());
     };
 
