@@ -54,20 +54,15 @@ router.put('/addtosetup/', function(request, response) {
             console.log('connection error', err);
         }
 
-        client.query('UPDATE titles SET setup_punch = setup_punch || $1 WHERE id=$2 AND setup_punch IS NOT NULL;', [text, id], function (err, result) {
+        client.query('UPDATE titles SET setup_punch =$1 WHERE id=$2;', [text, id], function (err, result) {
             if (err) {
                 console.log(err);
-            }
-            client.query('UPDATE titles SET setup_punch = $1 WHERE id=$2 AND setup_punch IS NULL;', [text, id], function (err, result) {
-                if (err) {
-                    console.log(err);
-                } else {
+            } else {
                     response.sendStatus(200);
                 }
             });
         });
     });
-});
 
 
 router.put('/addtoSM/', function(request, response) {
@@ -79,17 +74,12 @@ router.put('/addtoSM/', function(request, response) {
         if (err) {
             console.log('connection error', err);
         }
-        client.query('UPDATE titles SET subject_matter = subject_matter || $1 WHERE id=$2 AND subject_matter IS NOT NULL;', [text, id], function (err, result) {
+        client.query('UPDATE titles SET subject_matter = $1 WHERE id=$2;', [text, id], function (err, result) {
             if (err) {
                 console.log(err);
+            } else {
+                response.sendStatus(200);
             }
-            client.query('UPDATE titles SET subject_matter = $1 WHERE id=$2 AND subject_matter IS NULL;', [text, id], function (err, result) {
-                if (err) {
-                    console.log(err);
-                } else {
-                    response.sendStatus(200);
-                }
-            });
         });
     });
 });
@@ -104,17 +94,12 @@ router.put('/addtotopic/', function(request, response) {
             console.log('connection error', err);
         }
 
-        client.query('UPDATE titles SET topics = topics || $1 WHERE id=$2 AND topics IS NOT NULL;', [text, id], function (err, result) {
+        client.query('UPDATE titles SET topics = $1 WHERE id=$2;', [text, id], function (err, result) {
             if (err) {
                 console.log(err);
-            }
-            client.query('UPDATE titles SET topics = $1 WHERE id=$2 AND topics IS NULL;', [text, id], function (err, result) {
-                if (err) {
-                    console.log(err);
-                } else {
+            } else {
                     response.sendStatus(200);
                 }
-            });
         });
     });
 });
@@ -129,17 +114,12 @@ router.put('/addtotheme/', function(request, response) {
             console.log('connection error', err);
         }
 
-        client.query('UPDATE titles SET themes = themes || $1 WHERE id=$2 AND themes IS NOT NULL;', [text, id], function (err, result) {
+        client.query('UPDATE titles SET themes $1 WHERE id=$2;', [text, id], function (err, result) {
             if (err) {
                 console.log(err);
-            }
-            client.query('UPDATE titles SET themes = $1 WHERE id=$2 AND themes IS NULL;', [text, id], function (err, result) {
-                if (err) {
-                    console.log(err);
-                } else {
+            } else {
                     response.sendStatus(200);
-                }
-            });
+            }
         });
     });
 });
@@ -154,17 +134,12 @@ router.put('/addstatement/', function(request, response) {
             console.log('connection error', err);
         }
 
-        client.query('UPDATE titles SET statements = statements || $1 WHERE id=$2 AND statements IS NOT NULL;', [text, id], function (err, result) {
+        client.query('UPDATE titles SET statements = $1 WHERE id=$2;', [text, id], function (err, result) {
             if (err) {
                 console.log(err);
-            }
-            client.query('UPDATE titles SET statements = $1 WHERE id=$2 AND statements IS NULL;', [text, id], function (err, result) {
-                if (err) {
-                    console.log(err);
-                } else {
+            } else {
                     response.sendStatus(200);
-                }
-            });
+            }
         });
     });
 });
@@ -179,17 +154,12 @@ router.put('/addaltsetup/', function(request, response) {
             console.log('connection error', err);
         }
 
-        client.query('UPDATE titles SET alt_setup_punch = alt_setup_punch || $1 WHERE id=$2 AND alt_setup_punch IS NOT NULL;', [text, id], function (err, result) {
+        client.query('UPDATE titles SET alt_setup_punch = $1 WHERE id=$2;', [text, id], function (err, result) {
             if (err) {
                 console.log(err);
-            }
-            client.query('UPDATE titles SET alt_setup_punch = $1 WHERE id = $2 AND alt_setup_punch IS NULL;', [text, id], function (err, result) {
-                if (err) {
-                    console.log(err);
-                } else {
+            } else {
                 response.sendStatus(200);
             }
-            });
         });
     });
 });
@@ -204,17 +174,12 @@ router.put('/addaltsm/', function(request, response) {
             console.log('connection error', err);
         }
 
-        client.query('UPDATE titles SET alt_subject_matter = alt_subject_matter || $1 WHERE id=$2 AND alt_subject_matter IS NOT NULL;', [text, id], function (err, result) {
+        client.query('UPDATE titles SET alt_subject_matter = $1 WHERE id=$2;', [text, id], function (err, result) {
             if (err) {
                 console.log(err);
-            }
-            client.query('UPDATE titles SET alt_subject_matter = $1 WHERE id = $2 AND alt_subject_matter IS NULL;', [text, id], function (err, result) {
-                if (err) {
-                    console.log(err);
-                } else {
+            } else {
                     response.sendStatus(200);
-                }
-            });
+            }
         });
     });
 });
@@ -229,17 +194,12 @@ router.put('/addalttopic/', function(request, response) {
             console.log('connection error', err);
         }
 
-        client.query('UPDATE titles SET alt_topics = alt_topics || $1 WHERE id=$2 AND alt_topics IS NOT NULL;', [text, id], function (err, result) {
+        client.query('UPDATE titles SET alt_topics = $1 WHERE id=$2;', [text, id], function (err, result) {
             if (err) {
                 console.log(err);
-            }
-            client.query('UPDATE titles SET alt_topics = $1 WHERE id = $2 AND alt_topics IS NULL;', [text, id], function (err, result) {
-                if (err) {
-                    console.log(err);
-                } else {
+            } else {
                     response.sendStatus(200);
-                }
-            });
+            }
         });
     });
 });
@@ -254,17 +214,12 @@ router.put('/addalttheme/', function(request, response) {
             console.log('connection error', err);
         }
 
-        client.query('UPDATE titles SET alt_themes = alt_themes || $1 WHERE id=$2 AND alt_themes IS NOT NULL;', [text, id], function (err, result) {
+        client.query('UPDATE titles SET alt_themes = $1 WHERE id=$2;', [text, id], function (err, result) {
             if (err) {
                 console.log(err);
-            }
-            client.query('UPDATE titles SET alt_themes = $1 WHERE id = $2 AND alt_themes IS NULL;', [text, id], function (err, result) {
-                if (err) {
-                    console.log(err);
-                } else {
+            } else {
                     response.sendStatus(200);
-                }
-            });
+            }
         });
     });
 });
