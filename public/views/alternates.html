@@ -16,29 +16,31 @@
     <h4 class="underline">Joke</h4>
     <p>{{alternates.joke}}</p>
 
+    <!--Alternate Subject Matter Text Box-->
     <h4 class="underline">Subject Matter</h4>
     <textarea type="text" cols="50" ng-model="alternates.subjectMatter">
                 <h5>{{alternates.subjectMatter}}</h5>
     </textarea>
     <br />
-    <button class="exercise-buttons" ng-click="alternates.addAltSM()">Save</button>
+    <button class="exercise-buttons" ng-click="alternates.replaceAltElement('crud/addaltsm/', alternates.subjectMatter)">Save</button>
     <br />
 
+    <!--Alternate Topics Text Box-->
     <h4 class="underline">Topics</h4>
     <textarea type="text" cols="50" ng-model="alternates.topics">
                 <h5>{{alternates.topics}}</h5>
     </textarea>
     <br />
-    <button class="exercise-buttons" ng-click="alternates.addAltTopic()">Save</button>
+    <button class="exercise-buttons" ng-click="alternates.replaceAltElement('/crud/addalttopic/', alternates.topics)">Save</button>
     <br />
 
-
+    <!--Alternate Themes and Points Text Box-->
     <h4 class="underline">Themes and Points</h4>
     <textarea type="text" cols="50" ng-model="alternates.altThemes">
                 <h5>{{alternates.altThemes}}</h5>
     </textarea>
     <br />
-    <button class="exercise-buttons" ng-click="alternates.addAltTheme()">Save</button>
+    <button class="exercise-buttons" ng-click="alternates.replaceAltElement('/crud/addalttheme/', alternates.altThemes)">Save</button>
     <br />
 
 </div>

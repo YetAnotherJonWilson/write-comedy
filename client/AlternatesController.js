@@ -12,31 +12,14 @@ angular.module('comedyApp').controller('AlternatesController', ['$http', '$locat
     vm.topics = vm.pageData.currentAltTopic;
     vm.altThemes = vm.pageData.currentAltThemes;
 
-    vm.addAltSM = function(){
+    vm.replaceAltElement = function(url, altText){
         //$http.put('crud/addaltsm/' + vm.pageData.currentId + '/' + vm.textToUpdate).then(handleSavedSuccess());
+        vm.altCrudUrl = url;
+        vm.altText = altText;
         $http({
             method: 'PUT',
-            url: '/crud/addaltsm/',
-            data: {"id" : vm.pageData.currentId, "text" : vm.subjectMatter}
-        }).then(handleSavedSuccess());
+            url: vm.altCrudUrl,
+            data: {"id" : vm.pageData.currentId, "text" : vm.altText}
+        });
     };
-
-    vm.addAltTopic = function(){
-        //$http.put('crud/addalttopic/' + vm.pageData.currentId + '/' + vm.textToUpdate).then(handleSavedSuccess());
-        $http({
-            method: 'PUT',
-            url: '/crud/addalttopic/',
-            data: {"id" : vm.pageData.currentId, "text" : vm.topics}
-        }).then(handleSavedSuccess());
-    };
-
-    vm.addAltTheme = function(){
-        //$http.put('crud/addalttheme/' + vm.pageData.currentId + '/' + vm.textToUpdate).then(handleSavedSuccess());
-        $http({
-            method: 'PUT',
-            url: '/crud/addalttheme/',
-            data: {"id" : vm.pageData.currentId, "text" : vm.altThemes}
-        }).then(handleSavedSuccess());
-    }
-
 }]);

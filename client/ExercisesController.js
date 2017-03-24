@@ -35,75 +35,13 @@ angular.module('comedyApp').controller('ExercisesController', ['DataService', '$
         vm.updatedTextToSave = true;
     }
 
-    vm.replaceSetup = function(){
-        //$http.put('/crud/replacesetup/' + vm.pageData.currentId + '/' + vm.textToUpdate).then(handleSavedSuccess);
+    vm.replaceElement = function(url, text) {
+        vm.crudUrl = url;
+        vm.text = text;
         $http({
             method: 'PUT',
-            url: '/crud/replacesetup/',
-            data: {"id" : vm.pageData.currentId, "text" : vm.pageData.currentJoke}
-        }).then(handleSavedSuccess());
-    };
-
-    vm.replacePunch = function(){
-        //$http.put('crud/replacepunchline/' + vm.pageData.currentId + '/' + vm.textToUpdate).then(handleSavedSuccess());
-        $http({
-            method: 'PUT',
-            url: '/crud/replacepunchline/',
-            data: {"id" : vm.pageData.currentId, "text" : vm.textToSave}
-        }).then(handleSavedSuccess());
-    };
-
-    vm.addToSetup = function(){
-        //$http.put('crud/addtosetup/' + vm.pageData.currentId + '/' + vm.textToUpdate).then(handleSavedSuccess());
-        $http({
-            method: 'PUT',
-            url: '/crud/addtosetup/',
-            data: {"id" : vm.pageData.currentId, "text" : vm.pageData.currentTheme}
-        }).then(handleSavedSuccess());
-    };
-
-    vm.addToSM = function(){
-        //$http.put('crud/addtosm/' + vm.pageData.currentId + '/' + vm.textToUpdate).then(handleSavedSuccess());
-        $http({
-            method: 'PUT',
-            url: '/crud/addtosm/',
-            data: {"id" : vm.pageData.currentId, "text" : vm.pageData.currentSubject}
-        }).then(handleSavedSuccess());
-    };
-
-    vm.addToTopic = function(){
-        //$http.put('crud/addtotopic/' + vm.pageData.currentId + '/' + vm.textToUpdate).then(handleSavedSuccess());
-        $http({
-            method: 'PUT',
-            url: '/crud/addtotopic/',
-            data: {"id" : vm.pageData.currentId, "text" : vm.pageData.currentTopic}
-        }).then(handleSavedSuccess());
-    };
-
-    vm.addToTheme = function(){
-        //$http.put('crud/addtotheme/' + vm.pageData.currentId + '/' + vm.textToUpdate).then(handleSavedSuccess());
-        $http({
-            method: 'PUT',
-            url: '/crud/addtotheme/',
-            data: {"id" : vm.pageData.currentId, "text" : vm.pageData.currentTheme}
-        }).then(handleSavedSuccess());
-    };
-
-    vm.addToStatements = function(){
-        //$http.put('crud/addaltsetup/' + vm.pageData.currentId + '/' + vm.textToUpdate).then(handleSavedSuccess());
-        $http({
-            method: 'PUT',
-            url: '/crud/addstatement/',
-            data: {"id" : vm.pageData.currentId, "text" : vm.pageData.currentStatements}
-        }).then(handleSavedSuccess());
-    };
-
-    vm.addAltSetup = function(){
-        //$http.put('crud/addaltsetup/' + vm.pageData.currentId + '/' + vm.textToUpdate).then(handleSavedSuccess());
-        $http({
-            method: 'PUT',
-            url: '/crud/addaltsetup/',
-            data: {"id" : vm.pageData.currentId, "text" : vm.textToUpdate}
+            url: vm.crudUrl,
+            data: {"id" : vm.pageData.currentId, "text" : vm.text}
         }).then(handleSavedSuccess());
     };
 }]);

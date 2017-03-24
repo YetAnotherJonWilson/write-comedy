@@ -107,14 +107,15 @@ router.put('/addtotopic/', function(request, response) {
 router.put('/addtotheme/', function(request, response) {
     console.log('request.body:', request.body);
     var id = request.body.id;
-    var text = ' ' + request.body.text + '. ';
+    var text = ' ' + request.body.text;
+    console.log("request.body.text", request.body.text);
 
     pool.connect(function (err, client) {
         if (err) {
             console.log('connection error', err);
         }
 
-        client.query('UPDATE titles SET themes $1 WHERE id=$2;', [text, id], function (err, result) {
+        client.query('UPDATE titles SET themes = $1 WHERE id=$2;', [text, id], function (err, result) {
             if (err) {
                 console.log(err);
             } else {
@@ -167,7 +168,7 @@ router.put('/addaltsetup/', function(request, response) {
 router.put('/addaltsm/', function(request, response) {
     console.log('request.body:', request.body);
     var id = request.body.id;
-    var text = ' ' + request.body.text + '. ';
+    var text = ' ' + request.body.text;
 
     pool.connect(function (err, client) {
         if (err) {

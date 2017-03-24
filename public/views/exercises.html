@@ -19,14 +19,14 @@
             <textarea type="text" cols="50" ng-model="exercises.pageData.currentJoke">
             </textarea>
             <br />
-            <button class="exercise-buttons" ng-click="exercises.replaceSetup()">Save</button>
+            <button class="exercise-buttons" ng-click="exercises.replaceElement('crud/replacesetup', exercises.pageData.currentJoke)">Save</button>
 
             <!--Textbox of current Themes or Points-->
             <h4 class="underline">Theme(s) or Point(s)</h4>
             <textarea type="text" cols="50" ng-model="exercises.pageData.currentTheme">
             </textarea>
             <br />
-            <button class="exercise-buttons" ng-click="exercises.addToTheme()">Save</button>
+            <button class="exercise-buttons" ng-click="exercises.replaceElement('/crud/addtotheme/', exercises.pageData.currentTheme)">Save</button>
             <br />
 
             <!--Textbox of current Topics-->
@@ -34,7 +34,7 @@
             <textarea type="text" cols="50" ng-model="exercises.pageData.currentTopic">
             </textarea>
             <br />
-            <button class="exercise-buttons" ng-click="exercises.addToTopic()">Save</button>
+            <button class="exercise-buttons" ng-click="exercises.replaceElement('/crud/addtotopic/', exercises.pageData.currentTopic)">Save</button>
             <br />
 
             <!--Textbox of current Subject Matter-->
@@ -42,7 +42,7 @@
             <textarea type="text" cols="50" ng-model="exercises.pageData.currentSubject">
             </textarea>
             <br />
-            <button class="exercise-buttons" ng-click="exercises.addToSM()">Save</button>
+            <button class="exercise-buttons" ng-click="exercises.replaceElement('/crud/addtosm/', exercises.pageData.currentSubject)">Save</button>
             <br />
 
             <!--Textbox of current Statements-->
@@ -50,7 +50,7 @@
             <textarea type="text" cols="50" ng-model="exercises.pageData.currentStatements">
             </textarea>
             <br />
-            <button class="exercise-buttons" ng-click="exercises.addToStatements()">Save</button>
+            <button class="exercise-buttons" ng-click="exercises.replaceElement('/crud/addstatement/', exercises.pageData.currentStatements)">Save</button>
             <br />
 
             <!--Link to Alternate Material view-->
