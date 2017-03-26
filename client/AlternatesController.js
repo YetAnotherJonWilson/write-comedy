@@ -13,7 +13,6 @@ angular.module('comedyApp').controller('AlternatesController', ['$http', '$locat
     vm.altThemes = vm.pageData.currentAltThemes;
 
     vm.replaceAltElement = function(url, altText){
-        //$http.put('crud/addaltsm/' + vm.pageData.currentId + '/' + vm.textToUpdate).then(handleSavedSuccess());
         vm.altCrudUrl = url;
         vm.altText = altText;
         $http({
@@ -22,4 +21,6 @@ angular.module('comedyApp').controller('AlternatesController', ['$http', '$locat
             data: {"id" : vm.pageData.currentId, "text" : vm.altText}
         });
     };
+
+
 }]);
