@@ -10,24 +10,28 @@
 
 <div layout="column" class="welcome" md-whiteframe="3">
     <div>
-            <h4>Title<span id="red-ast">*</span></h4>
-            <input type="text" ng-model="newjoke.title" id="titleField"><br />
+            <h4>Title*</h4>
+            <input type="text" ng-model="newjoke.title"><br />
     </div>
 
     <h4>Joke or Bit</h4>
-    <textarea type="text" ng-model="newjoke.setup"></textarea><br />
+    <textarea type="text" rows="8" ng-model="newjoke.setup"></textarea><br />
 
     <h4>Subject Matter</h4>
     <p>Who, what, where</p>
-    <textarea type="text" ng-model="newjoke.subject"></textarea><br />
+    <textarea type="text" rows="5" ng-model="newjoke.subject"></textarea><br />
 
     <h4>Topic(s)</h4>
     <p>What does the subject matter add up to?</p>
-    <textarea type="text" ng-model="newjoke.topic"></textarea><br />
+    <textarea type="text" rows="5" ng-model="newjoke.topic"></textarea><br />
 
     <h4>Theme(s) or Point(s)</h4>
     <p>What is the joke about at a meta level? Try to say what the joke is about without referencing the subject matter or topic.</p>
-    <textarea type="text" ng-model="newjoke.theme"></textarea><br />
+    <textarea type="text" rows="5" ng-model="newjoke.theme"></textarea><br />
+
+    <h4>Statements</h4>
+    <p>Any statements you might make about the subject matter, topics or themes.</p>
+    <textarea type="text" rows="5" ng-model="newjoke.statements"></textarea><br />
 
     <ul style="list-style: none" id="newjoke-nav">
         <li ng-show="newjoke.afterSave"><button ng-click="newjoke.saveJoke()">Save</button></li>
