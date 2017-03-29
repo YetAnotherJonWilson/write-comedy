@@ -15,41 +15,42 @@
             <h2 id="exPageJokeTitle">{{exercises.pageData.currentTitle}}</h2>
 
             <!--Textbox of current Joke or Bit-->
-            <h3>Joke or Bit</h3>
-            <textarea type="text" cols="50" ng-model="exercises.pageData.currentJoke">
-            </textarea>
-            <br />
+            <md-input-container class="block">
+                <label>Joke or Bit</label>
+                <textarea cols="50" ng-model="exercises.pageData.currentJoke" md-select-on-focus></textarea>
+            </md-input-container>
             <button class="exercise-buttons" ng-click="exercises.replaceElement('crud/replacesetup', exercises.pageData.currentJoke)">Save</button>
+            <br />
 
             <!--Textbox of current Themes or Points-->
-            <h4 class="underline">Theme(s) or Point(s)</h4>
-            <textarea type="text" cols="50" ng-model="exercises.pageData.currentTheme">
-            </textarea>
-            <br />
+            <md-input-container class="block">
+                <label>Theme(s) or Point(s)</label>
+                <textarea cols="50" ng-model="exercises.pageData.currentTheme" md-select-on-focus></textarea>
+            </md-input-container>
             <button class="exercise-buttons" ng-click="exercises.replaceElement('/crud/addtotheme/', exercises.pageData.currentTheme)">Save</button>
             <br />
 
             <!--Textbox of current Topics-->
-            <h4 class="underline">Topic(s)</h4>
-            <textarea type="text" cols="50" ng-model="exercises.pageData.currentTopic">
-            </textarea>
-            <br />
+            <md-input-container class="block">
+                <label>Topic(s)</label>
+                <textarea cols="50" ng-model="exercises.pageData.currentTopic" md-select-on-focus></textarea>
+            </md-input-container>
             <button class="exercise-buttons" ng-click="exercises.replaceElement('/crud/addtotopic/', exercises.pageData.currentTopic)">Save</button>
             <br />
 
             <!--Textbox of current Subject Matter-->
-            <h4 class="underline">Subject Matter</h4>
-            <textarea type="text" cols="50" ng-model="exercises.pageData.currentSubject">
-            </textarea>
-            <br />
+            <md-input-container class="block">
+                <label>Subject Matter</label>
+                <textarea cols="50" ng-model="exercises.pageData.currentSubject" md-select-on-focus></textarea>
+            </md-input-container>
             <button class="exercise-buttons" ng-click="exercises.replaceElement('/crud/addtosm/', exercises.pageData.currentSubject)">Save</button>
             <br />
 
             <!--Textbox of current Statements-->
-            <h4 class="underline">Statements</h4>
-            <textarea type="text" cols="50" ng-model="exercises.pageData.currentStatements">
-            </textarea>
-            <br />
+            <md-input-container class="block">
+                <label>Statements</label>
+                <textarea cols="50" ng-model="exercises.pageData.currentStatements" md-select-on-focus></textarea>
+            </md-input-container>
             <button class="exercise-buttons" ng-click="exercises.replaceElement('/crud/addstatement/', exercises.pageData.currentStatements)">Save</button>
             <br />
 
