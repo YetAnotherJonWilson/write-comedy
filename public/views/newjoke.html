@@ -9,29 +9,39 @@
 </md-toolbar>
 
 <div layout="column" class="welcome" md-whiteframe="3">
-    <div>
-            <h4>Title*</h4>
-            <input type="text" ng-model="newjoke.title"><br />
-    </div>
 
-    <h4>Joke or Bit</h4>
-    <textarea type="text" rows="8" ng-model="newjoke.setup"></textarea><br />
+    <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding>
+        <md-input-container>
+            <label>Title</label>
+            <input ng-model="newjoke.title">
+        </md-input-container>
+    </md-content>
 
-    <h4>Subject Matter</h4>
-    <p>Who, what, where</p>
-    <textarea type="text" rows="5" ng-model="newjoke.subject"></textarea><br />
+    <md-input-container class="block">
+        <label>Joke or Bit</label>
+        <textarea ng-model="newjoke.setup" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+    </md-input-container>
 
-    <h4>Topic(s)</h4>
-    <p>What does the subject matter add up to?</p>
-    <textarea type="text" rows="5" ng-model="newjoke.topic"></textarea><br />
+    <md-input-container class="block">
+        <label>Subject Matter</label>
+        <textarea ng-model="newjoke.subject" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+    </md-input-container>
 
-    <h4>Theme(s) or Point(s)</h4>
-    <p>What is the joke about at a meta level? Try to say what the joke is about without referencing the subject matter or topic.</p>
-    <textarea type="text" rows="5" ng-model="newjoke.theme"></textarea><br />
 
-    <h4>Statements</h4>
-    <p>Any statements you might make about the subject matter, topics or themes.</p>
-    <textarea type="text" rows="5" ng-model="newjoke.statements"></textarea><br />
+    <md-input-container class="block">
+        <label>Topic(s)</label>
+        <textarea ng-model="newjoke.topic" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+    </md-input-container>
+
+    <md-input-container class="block">
+        <label>Theme(s) or Point(s)</label>
+        <textarea ng-model="newjoke.theme" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+    </md-input-container>
+
+    <md-input-container class="block">
+        <label>Statement(s)</label>
+        <textarea ng-model="newjoke.statements" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+    </md-input-container>
 
     <ul style="list-style: none" id="newjoke-nav">
         <li ng-show="newjoke.afterSave"><button ng-click="newjoke.saveJoke()">Save</button></li>
