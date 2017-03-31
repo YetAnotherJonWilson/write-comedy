@@ -44,9 +44,9 @@
     </md-input-container>
 
     <ul style="list-style: none" id="newjoke-nav">
-        <li ng-show="newjoke.afterSave"><button ng-click="newjoke.saveJoke()">Save</button></li>
+        <li style="float: left" ng-show="newjoke.afterSave"><md-button ng-click="newjoke.saveJoke()">Save</md-button></li>
         <p ng-show="newjoke.saved">Joke Saved!</p>
-        <li><button><a style="text-decoration: none; color: black" href="javascript:window.location.reload();">Clear Form</a></button></li>
-        <li ng-show="newjoke.exerciseLink"><button ng-click="newjoke.goToExercises()">Go To Exercises</button></li>
+        <li><md-button><a style="text-decoration: none; color: black" href="javascript:window.location.reload();">Clear Form</a></md-button></li>
+        <li ng-show="newjoke.exerciseLink"><md-button ng-click="newjoke.goToExercises()">Go To Exercises</md-button></li>
     </ul>
 </div>

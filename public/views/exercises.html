@@ -19,7 +19,7 @@
                 <label>Joke or Bit</label>
                 <textarea cols="50" ng-model="exercises.pageData.currentJoke" md-select-on-focus></textarea>
             </md-input-container>
-            <button class="exercise-buttons" ng-click="exercises.replaceElement('crud/replacesetup', exercises.pageData.currentJoke)">Save</button>
+            <md-button class="md-raised" ng-click="exercises.replaceElement('crud/replacesetup', exercises.pageData.currentJoke)">Save</md-button>
             <br />
 
             <!--Textbox of current Themes or Points-->
@@ -27,7 +27,7 @@
                 <label>Theme(s) or Point(s)</label>
                 <textarea cols="50" ng-model="exercises.pageData.currentTheme" md-select-on-focus></textarea>
             </md-input-container>
-            <button class="exercise-buttons" ng-click="exercises.replaceElement('/crud/addtotheme/', exercises.pageData.currentTheme)">Save</button>
+            <md-button class="md-raised" ng-click="exercises.replaceElement('/crud/addtotheme/', exercises.pageData.currentTheme)">Save</md-button>
             <br />
 
             <!--Textbox of current Topics-->
@@ -35,7 +35,7 @@
                 <label>Topic(s)</label>
                 <textarea cols="50" ng-model="exercises.pageData.currentTopic" md-select-on-focus></textarea>
             </md-input-container>
-            <button class="exercise-buttons" ng-click="exercises.replaceElement('/crud/addtotopic/', exercises.pageData.currentTopic)">Save</button>
+            <md-button class="md-raised" ng-click="exercises.replaceElement('/crud/addtotopic/', exercises.pageData.currentTopic)">Save</md-button>
             <br />
 
             <!--Textbox of current Subject Matter-->
@@ -43,7 +43,7 @@
                 <label>Subject Matter</label>
                 <textarea cols="50" ng-model="exercises.pageData.currentSubject" md-select-on-focus></textarea>
             </md-input-container>
-            <button class="exercise-buttons" ng-click="exercises.replaceElement('/crud/addtosm/', exercises.pageData.currentSubject)">Save</button>
+            <md-button class="md-raised" ng-click="exercises.replaceElement('/crud/addtosm/', exercises.pageData.currentSubject)">Save</md-button>
             <br />
 
             <!--Textbox of current Statements-->
@@ -51,11 +51,11 @@
                 <label>Statements</label>
                 <textarea cols="50" ng-model="exercises.pageData.currentStatements" md-select-on-focus></textarea>
             </md-input-container>
-            <button class="exercise-buttons" ng-click="exercises.replaceElement('/crud/addstatement/', exercises.pageData.currentStatements)">Save</button>
+            <md-button class="md-raised" ng-click="exercises.replaceElement('/crud/addstatement/', exercises.pageData.currentStatements)">Save</md-button>
             <br />
 
             <!--Link to Alternate Material view-->
-            <button class="exercise-buttons" ng-click="exercises.viewAlternateMaterial()">View Alternate Material</button><br /><br />
+            <md-button class="md-raised" ng-click="exercises.viewAlternateMaterial()">View Alternate Material</md-button><br /><br />
             <!--<h5>Part of set #&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5><button>Add to another set</button><br><br>-->
             <!--<h5>Part of Bit #&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5><button>Add to a different bit</button>-->
         </div>
@@ -63,7 +63,7 @@
 <div class="page" md-whiteframe="3">
     <h1>Exercises</h1>
     <div>
-        <button ng-click="exercises.getRandomExercise()">Get Random Exercise</button><br><br>
+        <md-button class="md-warn" style="margin-left: 0" ng-click="exercises.getRandomExercise()">Get Random Exercise</md-button><br><br>
         <h3>Exercise: {{exercises.exerciseName}}</h3>
         <p>Description: {{exercises.exerciseDescription}}</p>
         <p>Use the box below to do the exercise and write ideas.</p>
