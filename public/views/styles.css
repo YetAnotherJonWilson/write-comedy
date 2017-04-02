@@ -26,10 +26,19 @@ md-content {
 }
 
 .welcome {
+    background-color: white;
     width: 80%;
     min-height: 1000px;
     margin: 20px auto 20px auto;
     padding: 20px;
+}
+
+.ruled p {
+    font-family: 'Nothing You Could Do', cursive;
+    font-weight: bold;
+    border-bottom: 1px solid lightblue;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .page {
