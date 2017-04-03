@@ -41,6 +41,11 @@ md-content {
     margin-bottom: 0;
 }
 
+.tocapitalize {
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
 .page {
     width: 45%;
     min-height: 1000px;

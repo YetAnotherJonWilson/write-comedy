@@ -32,7 +32,7 @@ angular.module('comedyApp').config(['$routeProvider', '$locationProvider', '$mdT
     });
 
     $mdThemingProvider.theme('default')
-        .primaryPalette('orange')
+        .primaryPalette('indigo')
         .accentPalette('brown')
         .warnPalette('purple');
 
