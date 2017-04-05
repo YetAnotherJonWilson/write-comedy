@@ -28,17 +28,14 @@ angular.module('comedyApp').controller('WelcomeController', ['$http', '$location
         $location.path('/exercises');
     };
 
-    vm.deleteStepOne = function () {
-        vm.deleteStepOneButton = false;
-        vm.deleteStepTwoButton = true;
+    vm.deleteStepOne = function (itemId) {
+
+        if(confirm("Are you sure?") === true){
+            $http.delete('/crud/deleteitem/' + itemId).then(location.reload());
+        } else {
+            alert("good job");
+        }
     };
 
-    vm.deleteStepTwo = function(itemId){
-        console.log(itemId);
-        $http.delete('/crud/deleteitem/' + itemId).then($http.get('/getCurrentUserJokes').then(handleSuccessTwo));
-        //.then(fetchItems());
-    };
-
-    //fetchItems();
 
 }]);

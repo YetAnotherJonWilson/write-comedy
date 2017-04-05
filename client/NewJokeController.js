@@ -8,7 +8,6 @@ angular.module('comedyApp').controller('NewJokeController', ['$http', '$location
     vm.topic = '';
     vm.statements = '';
     vm.afterSave = true;
-    vm.saved = false;
     vm.exerciseLink = false;
 
     var sendData = {};
@@ -55,7 +54,6 @@ angular.module('comedyApp').controller('NewJokeController', ['$http', '$location
         vm.userId = response.data.id;
         $location.path('/newjoke');
         vm.afterSave = false;
-        vm.saved = true;
         vm.exerciseLink = true;
     }
 
