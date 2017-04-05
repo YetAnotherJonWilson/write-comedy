@@ -16,8 +16,8 @@
     <div  class="ruled" layout="column" layout-wrap>
         <p ng-repeat="joke in welcome.jokes">
             <md-button class="md-primary tocapitalize" ng-click="welcome.currentJokeInExercises(joke.id, joke.title, joke.setup_punch, joke.themes, joke.subject_matter, joke.topics, joke.statements)">{{joke.title}} . . . . . . . .</md-button>
-            <md-button ng-show="welcome.deleteStepOneButton" ng-click="welcome.deleteStepOne()">Delete</md-button>
-            <md-button ng-show="welcome.deleteStepTwoButton" ng-click="welcome.deleteStepTwo(joke.id)">Are you Sure?</md-button>
+            <md-button ng-click="welcome.deleteStepOne()">Delete</md-button>
+           <!--ng-click="welcome.deleteStepTwo(joke.id)">Are you Sure?-->
         </p>
     </div>
 

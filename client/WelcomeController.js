@@ -7,6 +7,7 @@ angular.module('comedyApp').controller('WelcomeController', ['$http', '$location
     vm.nojokes="";
     vm.alljokes="All Jokes";
 
+
     $http.get('/getCurrentUserJokes').then(handleSuccessTwo);
 
     function handleSuccessTwo(response) {
@@ -34,7 +35,7 @@ angular.module('comedyApp').controller('WelcomeController', ['$http', '$location
 
     vm.deleteStepTwo = function(itemId){
         console.log(itemId);
-        $http.delete('/crud/deleteitem/' + itemId);
+        $http.delete('/crud/deleteitem/' + itemId).then($http.get('/getCurrentUserJokes').then(handleSuccessTwo));
         //.then(fetchItems());
     };
 
