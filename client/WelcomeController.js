@@ -1,4 +1,4 @@
-angular.module('comedyApp').controller('WelcomeController', ['$http', '$location', '$localStorage', function($http, $location, $localStorage) {
+angular.module('comedyApp').controller('WelcomeController', ['$http', '$location', '$localStorage', '$mdDialog', function($http, $location, $localStorage, $mdDialog) {
     var vm = this;
 
     // warn user before deleting joke
@@ -32,8 +32,6 @@ angular.module('comedyApp').controller('WelcomeController', ['$http', '$location
 
         if(confirm("Are you sure?") === true){
             $http.delete('/crud/deleteitem/' + itemId).then(location.reload());
-        } else {
-            alert("good job");
         }
     };
 
