@@ -28,12 +28,16 @@ angular.module('comedyApp').controller('WelcomeController', ['$http', '$location
         $location.path('/exercises');
     };
 
-    vm.deleteStepOne = function (itemId) {
+        vm.deleteStepOne = function(itemid) {
+            // Appending dialog to document.body to cover sidenav in docs app
+            var confirm = $mdDialog.confirm()
+                .title('Would you like to delete your joke?')
+                .ariaLabel('delete it')
+                .ok('Please do it!')
+                .cancel('Sounds like a bad idea');
 
-        if(confirm("Are you sure?") === true){
-            $http.delete('/crud/deleteitem/' + itemId).then(location.reload());
-        }
-    };
-
-
+             $mdDialog.show(confirm).then(function() {
+                 $http.delete('/crud/deleteitem/' + itemid).then(location.reload());
+            });
+        };
 }]);
