@@ -22,10 +22,12 @@ router.get('/', function(request, response){
             if (err){
                 console.log(err);
                 console.log(currentUserId);
+                console.log("Current User: ", request.user);
                 response.sendStatus(400);
                 done();
             } else {
                 console.log('Current UserId', currentUserId);
+                console.log("Current User: ", request.user.username);
                 console.log(result.rows);
                 response.send(result.rows);
                 done();

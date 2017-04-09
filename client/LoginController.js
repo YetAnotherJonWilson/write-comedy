@@ -18,11 +18,11 @@ angular.module('comedyApp').controller('LoginController', ['$http', '$location',
         $http.post('/login', sendData).then(handleLoginSuccess, handleLoginFailure);
     };
 
-    function handleLoginSuccess(response){
+    function handleLoginSuccess(){
         $location.path('/success');
     }
 
-    function handleLoginFailure(response){
+    function handleLoginFailure(){
         $location.path('/');
         vm.loginError = true;
     }

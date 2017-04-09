@@ -6,6 +6,8 @@ angular.module('comedyApp').controller('WelcomeController', ['$http', '$location
     vm.deleteStepTwoButton = false;
     vm.nojokes="";
     vm.alljokes="All Jokes";
+    // vm.userName = this.user.userName;
+    console.log("Hello, ", vm);
 
 
     $http.get('/getCurrentUserJokes').then(handleSuccessTwo);
