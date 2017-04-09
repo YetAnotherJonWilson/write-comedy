@@ -16,8 +16,8 @@ router.get('/', function(request, response){
             console.log('connection error', err);
             done();
         }
-        client.query('select titles.title, titles.id, titles.setup_punch, titles.subject_matter, titles.themes, titles.topics, titles.statements from titles ' +
-            'where user_id=$1 order by title;',
+        client.query('select titles.title, titles.id, titles.setup_punch, titles.subject_matter, titles.themes, titles.topics, titles.statements, ' +
+            'users.username from titles inner join users on titles.user_id=users.id where user_id=$1;',
             [currentUserId], function(err, result){
             if (err){
                 console.log(err);

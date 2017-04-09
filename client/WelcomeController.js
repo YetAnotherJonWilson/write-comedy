@@ -4,16 +4,16 @@ angular.module('comedyApp').controller('WelcomeController', ['$http', '$location
     // warn user before deleting joke
     vm.deleteStepOneButton = true;
     vm.deleteStepTwoButton = false;
-    vm.nojokes="";
-    vm.alljokes="All Jokes";
-    // vm.userName = this.user.userName;
-    console.log("Hello, ", vm);
-
+    vm.nojokes = "";
+    vm.alljokes = "All Jokes";
+    vm.owner = "";
 
     $http.get('/getCurrentUserJokes').then(handleSuccessTwo);
 
     function handleSuccessTwo(response) {
         vm.jokes = response.data;
+        console.log("Hello, ", vm.jokes[0].username);
+        vm.owner = vm.jokes[0].username + "'s Notebook";
         console.log("vm.jokes =", response.data);
         if(vm.jokes.length < 1 ) {
             vm.nojokes="To get started, click New Joke to create your first joke.";
