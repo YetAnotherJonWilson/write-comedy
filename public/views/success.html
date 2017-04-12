@@ -20,7 +20,7 @@
     <div  class="ruled" layout="column" layout-wrap>
         <p ng-repeat="joke in welcome.jokes">
             <md-button class="md-primary tocapitalize" ng-click="welcome.currentJokeInExercises(joke.id, joke.title, joke.setup_punch, joke.themes, joke.subject_matter, joke.topics, joke.statements)">{{joke.title}} . . . . . . . .</md-button>
-            <md-button ng-click="welcome.deleteStepOne(joke.id)">Delete</md-button>
+            <md-button class="md-primary tocapitalize" id="delete" ng-click="welcome.deleteStepOne(joke.id)">Delete</md-button>
         </p>
     </div>
 

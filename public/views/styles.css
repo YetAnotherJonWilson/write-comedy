@@ -39,10 +39,6 @@ md-content {
     text-align: center;
 }
 
-.page-type {
-
-}
-
 .ruled p {
     font-family: 'Nothing You Could Do', cursive;
     font-weight: bold;
@@ -54,6 +50,10 @@ md-content {
 .tocapitalize {
     text-transform: capitalize;
     font-weight: bold;
+}
+
+#delete {
+    float: right;
 }
 
 .page {
