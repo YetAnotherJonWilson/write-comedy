@@ -21,12 +21,10 @@ router.post('/', function(request, response){
 
     pool.connect(function(err, client, done){
         if (err){
-            console.log('connection error', err);
             done();
         }
         client.query('INSERT INTO titles (title, user_id, setup_punch, themes, subject_matter, topics, statements) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING id', [title, userId, setup_punch, themes, subject, topics, statements], function(err, result){
             if (err){
-                console.log(err);
                 done();
             } else {
                 response.sendStatus(200);

@@ -7,8 +7,6 @@ angular.module('comedyApp').controller('RegisterController', ['$http', '$locatio
     vm.errorMessage = 'Sorry, Username taken';
 
     vm.register = function(){
-        // console.log('Username', vm.username);
-        // console.log('Password', vm.password);
 
         var sendData = {};
 
@@ -19,13 +17,11 @@ angular.module('comedyApp').controller('RegisterController', ['$http', '$locatio
     };
 
     function handleSuccess(response){
-        console.log('Success', response);
         $location.path('/');
-    };
+    }
 
     function handleFailure(response){
-        console.log('Failure', response);
         $location.path('/register');
         vm.error = true;
-    };
+    }
 }]);

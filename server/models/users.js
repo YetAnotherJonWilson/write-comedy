@@ -58,8 +58,6 @@ function create(username, password, callback) {
 }
 
 function findAndComparePassword(username, candidatePassword, callback) {
-    // candidatePassword is what we received on the request
-    console.log('Checking password');
     findByUsername(username, function(err, user) {
         if (err) {
             return callback(err);
@@ -70,10 +68,8 @@ function findAndComparePassword(username, candidatePassword, callback) {
 
         bcrypt.compare(candidatePassword, user.password, function(err, isMatch){
             if(err){
-                console.log(err);
                 callback(err);
             } else {
-                console.log('isMatch', isMatch);
                 callback(null, isMatch, user);
             }
         });

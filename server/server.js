@@ -94,7 +94,6 @@ app.use('/exercises', index);
 app.use('/alternates', index);
 app.use('/postNewJoke', postNewJoke);
 app.get('/getCurrentUserName', function(request, response){
-    // console.log(request);
     response.send(request.user.username);
 });
 app.get('/getCurrentUserId', function(request, response){
@@ -102,7 +101,6 @@ app.get('/getCurrentUserId', function(request, response){
     response.send(data);
 });
 app.get('/getCurrentJokeById', function(request, response){
-    console.log(request);
     // var data = {id: request.body.id};
     response.sendStatus(200);
 });

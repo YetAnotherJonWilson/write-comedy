@@ -1,4 +1,4 @@
-angular.module('comedyApp').controller('NewJokeController', ['$http', '$location', 'DataService', '$localStorage', function($http, $location, DataService, $localStorage){
+angular.module('comedyApp').controller('NewJokeController', ['$http', '$location', '$localStorage', function($http, $location, $localStorage){
     var vm = this;
     vm.title = '';
     vm.setup = '';
@@ -12,9 +12,6 @@ angular.module('comedyApp').controller('NewJokeController', ['$http', '$location
 
     var sendData = {};
 
-
-
-
     vm.saveJoke = function() {
         $http.get('/getCurrentUserId').then(handleSuccess);
 
@@ -27,8 +24,6 @@ angular.module('comedyApp').controller('NewJokeController', ['$http', '$location
         sendData.topic = vm.topic;
         sendData.statements = vm.statements;
 
-        console.log(vm.title);
-
         $http.post('/postNewJoke', sendData);
 
     };
@@ -38,16 +33,6 @@ angular.module('comedyApp').controller('NewJokeController', ['$http', '$location
         var pageData = {};
         vm.pageData = {currentTitle: vm.title, currentJoke: vm.setup, currentTheme: vm.theme, currentSubject: vm.subject, currentTopic: vm.topic, currentStatements: vm.statements};
         $localStorage.prevPageData = vm.pageData;
-
-
-
-        // DataService.data.currentTitle = vm.title;
-        // DataService.data.currentSetup = vm.setup;
-        // DataService.data.currentPunchline = vm.punchline;
-        // DataService.data.currentTheme = vm.theme;
-        // DataService.data.currentSubject = vm.subject;
-
-
     };
 
     function handleSuccess(response) {

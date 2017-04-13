@@ -12,9 +12,7 @@ angular.module('comedyApp').controller('WelcomeController', ['$http', '$location
 
     function handleSuccessTwo(response) {
         vm.jokes = response.data;
-        console.log("Hello, ", vm.jokes[0].username);
         vm.owner = vm.jokes[0].username + "'s Notebook";
-        console.log("vm.jokes =", response.data);
         if(vm.jokes.length < 1 ) {
             vm.nojokes="To get started, click New Joke to create your first joke.";
             vm.alljokes="";
@@ -22,7 +20,6 @@ angular.module('comedyApp').controller('WelcomeController', ['$http', '$location
     }
 
     vm.currentJokeInExercises = function(id, title, setup_punch, theme, subject, topic, statements){
-        console.log("id:", id);
         var pageData = {};
         vm.pageData = {currentId: id, currentTitle: title, currentJoke: setup_punch, currentTheme: theme, currentSubject: subject, currentTopic: topic, currentStatements: statements};
         // Use browser's localstorage to store current joke data

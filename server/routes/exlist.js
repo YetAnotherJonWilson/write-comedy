@@ -10,8 +10,6 @@ var config = parseDbUrl(process.env.DATABASE_URL);
 
 router.get('/', function(request, response){
     var client = new pg.Client(config);
-    console.log(request);
-
 
     client.connect(function(err){
         if (err){
@@ -20,10 +18,8 @@ router.get('/', function(request, response){
         }
         client.query('SELECT * FROM exercises', [], function(err, result){
             if(err){
-                console.log('Query error', err);
                 response.sendStatus(500);
             }else{
-                console.log('success');
                 response.send(result.rows);
             }
         })

@@ -22,16 +22,12 @@ router.get('/', function(request, response){
 
     pool.connect(function(err, client){
         if (err){
-            console.log('connection error', err);
             done();
         }
         client.query('SELECT * FROM exercises WHERE id=$1', [ranNumber], function(err, result){
             if (err){
-                console.log(err);
                 done();
             } else {
-                console.log('random ex sent');
-                console.log(result.rows[0]);
                 response.send(result.rows[0]);
             }
         });

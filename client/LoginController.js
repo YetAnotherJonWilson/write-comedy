@@ -28,8 +28,6 @@ angular.module('comedyApp').controller('LoginController', ['$http', '$location',
     }
 
     vm.register = function(){
-        // console.log('Username', vm.username);
-        // console.log('Password', vm.password);
 
         var sendData = {};
 
@@ -40,12 +38,10 @@ angular.module('comedyApp').controller('LoginController', ['$http', '$location',
     };
 
     function handleRegisterSuccess(response){
-        console.log('Success', response);
         $location.path('/success');
     }
 
     function handleRegisterFailure(response){
-        console.log('Failure', response);
         vm.registerError = true;
     }
 
