@@ -25,6 +25,16 @@ md-content {
     font-family: serif;
 }
 
+.toolbar-button {
+    height: 35px;
+    margin-top: 38px
+}
+
+.active {
+    font-weight: bold;
+    color: #FFC107
+}
+
 .welcome {
     background-color: white;
     width: 80%;

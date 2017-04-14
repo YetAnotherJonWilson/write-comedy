@@ -1,9 +1,9 @@
 <!--Header toolbar, consistent at top of each view-->
 <md-toolbar class="toolbarHeading" md-whiteframe="3" style="height: 75px; padding: 0 15px 0 15px" layout="row">
     <div flex>
-        <md-button style="height: 35px; margin-top: 38px; font-weight: bold" ng-href="/newjoke">New Material</md-button>
-        <md-button style="height: 35px; margin-top: 38px" ng-href="/success">Table of Contents</md-button>
-        <md-button style="height: 35px; margin-top: 38px" ng-href="/logout" target="_self">Logout</md-button>
+        <md-button class="toolbar-button active" ng-href="/newjoke">New Material</md-button>
+        <md-button class="toolbar-button" ng-href="/success">Table of Contents</md-button>
+        <md-button class="toolbar-button" ng-href="/logout" target="_self">Logout</md-button>
     </div>
     <h1 id="main-message">{{main.message}}</h1>
 </md-toolbar>
