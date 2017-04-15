@@ -45,7 +45,6 @@ router.put('/replacesetup/', function(request, response) {
 });
 
 router.put('/addtosetup/', function(request, response) {
-    console.log('request.body:', request.body);
     var id = request.body.id;
     var text = request.body.text;
 
@@ -66,7 +65,6 @@ router.put('/addtosetup/', function(request, response) {
 
 
 router.put('/addtoSM/', function(request, response) {
-    console.log('request.body:', request.body);
     var id = request.body.id;
     var text = request.body.text;
 
@@ -85,7 +83,6 @@ router.put('/addtoSM/', function(request, response) {
 });
 
 router.put('/addtotopic/', function(request, response) {
-    console.log('request.body:', request.body);
     var id = request.body.id;
     var text = request.body.text;
 
@@ -105,10 +102,8 @@ router.put('/addtotopic/', function(request, response) {
 });
 
 router.put('/addtotheme/', function(request, response) {
-    console.log('request.body:', request.body);
     var id = request.body.id;
     var text = request.body.text;
-    console.log("request.body.text", request.body.text);
 
     pool.connect(function (err, client) {
         if (err) {
@@ -126,7 +121,6 @@ router.put('/addtotheme/', function(request, response) {
 });
 
 router.put('/addstatement/', function(request, response) {
-    console.log('request.body:', request.body);
     var id = request.body.id;
     var text = request.body.text;
 
@@ -146,7 +140,6 @@ router.put('/addstatement/', function(request, response) {
 });
 
 router.put('/addaltsetup/', function(request, response) {
-    console.log('request.body:', request.body);
     var id = request.body.id;
     var text = request.body.text;
 
@@ -166,7 +159,6 @@ router.put('/addaltsetup/', function(request, response) {
 });
 
 router.put('/addaltsm/', function(request, response) {
-    console.log('request.body:', request.body);
     var id = request.body.id;
     var text = request.body.text;
 
@@ -186,7 +178,6 @@ router.put('/addaltsm/', function(request, response) {
 });
 
 router.put('/addalttopic/', function(request, response) {
-    //console.log('request.body:', request.body);
     var id = request.body.id;
     var text = request.body.text;
 
@@ -206,7 +197,6 @@ router.put('/addalttopic/', function(request, response) {
 });
 
 router.put('/addalttheme/', function(request, response) {
-    console.log('request.body:', request.body);
     var id = request.body.id;
     var text = request.body.text;
 
