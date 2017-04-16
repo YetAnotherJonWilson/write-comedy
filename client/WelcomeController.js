@@ -11,6 +11,7 @@ angular.module('comedyApp').controller('WelcomeController', ['$http', '$location
     $http.get('/getCurrentUserJokes').then(handleSuccessTwo);
 
     function handleSuccessTwo(response) {
+        vm.TOC="Table of Contents";
         vm.jokes = response.data;
         vm.owner = vm.jokes[0].username + "'s Notebook";
         if(vm.jokes.length < 1 ) {
