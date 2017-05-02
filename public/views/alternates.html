@@ -13,34 +13,36 @@
 
     <h2>{{alternates.title}}</h2>
 
-    <h4 class="underline">Joke</h4>
-    <p>{{alternates.joke}}</p>
+    <!--Alternate Setup Punch Text Box-->
+    <md-input-container class="block">
+        <label>Alternate Setup/Punch</label>
+        <textarea cols="50" ng-model="alternates.joke" md-select-on-focus></textarea>
+    </md-input-container>
+    <md-button class="md-raised" ng-click="exercises.replaceElement('crud/addaltsetup', alternates.joke)">Save</md-button>
+    <br />
 
     <!--Alternate Subject Matter Text Box-->
-    <h4 class="underline">Subject Matter</h4>
-    <textarea type="text" cols="50" ng-model="alternates.subjectMatter">
-                <h5>{{alternates.subjectMatter}}</h5>
-    </textarea>
-    <br />
-    <button class="exercise-buttons" ng-click="alternates.replaceAltElement('crud/addaltsm/', alternates.subjectMatter)">Save</button>
+    <md-input-container class="block">
+        <label>Subject Matter</label>
+        <textarea cols="50" ng-model="alternates.subjectMatter" md-select-on-focus></textarea>
+    </md-input-container>
+    <md-button class="md-raised" ng-click="alternates.replaceAltElement('crud/addaltsm/', alternates.subjectMatter)">Save</md-button>
     <br />
 
     <!--Alternate Topics Text Box-->
-    <h4 class="underline">Topics</h4>
-    <textarea type="text" cols="50" ng-model="alternates.topics">
-                <h5>{{alternates.topics}}</h5>
-    </textarea>
-    <br />
-    <button class="exercise-buttons" ng-click="alternates.replaceAltElement('/crud/addalttopic/', alternates.topics)">Save</button>
+    <md-input-container class="block">
+        <label>Topics</label>
+        <textarea cols="50" ng-model="alternates.topics" md-select-on-focus></textarea>
+    </md-input-container>
+    <md-button class="md-raised" ng-click="alternates.replaceAltElement('/crud/addalttopic/', alternates.topics)">Save</md-button>
     <br />
 
     <!--Alternate Themes and Points Text Box-->
-    <h4 class="underline">Themes and Points</h4>
-    <textarea type="text" cols="50" ng-model="alternates.altThemes">
-                <h5>{{alternates.altThemes}}</h5>
-    </textarea>
-    <br />
-    <button class="exercise-buttons" ng-click="alternates.replaceAltElement('/crud/addalttheme/', alternates.altThemes)">Save</button>
+    <md-input-container class="block">
+        <label>Themes and Points</label>
+        <textarea cols="50" ng-model="alternates.altThemes" md-select-on-focus></textarea>
+    </md-input-container>
+    <md-button class="md-raised" ng-click="alternates.replaceAltElement('/crud/addalttheme/', alternates.altThemes)">Save</md-button>
     <br />
 
 </div>
