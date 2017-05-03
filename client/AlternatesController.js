@@ -20,5 +20,8 @@ angular.module('comedyApp').controller('AlternatesController', ['$http', '$locat
         });
     };
 
+    vm.goToExercises = function() {
+        $location.path('/exercises');
+    };
 
 }]);
