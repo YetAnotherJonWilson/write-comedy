@@ -49,9 +49,17 @@ md-content {
     text-align: center;
 }
 
+.TOC-header {
+    font-family: 'Nothing You Could Do', cursive;
+    font-weight: bold;
+    font-size: 22px;
+    color: blue;
+}
+
 .ruled p {
     font-family: 'Nothing You Could Do', cursive;
     font-weight: bold;
+    color: blue;
     border-bottom: 1px solid lightblue;
     margin-top: 0;
     margin-bottom: 0;

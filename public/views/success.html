@@ -11,16 +11,16 @@
 
 <div layout="column" class="welcome" md-whiteframe="3">
     <div class="page-header">
-        <span class="title">{{welcome.owner}}</span>
+        <span class="TOC-header">{{welcome.owner}}</span>
         <br />
-        <span class="page-type">{{welcome.TOC}}</span>
+        <span class="TOC-header">{{welcome.TOC}}</span>
     </div>
     <div style="padding-left: 100px; padding-top: 50px"><h2>{{welcome.nojokes}}</h2></div>
 
     <div  class="ruled" layout="column" layout-wrap>
         <p ng-repeat="joke in welcome.jokes">
-            <md-button class="md-primary tocapitalize" ng-click="welcome.currentJokeInExercises(joke.id, joke.title, joke.setup_punch, joke.themes, joke.subject_matter, joke.topics, joke.statements)">{{joke.title}} . . . . . . . .</md-button>
-            <md-button class="md-primary tocapitalize" id="delete" ng-click="welcome.deleteStepOne(joke.id)">Delete</md-button>
+            <md-button style="font-size: 18px" class="tocapitalize" ng-click="welcome.currentJokeInExercises(joke.id, joke.title, joke.setup_punch, joke.themes, joke.subject_matter, joke.topics, joke.statements)">{{joke.title}} . . . . . . . .</md-button>
+            <md-button style="font-size: 18px" class="tocapitalize" id="delete" ng-click="welcome.deleteStepOne(joke.id)">Delete</md-button>
         </p>
     </div>
 
