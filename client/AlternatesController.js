@@ -5,7 +5,7 @@ angular.module('comedyApp').controller('AlternatesController', ['$http', '$locat
     vm.pageData = $localStorage.prevPageData;
 
     vm.title = vm.pageData.currentTitle;
-    vm.joke = vm.pageData.currentJoke;
+    vm.joke = vm.pageData.currentAltSetup;
     vm.subjectMatter = vm.pageData.currentAltSM;
     vm.topics = vm.pageData.currentAltTopic;
     vm.altThemes = vm.pageData.currentAltThemes;
