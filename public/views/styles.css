@@ -2,7 +2,7 @@ md-content {
     padding: 20px;
 }
 
-#leftLogin {
+#left-login {
     height: 100%;
     width: 49%;
     text-align: center;
@@ -10,18 +10,18 @@ md-content {
     border-right: 2pt groove lightblue;
 }
 
-#rightLogin{
+#right-login{
     width: 49%;
     text-align: center;
     float: right;
 }
 
-.loginDiv {
+.login-div {
     width: 300px;
     margin: auto;
 }
 
-.toolbarHeading h1 {
+.toolbar-heading h1 {
     font-family: serif;
 }
 

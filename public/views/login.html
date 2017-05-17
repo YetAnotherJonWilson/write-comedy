@@ -1,14 +1,14 @@
 <!--Header toolbar, consistent at top of each view-->
-<md-toolbar class="toolbarHeading" md-whiteframe="3" style="height: 75px; padding: 0 15px 0 15px" layout="row">
+<md-toolbar class="toolbar-heading" md-whiteframe="3" style="height: 75px; padding: 0 15px 0 15px" layout="row">
     <md-button class="toolbar-button" aria-label="New Material" ng-href="/newjoke">New Material</md-button>
     <md-button class="toolbar-button" aria-label="All Jokes" ng-href="/success">Table of Contents</md-button>
     <span flex></span>
     <h1 id="main-message">{{main.message}}</h1>
 </md-toolbar>
 
-<div id = "leftLogin">
+<div id = "left-login">
     <h2 style="margin-top: 250px">New User?</h2>
-    <div class = "loginDiv">
+    <div class = "login-div">
         <fieldset>
             <legend>Register</legend>
             <form ng-submit="login.register()">
@@ -28,9 +28,9 @@
     </div>
 </div>
 
-<div id = "rightLogin">
+<div id = "right-login">
     <h2 style="margin-top: 250px">Old User?</h2>
-    <div class = "loginDiv">
+    <div class = "login-div">
         <fieldset>
             <legend>Sign In</legend>
             <form ng-submit="login.login()">
