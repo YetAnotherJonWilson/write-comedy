@@ -16,34 +16,33 @@
     <!--Alternate Setup Punch Text Box-->
     <md-input-container class="block">
         <label>Alternate Setup/Punch</label>
-        <textarea cols="50" ng-model="alternates.joke" md-select-on-focus></textarea>
+        <textarea cols="50" ng-model="alternates.pageData.currentAltSetup" md-select-on-focus></textarea>
     </md-input-container>
-    <md-button class="md-raised" ng-click="alternates.replaceAltElement('crud/addaltsetup', alternates.joke)">Save</md-button>
     <br />
 
     <!--Alternate Subject Matter Text Box-->
     <md-input-container class="block">
         <label>Subject Matter</label>
-        <textarea cols="50" ng-model="alternates.subjectMatter" md-select-on-focus></textarea>
+        <textarea cols="50" ng-model="alternates.pageData.currentAltSM" md-select-on-focus></textarea>
     </md-input-container>
-    <md-button class="md-raised" ng-click="alternates.replaceAltElement('crud/addaltsm/', alternates.subjectMatter)">Save</md-button>
     <br />
 
     <!--Alternate Topics Text Box-->
     <md-input-container class="block">
         <label>Topics</label>
-        <textarea cols="50" ng-model="alternates.topics" md-select-on-focus></textarea>
+        <textarea cols="50" ng-model="alternates.pageData.currentAltTopic" md-select-on-focus></textarea>
     </md-input-container>
-    <md-button class="md-raised" ng-click="alternates.replaceAltElement('/crud/addalttopic/', alternates.topics)">Save</md-button>
     <br />
 
     <!--Alternate Themes and Points Text Box-->
     <md-input-container class="block">
         <label>Themes and Points</label>
-        <textarea cols="50" ng-model="alternates.altThemes" md-select-on-focus></textarea>
+        <textarea cols="50" ng-model="alternates.pageData.currentAltThemes" md-select-on-focus></textarea>
     </md-input-container>
-    <md-button class="md-raised" ng-click="alternates.replaceAltElement('/crud/addalttheme/', alternates.altThemes)">Save</md-button>
     <br />
+
+    <!--Save Button-->
+    <md-button class="md-raised" ng-click="alternates.replaceAltElement()">Save</md-button>
 
     <!--Go Back to Exercises Button-->
     <md-button class="md-raised" ng-click="alternates.goToExercises()">Back to Exercises</md-button>

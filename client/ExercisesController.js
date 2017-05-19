@@ -32,6 +32,6 @@ angular.module('comedyApp').controller('ExercisesController', ['$location', '$lo
     }
 
     vm.replaceElement = function() {
-        $http.post('/crud/replaceElements', vm.pageData).then(handleSavedSuccess());
+        $http.put('/crud/replaceElements', vm.pageData).then(handleSavedSuccess());
     };
 }]);

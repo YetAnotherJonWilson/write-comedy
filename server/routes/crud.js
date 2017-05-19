@@ -26,214 +26,48 @@ router.delete('/deleteitem/:id', function(request, response) {
 });
 
 router.put('/replaceElements/', function(request, response) {
-    var id = request.pageData.currentId;
-    var setup_punch = request.pageData.currentJoke;
-    var themes = request.pageData.currentTheme;
-    var subject = request.pageData.currentSubject;
-    var topics = request.pageData.currentTopic;
-    var statements = request.pageData.currentStatements;
+    var id = request.body.currentId;
+    var setup_punch = request.body.currentJoke;
+    var themes = request.body.currentTheme;
+    var subject = request.body.currentSubject;
+    var topics = request.body.currentTopic;
+    var statements = request.body.currentStatements;
 
-    pool.connect(function (err, client) {
+    pool.connect(function (err, client, done) {
         if (err) {
             console.log('connection error', err);
         }
 
-        client.query('UPDATE titles (setup_punch, themes, subject_matter, topics, statements) VALUES ($1, $2, $3, $4, $5) WHERE id=$6', [setup_punch, themes, subject, topics, statements, id], function(err, result){
+        client.query('UPDATE titles SET setup_punch=$1, themes=$2, subject_matter=$3, topics=$4, statements=$5 WHERE id=$6', [setup_punch, themes, subject, topics, statements, id], function(err, result){
+            if (err){
+                console.log(err);
+                done();
+            } else {
+                response.sendStatus(200);
+                done();
+            }
+        });
+    });
+});
+
+router.put('/replaceAltElements/', function(request, response) {
+    var id = request.body.currentId;
+    var setup_punch = request.body.currentAltSetup;
+    var themes = request.body.currentAltThemes;
+    var subject = request.body.currentAltSM;
+    var topics = request.body.currentAltTopic;
+
+    pool.connect(function (err, client, done) {
+        if (err) {
+            console.log('connection error', err);
+        }
+
+        client.query('UPDATE titles SET alt_setup_punch=$1, alt_themes=$2, alt_subject_matter=$3, alt_topics=$4 WHERE id=$5', [setup_punch, themes, subject, topics, id], function(err, result){
             if (err){
                 done();
             } else {
                 response.sendStatus(200);
                 done();
-            }
-        });
-    });
-});
-
-router.put('/replacesetup/', function(request, response) {
-    var id = request.body.id;
-    var text = request.body.text;
-
-    pool.connect(function (err, client) {
-        if (err) {
-            console.log('connection error', err);
-        }
-
-        client.query('UPDATE titles SET setup_punch=$1 WHERE id=$2;', [text, id], function (err, result) {
-            if (err) {
-                console.log(err);
-            } else {
-                response.sendStatus(200);
-            }
-        });
-    });
-});
-
-router.put('/addtosetup/', function(request, response) {
-    var id = request.body.id;
-    var text = request.body.text;
-
-    pool.connect(function (err, client) {
-        if (err) {
-            console.log('connection error', err);
-        }
-
-        client.query('UPDATE titles SET setup_punch =$1 WHERE id=$2;', [text, id], function (err, result) {
-            if (err) {
-                console.log(err);
-            } else {
-                    response.sendStatus(200);
-                }
-            });
-        });
-    });
-
-
-router.put('/addtoSM/', function(request, response) {
-    var id = request.body.id;
-    var text = request.body.text;
-
-    pool.connect(function (err, client) {
-        if (err) {
-            console.log('connection error', err);
-        }
-        client.query('UPDATE titles SET subject_matter = $1 WHERE id=$2;', [text, id], function (err, result) {
-            if (err) {
-                console.log(err);
-            } else {
-                response.sendStatus(200);
-            }
-        });
-    });
-});
-
-router.put('/addtotopic/', function(request, response) {
-    var id = request.body.id;
-    var text = request.body.text;
-
-    pool.connect(function (err, client) {
-        if (err) {
-            console.log('connection error', err);
-        }
-
-        client.query('UPDATE titles SET topics = $1 WHERE id=$2;', [text, id], function (err, result) {
-            if (err) {
-                console.log(err);
-            } else {
-                    response.sendStatus(200);
-                }
-        });
-    });
-});
-
-router.put('/addtotheme/', function(request, response) {
-    var id = request.body.id;
-    var text = request.body.text;
-
-    pool.connect(function (err, client) {
-        if (err) {
-            console.log('connection error', err);
-        }
-
-        client.query('UPDATE titles SET themes = $1 WHERE id=$2;', [text, id], function (err, result) {
-            if (err) {
-                console.log(err);
-            } else {
-                    response.sendStatus(200);
-            }
-        });
-    });
-});
-
-router.put('/addstatement/', function(request, response) {
-    var id = request.body.id;
-    var text = request.body.text;
-
-    pool.connect(function (err, client) {
-        if (err) {
-            console.log('connection error', err);
-        }
-
-        client.query('UPDATE titles SET statements = $1 WHERE id=$2;', [text, id], function (err, result) {
-            if (err) {
-                console.log(err);
-            } else {
-                    response.sendStatus(200);
-            }
-        });
-    });
-});
-
-router.put('/addaltsetup/', function(request, response) {
-    var id = request.body.id;
-    var text = request.body.text;
-
-    pool.connect(function (err, client) {
-        if (err) {
-            console.log('connection error', err);
-        }
-
-        client.query('UPDATE titles SET alt_setup_punch = $1 WHERE id=$2;', [text, id], function (err, result) {
-            if (err) {
-                console.log(err);
-            } else {
-                response.sendStatus(200);
-            }
-        });
-    });
-});
-
-router.put('/addaltsm/', function(request, response) {
-    var id = request.body.id;
-    var text = request.body.text;
-
-    pool.connect(function (err, client) {
-        if (err) {
-            console.log('connection error', err);
-        }
-
-        client.query('UPDATE titles SET alt_subject_matter = $1 WHERE id=$2;', [text, id], function (err, result) {
-            if (err) {
-                console.log(err);
-            } else {
-                    response.sendStatus(200);
-            }
-        });
-    });
-});
-
-router.put('/addalttopic/', function(request, response) {
-    var id = request.body.id;
-    var text = request.body.text;
-
-    pool.connect(function (err, client) {
-        if (err) {
-            console.log('connection error', err);
-        }
-
-        client.query('UPDATE titles SET alt_topics = $1 WHERE id=$2;', [text, id], function (err, result) {
-            if (err) {
-                console.log(err);
-            } else {
-                    response.sendStatus(200);
-            }
-        });
-    });
-});
-
-router.put('/addalttheme/', function(request, response) {
-    var id = request.body.id;
-    var text = request.body.text;
-
-    pool.connect(function (err, client) {
-        if (err) {
-            console.log('connection error', err);
-        }
-
-        client.query('UPDATE titles SET alt_themes = $1 WHERE id=$2;', [text, id], function (err, result) {
-            if (err) {
-                console.log(err);
-            } else {
-                    response.sendStatus(200);
             }
         });
     });
