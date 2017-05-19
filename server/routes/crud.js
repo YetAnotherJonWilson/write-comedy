@@ -25,6 +25,30 @@ router.delete('/deleteitem/:id', function(request, response) {
     });
 });
 
+router.put('/replaceElements/', function(request, response) {
+    var id = request.pageData.currentId;
+    var setup_punch = request.pageData.currentJoke;
+    var themes = request.pageData.currentTheme;
+    var subject = request.pageData.currentSubject;
+    var topics = request.pageData.currentTopic;
+    var statements = request.pageData.currentStatements;
+
+    pool.connect(function (err, client) {
+        if (err) {
+            console.log('connection error', err);
+        }
+
+        client.query('UPDATE titles (setup_punch, themes, subject_matter, topics, statements) VALUES ($1, $2, $3, $4, $5) WHERE id=$6', [setup_punch, themes, subject, topics, statements, id], function(err, result){
+            if (err){
+                done();
+            } else {
+                response.sendStatus(200);
+                done();
+            }
+        });
+    });
+});
+
 router.put('/replacesetup/', function(request, response) {
     var id = request.body.id;
     var text = request.body.text;
