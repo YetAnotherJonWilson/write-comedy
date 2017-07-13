@@ -2,6 +2,9 @@
   "name": "write-comedy",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "6.11.1"
+  },
   "main": "server/server.js",
   "scripts": {
     "test": "mocha",
